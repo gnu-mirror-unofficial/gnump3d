@@ -35,13 +35,22 @@
       <div id="content">
 <a name="attacks"><!-- Anchor--></a>
 
-<h3><a name="TOC109">Past Security Attacks</a></h3>
+<h3><a name="TOC110">Past Security Attacks</a></h3>
 
  <p>In the interests of full disclosure this page will stand as a permanent record of any security vulnerabilities which have been discovered in the server.</p>
-<p>To date I'm pleased that there has only been one serious problem.  Granted this is one too many, but it's not a bad record</p>
+<p>To date there have only been two problems reporting.  Granted this is two too many.</p>
+
+<p>Erroneous security reports involve:</p>
+<ul>
+<li><a href="securing.html#password-mitigation">Password evasion</a></li>
+<li>Cross Site Scripting (XSS) Attacks</li>
+</ul>
+<p>Whilst it is true that cross site scripting attacks can be serious, in this application they are not.  A cross site scripting attack (xss) is one in which user supplied input is injecting into pages, usually with the intention of stealing cookies.</p>
+<p>Whilst it's true that user supplied input is displayed upon the GNUMP3d output pages, for example if you enter HTML code into the search box, this is not a security concern because the code doesn't use cookies for storing authentication information.</p>
 
 
-<h4><a name="TOC110">GNUMP3d v2.0 Password File Weakness</a></h4>
+
+<h4><a name="TOC111">GNUMP3d v2.0 Password File Weakness</a></h4>
 <p>GNUMP3d supports two simple methods of securing access to your music archive, (these are described more fully <a href="securing.html#Securing">here</a>), IP address access control and a password system.</p>
 <p>The password system relies upon their being a file within the music archive containing a list of usernames and passwords which may be used to access the system.</p>
 <p>When this system was created I was careful to deny browsers the ability to download this file - as part of the re-write in Perl I missed this important step.</p>
@@ -50,6 +59,25 @@
 <p>This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
 <p>(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
 
+<h4><a name="TOC112">Directory Traversal Attack</a></h4>
+<p>This is a bug which was present in two release of the code:</p>
+<ul>
+<li>2.9.2</li>
+<li>2.9.1</li>
+</ul>
+<p>In both cases this was because of an error in the way I tested for
+ traversal attacks.</p>
+<p>A directory traversal attack involves making a request such as :</p>
+<pre>
+http://server.host.name:port/../../../etc/passwd
+</pre>
+<p>My code attempted to deal with this by removing the following characters from the requested files "<tt>../</tt>".  However this failed to handle the case where users would request:</p>
+<pre>
+http://server.host.name:port/....//....//....//etc/passwd
+</pre>
+<p>Removing "<tt>../</tt>" from this request still leaves it vulnerable.</p>
+<P>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
+
 
 
 
@@ -57,7 +85,7 @@
     </div>
 
     <div class="copyright">
-      <p>Last modified: 19 February 2005
+      <p>Last modified: 01 April 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>

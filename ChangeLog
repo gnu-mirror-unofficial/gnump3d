@@ -11,7 +11,37 @@
 	v1.0     - Current    Were coded in Perl
 	
 
-  2.9.1 / 2.9.2 [ 19 Feb 2005 ]
+
+ 
+  2.9.3 [ 1st April 2005 ]
+
+    - CACHING: Allow incremental tag cache updating.
+
+    - MISC:    Show new files instead of new directories.
+    - MISC:    Tag support for .WMA files.
+    - MISC:    Tag support for .MP4 / .AAC files.
+    - MISC:    Be paranoid about cookie values and parameter values.
+    - MISC:    Added French language translation.
+    - MISC:    Added a couple of new sorting options.
+
+    - THEMES:  Fix the broken link in the footer of the Nomad Theme.
+    - THEMES:  Add <body> tags to the LaFrere theme.
+    - THEMES:  Use JavaScript to focus the search forms on all search pages.
+
+    - BUGFIX:  URL Encode files on the random playlist page.
+    - BUGFIX:  Fix 'FILENAME' tag computation in the worker 
+               children; it was exposing filesystem layout.
+    - BUGFIX:  Tag cache reload should happen in the parent.
+
+
+  2.9.2 [19th Feb 2005]
+
+       - Identical to previous release, issued immediately afterwards
+	 due to screwup uploading to savannah.gnu.org
+
+
+
+  2.9.1 [ 19 Feb 2005 ]
 
   	- FEATURES:  Support .aif/.aiff tag display and processing.
 	- FEATURES:  Show .shn files as audio files too.

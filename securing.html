@@ -114,13 +114,41 @@ usernameN:passwordN
 <p>If the visitor enters a valid username and password they will be
  able to browse - otherwise they won't.</p>
 
+<a name="password-mitigation"><!-- Anchor--></a>
+<h4><a name="TOC24">Password Protection Evasion</a></h4>
+<p>Every few months a user will report a security issue with the server
+ when they realise that if they know the name of an audio file they
+ can download it without being prompted for a password.</p>
+<p>This is a <b>deliberate hole</b>.  Although that might seem nonsensical its
+ mandated by the way the server works.</p>
+<p>If you enable the password protection what you are actually doing is
+ denying random visitors the ability to browse your music archives GUI,
+ including the playlists.</p>
+<p>However you're not protecting against the users who know what
+ directory structure you have - if a remote user knows you have the
+ following file they can download it directly:</p>
+<pre>
+http://some.host.name:port/foo/bar/test.mp3
+</pre>
+<p>Why is that?</p>
+<p>It's because 99% of available MP3 players know nothing of HTTP authentication, which is used to prompt visitors for their password.</p>
+<p>If we protected the audio files as well as the GUI files then the client
+ MP3 players would be unable to download the audio tracks and streaming
+ would break for all users.</p>
+<p>So, whilst the password protection is useful, and does stop somebody
+ from discovering your archive structure it doesn't give foolproof protection.</p>
+<p>I'll reiterate this one last time:</p>
+<P>If you want full security restrict access by IP addresses and only allow known-good clients to connect.</p>
+
+
+
 
 
       </div>
     </div>
 
     <div class="copyright">
-      <p>Last modified: 19 February 2005
+      <p>Last modified: 01 April 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>

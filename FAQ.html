@@ -36,10 +36,10 @@
 <a name="FAQ"><!-- Anchor--></a>
 
 
-<h3><a name="TOC25">Frequently Asked Questions</a></h3>
+<h3><a name="TOC26">Frequently Asked Questions</a></h3>
 
 
-<h4><a name="TOC26">General Questions</a></h4>
+<h4><a name="TOC27">General Questions</a></h4>
 <ol>
 <li><a href="FAQ.html#FAQ-platforms">What systems does it run on?</a></li>
 <li><a href="FAQ.html#FAQ-players">What MP3/OGG players are supported?</a></li>
@@ -53,7 +53,7 @@
 <li><a href="FAQ.html#faq-money">You're just doing this to solicit freebies, aren't you?</a></li>
 </ol>
 
-<h4><a name="TOC27">Configuration Questions</a></h4>
+<h4><a name="TOC28">Configuration Questions</a></h4>
 <ol>
 <li><a href="FAQ.html#faq-reload-themes">Do I have to restart the server to update the template files?</a></li>
 <li><a href="FAQ.html#faq-hostname">The server uses the wrong hostname, how do I change this?</a></li>
@@ -61,7 +61,7 @@
 <li><a href="FAQ.html#faq-securing">How do I secure my music archive?</a></li>
 </ol>
 
-<h4><a name="TOC28">Theme support questions</a></h4>
+<h4><a name="TOC29">Theme support questions</a></h4>
 <ol>
 <li><a href="FAQ.html#faq-template">Can I change the HTML that's generated?</a></li>
 <li><a href="FAQ.html#faq-themes">How do I build a theme?</a></li>
@@ -69,7 +69,7 @@
 <li><a href="FAQ.html#faq-theme-location">Can I load themes from other directories?</a></li>
 </ol>
 
-<h4><a name="TOC29">Plugin Questions</a></h4>
+<h4><a name="TOC30">Plugin Questions</a></h4>
 <ol>
 <li><a href="FAQ.html#faq-what-plugins">What are plugins, why are they used?</a></li>
 <li><a href="FAQ.html#faq-special">What are the <i>special</i> URLS?</a></li>
@@ -77,14 +77,14 @@
 <li><a href="FAQ.html#faq-plugin-overview">How do I write a plugin?</a></li>
 </ol>
 
-<h4><a name="TOC30">Platform/Distribution Specific</a></h4>
+<h4><a name="TOC31">Platform/Distribution Specific</a></h4>
 <ul>
 <li><a href="FAQ.html#faq-win32">Will the Perl server run under Windows?</a></li>
 <li>[<font color="red">Updated</font>] <a href="FAQ.html#faq-win32-service">Will the Perl server run as a service under Windows?</a></li>
 <li><a href="FAQ.html#faq-macosx-startup">How can I make the server run at startup on Mac OS X?</a></li>
 </ul>
 
-<h4><a name="TOC31">Development Questions</a></h4>
+<h4><a name="TOC32">Development Questions</a></h4>
 <ul>
 <li><a href="FAQ.html#faq-perl">Why did you switch to perl?</a></li>
 <li><a href="FAQ.html#faq-v2-help">How can I help with version 2.x development?</a></li>
@@ -96,7 +96,7 @@
 
 <a name="FAQ-platforms"><!-- Anchor--></a>
 
-<h4><a name="TOC32">What systems does it run on?</a></h4>
+<h4><a name="TOC33">What systems does it run on?</a></h4>
 <p>GNUMP3d is written in portable Perl, and should run on any system which is capable of running perl code.</p>
 <p>The only additional requirement is a working 'fork' call - which in practice means the system must be either GNU, Unix, or running a recent version of <a href="http://www.activestate.com/Solutions/Programmer/Perl.plex">ActiveState Perl port</a> for Microsoft Windows</p>
 <p>Supported platforms include:</p>
@@ -109,7 +109,7 @@
 
 
 <a name="FAQ-players"><!-- Anchor--></a>
-<h4><a name="TOC33">What MP3/OGG players are supported?</a></h4>
+<h4><a name="TOC34">What MP3/OGG players are supported?</a></h4>
 <p>Any player which supports streaming over HTTP should work just fine,
  although some will work better than others.</p>
 <p>Players which are reported to work well include:</p>
@@ -122,20 +122,20 @@
 
 
 <a name="faq-lame"><!-- Anchor--></a>
-<h4><a name="TOC34">Can you change the bitrate, in real-time?</a></h4>
+<h4><a name="TOC35">Can you change the bitrate, in real-time?</a></h4>
 <p>Yes you can.  It's not as flexable as I'd like due to the nature of the serving.  Because in the majority of cases it's your MP3/OGG player which fetches the tracks I can't use cookies - they don't XMMS/FreeAmp/WinAmp don't support them.</p>
 <p>More documentation will be available online soon.
 
 
 <a name="faq-hack"><!-- Anchor--></a>
-<h4><a name="TOC35">I've found a security hole...</a></h4>
+<h4><a name="TOC36">I've found a security hole...</a></h4>
 <p>This software was designed to be secure, and I believe it is.
  If you believe you've found a problem then please let me know.</p>
 <p>There's a <a href="security.html#Security">specific security page</a>, in the documentation section, which describes the security of this server, and gives a contact address.</p>
 <p>Anybody who reports a legitimate security hole within a current release will receive credit and thanks upon our <a href="attacks.html#attacks">security attacks</a> page.  We hope this we encourage responsible disclosure.</p>
 
 <a name="faq-add"><!-- Anchor--></a>
-<h4><a name="TOC36">Will you add ...?</a></h4>
+<h4><a name="TOC37">Will you add ...?</a></h4>
 <p>If you have a suggestion then I'd be happy to hear, simply make a post  to the relevent <a href="lists.html#Lists">mailing list</a>, or <a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">mail the author</a>.</p>
 <p>If you have a patch, or a rough idea of how it could be implemented then so much the better!</p>
 
@@ -143,14 +143,14 @@
 
 
 <a name="faq-assoc"><!-- Anchor--></a>
-<h4><a name="TOC37">I have the server setup, but I don't hear anything...</a></h4>
+<h4><a name="TOC38">I have the server setup, but I don't hear anything...</a></h4>
 <p>Check that you have the .m3u, .mp3, and .ogg extensions associated
  with your music player - XMMS, WinAmp, FreeAmp, or whatever else you're using - otherwise you'll just have the files being downloaded and not played.</p>
 
 
 
 <a name="faq-more-info"><!-- Anchor--></a>
-<h4><a name="TOC38">Where can I find more information?</a></h4>
+<h4><a name="TOC39">Where can I find more information?</a></h4>
 <p>All of the currently available documentation is listed in the
  <a href="documents.html#Documentation">documentation</a> index - if you're not
  satisfied with the information there, then you should checkout the
@@ -158,16 +158,16 @@
 
 
 <a name="faq-key"><!-- Anchor--></a>
-<h4><a name="TOC39">Do you have a PGP key, or GPG key?</a></h4>
+<h4><a name="TOC40">Do you have a PGP key, or GPG key?</a></h4>
 <p>I have a key which may be used with <a href="http://www.gnupg.org/">GNU Privacy Guard</a> (gpg) - you may find it <a href="gnump3d@steve.org.uk.gpg">here</a>.</p>
 
 <a name="faq-donate"><!-- Anchor--></a>
-<h4><a name="TOC40">I like this software - can I give you something?</a></h4>
+<h4><a name="TOC41">I like this software - can I give you something?</a></h4>
 <p>If you want to give me something 'big' then there's a small Amazon wishlist <a href="http://www.amazon.co.uk/exec/obidos/registry/2LTKRAY9O22LI/ref=wl_s_3/202-8341772-7932661">here</a>.  If you just wish to express your appreciation just drop me or the <a href="lists.html#Lists">mailing lists</a> an email - its always nice to receive feedback, (good <b>or</b> bad).</p>
 <p>If you wish to work on the code the contributions are always welcome.  Working on any free software is a good way to thank other users.</p>
 
 <a name="faq-money"><!-- Anchor--></a>
-<h4><a name="TOC41">You're just doing this to solicit freebies, aren't you?</a></h4>
+<h4><a name="TOC42">You're just doing this to solicit freebies, aren't you?</a></h4>
 <p>Nope.   Accepting donations was suggested by a friend when I
  was having a hard time looking for a new job.  I'm entirely happy to give
  away the source for free both in terms of speech, and beer. </p>
@@ -181,12 +181,12 @@
 
 
 <a name="faq-reload-themes"><!-- Anchor--></a>
-<h4><a name="TOC42">Do I have to restart the server to update the template files?</a></h4>
+<h4><a name="TOC43">Do I have to restart the server to update the template files?</a></h4>
 <p>No.  The theme files are cached but will be re-read when they are modified.  The only exception to this is the theme override file which will not be re-read.</p>
 <p>This makes it simple to modify the template files in place.</p>
 
 <a name="faq-hostname"><!-- Anchor--></a>
-<h4><a name="TOC43">The server uses the wrong hostname, how do I change this?</a></h4>
+<h4><a name="TOC44">The server uses the wrong hostname, how do I change this?</a></h4>
 <p>If you've got the server running, but the hostname which is
  used in the playlists is wrong - then this section applies to you.</p>
 <p>Simply place lines such as the following in your gnump3d.conf file:</p>
@@ -209,7 +209,7 @@ hostname = mp3d.foo.org
 
 
 <a name="faq-proxy"><!-- Anchor--></a>
-<h4><a name="TOC44">The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</a></h4>
+<h4><a name="TOC45">The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</a></h4>
 <p>The hostname used in the links can be set fairly easily, simply update the configuration file <tt>gnump3d.conf</tt> paying attention to the following setting:</p>
 <pre>
 ##
@@ -227,7 +227,7 @@ hostname = mp3d.foo.org
 
 
 <a name="faq-securing"><!-- Anchor--></a>
-<h4><a name="TOC45">How do I secure my music archive?</a></h4>
+<h4><a name="TOC46">How do I secure my music archive?</a></h4>
 <p>You can secure your archive in two ways, see the following URL's for details:</p>
 <ul>
 <li><a href="securing.html#Securing-IP">Restrict access by the IP Address of the browser</a>.</li>
@@ -238,19 +238,19 @@ hostname = mp3d.foo.org
 <hr width="50%" />
 
 <a name="faq-template"><!-- Anchor--></a>
-<h4><a name="TOC46">Can I change the HTML that's generated?</a></h4>
+<h4><a name="TOC47">Can I change the HTML that's generated?</a></h4>
 <p>Yes you can change almost everything!</p>
 <p>The server will read in a bunch of template files when it starts, from the directory /usr/share/gnump3d/$THEMENAME/ - edit those and the output will change.</p>
 <p>Note that you don't have to restart the server for changes in the template files to take effect, any changes you make will be reflected immediately.</p>
 <p>The name of the theme is set in the <a href="config.html#Config">configuration file</a> -look for a line like 'theme = default' to see some of the available choices.</p>
 
 <a name="faq-themes"><!-- Anchor--></a>
-<h4><a name="TOC47">How do I build a theme?</a></h4>
+<h4><a name="TOC48">How do I build a theme?</a></h4>
 <p>Create a directory in /usr/share/gnump3d/ with the name of your theme 'foo', and copy all the files from /usr/share/gnump3d/default into it.  Edit those files to suit your tastes - then set theme=foo in your gnump3d.conf file.</p>
 <p>There's a more detailed explaination upon the <a href="theme.html#Theme">theme creation</a> page - after reading that you might want to look at the <a href="advancedtheming.html#Theme-advanced">advanced theming page</a>.</p>
 
 <a name="faq-expand"><!-- Anchor--></a>
-<h4><a name="TOC48">What variables are expanded in the templates?</a></h4>
+<h4><a name="TOC49">What variables are expanded in the templates?</a></h4>
 <p>The template files, which are mentioned <a href="FAQ.html#faq-template">above</a>, can contain special variables which are expanded upon display.
 </p>
 <p>The following variables are supported:</p>
@@ -264,7 +264,7 @@ hostname = mp3d.foo.org
 <p>There are more which control where the output will appear - these will be documented soon.</p>
 
 <a name="faq-theme-location"><!-- Anchor--></a>
-<h4><a name="TOC49">Can I load themes from other directories?</a></h4>
+<h4><a name="TOC50">Can I load themes from other directories?</a></h4>
 <p>You can specify a different base directory for the themes by setting the following option in the gnump3d.conf file:</p>
 
 <pre class="example">
@@ -279,7 +279,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-what-plugins"><!-- Anchor--></a>
-<h4><a name="TOC50">What are plugins, why are they used?</a></h4>
+<h4><a name="TOC51">What are plugins, why are they used?</a></h4>
 <p>Plugins are nothing more than external libraries which contain code the main program, gnump3d, can call.</p>
 <p>They are used to simplify the main code, and keep certain tricky or complicated, functions out of the main code where they would get in the way.</p>
 <p>A good example of this is the search plugin.  By moving out all the searching code from the main program it becomes easier for somebody to read the short plugin and add, for example, the ability to search by genre.</p>
@@ -288,7 +288,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-special"><!-- Anchor--></a>
-<h4><a name="TOC51">What are the <i>special</i> URLS?</a></h4>
+<h4><a name="TOC52">What are the <i>special</i> URLS?</a></h4>
 <p>There are several <i>special</i> URL's which are handled by external plugins.</p>
 <p>(If you have installed extra plugins in addition to those which come with the server you may have more special URLs not listed here).</p>
 
@@ -307,7 +307,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-stats"><!-- Anchor--></a>
-<h4><a name="TOC52">I don't see any statistics</a></h4>
+<h4><a name="TOC53">I don't see any statistics</a></h4>
 <p>First of all check that accesses to your server are being
  logged correctly into the file you have specified with the 'access_log' configuration directive.</p>
 <p>If this is correct ensure that you have the "gnump3d-top" script
@@ -326,7 +326,7 @@ there are two thing to check:</p>
 
 
 <a name="faq-plugin-overview"><!-- Anchor--></a>
-<h4><a name="TOC53">How do I write a plugin?</a></h4>
+<h4><a name="TOC54">How do I write a plugin?</a></h4>
 <p>Please see the <a href="plugins.html#Plugins">plugin section</a> of the
  developer notes, and the <a href="ptutorial.html#plugin-tutorial">plugin tutorial</a>.</p>
 
@@ -334,7 +334,7 @@ there are two thing to check:</p>
 <hr width="50%" />
 
 <a name="faq-logfile"><!-- Anchor--></a>
-<h4><a name="TOC54">I installed the RPM but the server won't start</a></h4>
+<h4><a name="TOC55">I installed the RPM but the server won't start</a></h4>
 <p>This is almost certainly a problem with the logfile you're trying
  to use not existing.</p>
 <p>There are two solutions to this:</p>
@@ -345,12 +345,12 @@ there are two thing to check:</p>
 
 
 <a name="faq-win32"><!-- Anchor--></a>
-<h4><a name="TOC55">Will the Perl server run under Windows?</a></h4>
+<h4><a name="TOC56">Will the Perl server run under Windows?</a></h4>
 <p>Yes, see the instructions in the <a href="README.Windows">README.Windows</a> file - and ask upon <a href="lists.html#Lists">the lists</a> if you have problems.</p>
 
 
 <a name="faq-win32-service"><!-- Anchor--></a>
-<h4><a name="TOC56"><font color="red">Updated</font> Will the Perl server run as a service under Windows?</a></h4>
+<h4><a name="TOC57"><font color="red">Updated</font> Will the Perl server run as a service under Windows?</a></h4>
 <p>Not natively no.</p>
 <p>However with some help from the Windows NT resource kit you can make it do so - there are some minimal instructions online below:</p>
 <ul>
@@ -362,7 +362,7 @@ there are two thing to check:</p>
 </ul>
 
 <a name="faq-macosx-startup"><!-- Anchor--></a>
-<h4><a name="TOC57">How can I make the server run at startup on Mac OS X?</a></h4>
+<h4><a name="TOC58">How can I make the server run at startup on Mac OS X?</a></h4>
 <p>Thanks to a contribution from Eric Lawrence some files, and instructions, are included with the current release.</p>
 <p>Please see instructions in the <a href="README.MacOSX">README.MacOSX</a> file.</p>
 
@@ -371,7 +371,7 @@ there are two thing to check:</p>
 <p></p>
 
 <a name="faq-perl"><!-- Anchor--></a>
-<h4><a name="TOC58">Why did you switch to perl?</a></h4>
+<h4><a name="TOC59">Why did you switch to perl?</a></h4>
 <p>Originally I started coding in Perl because I wanted something fast, and simple to develop in, so that I could experiment with different database formats.</p>
 <p>However sooner than I realised I had recreated almost all the major pieces of code necessary to have a standalone GNUMP3d server.</p>
 <p>Partly this is because I'm familiar with perl, but partly it's because scripting languages are traditionaly quick to develop in.</p>
@@ -385,7 +385,7 @@ there are two thing to check:</p>
 
 
 <a name="faq-v2-help"><!-- Anchor--></a>
-<h4><a name="TOC59">How can I help with version 2.x development?</a></h4>
+<h4><a name="TOC60">How can I help with version 2.x development?</a></h4>
 <p>In the same way that people have previously helped:</p>
 <ul>
 <li>Giving interesting, and useful, feedback, or suggestions.
@@ -401,7 +401,7 @@ there are two thing to check:</p>
     </div>
 
     <div class="copyright">
-      <p>Last modified: 19 February 2005
+      <p>Last modified: 01 April 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>
