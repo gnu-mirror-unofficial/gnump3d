@@ -20,7 +20,7 @@
 .define VERSION 2.6
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.6 $
+.define PRELUDE-VERSION $Revision: 1.7 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to
@@ -105,7 +105,7 @@
 				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
 		</div>
 		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a><spam>
+			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
 			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
 			<p>Page Last modified : $(DATE)</p>
 		</div>
