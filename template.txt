@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.13 $
+.define TEMPLATE-VERSION $Revision: 1.14 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -1212,12 +1212,11 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
 
 <h4>Testing</h4>
-<p>I believe that my server, (this software), doesn't do allow anybody
+<p>I believe that my server (this software), doesn't allow anybody
  to subvert your machine - and I've tested this to the best of my ability.</p>
 
 <h4>Security Notifications</h4>
-<p>After reading BugTrack, etc, I know that having a good 
- contact address is essential - my email address is listed at the bottom of each page on this website, so you shouldn't have too much difficulty in finding it ;)
+<p>After reading <a href="http://www.securityfocus.com/archive/1" title="View bugtraq">BugTraq</a>, etc, I know that having a good contact address is essential - my email address is listed at the bottom of each page on this website, so you shouldn't have too much difficulty in finding it ;)
 </p>
 <p>(If you wish you may use my <a href="$(GPGKEY)">gpg key</a>).</p>
 
