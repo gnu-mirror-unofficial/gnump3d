@@ -1,74 +1,145 @@
-		#pagemenu {
-			float: left;
-			width: 10em;
-			margin-right: -9em;	/* this is a fix for IE 4 which suffers
-								   from a bug similar to Navigator 4. 
-								   Setting this to -10em generates a bug
-								   in Mozilla which then ignores the float
-								   so that clear:both does not place text
-								   below the menu if the content height is
-								   shorter than the menu. this bug also
-								   appears in IE 6 if the <?XML ...>
-								   tag is missing (quirks mode?) */
-		}
-		#pagebodyframe {
-			margin-right: 1px;	/* by applying left or right side padding
-								   or margin space, Navigator 4 will _NOT_
-								   wrap content around a float. this bug
-								   appears to apply to all versions of 
-								   Navigator 4. */
-			height: 100%;
-		}
-		div#pagebodyframe {
-			margin-right: 0;
-			margin-left: 10.5em;	/* Navigator 4 ignores the div#<id>
-									   selector for all DIV elements that are
-									   a child of the body tag. this is 
-									   another CSS bug that seems to exist
-									   through all versions of Navigator 4.
-									   Note I said CHILD and not DESCENDANT as
-									   the selector IS applied to any element
-									   that is a DESCENDANT but is not a CHILD
-									   of the BODY element. */
-		}
-		#footer {
-			clear: both;
-		}
-		#copyright {
-			text-align: center;
-		}
-		#validxhtml {
-			float: right;
-			width: 88px;
-		}
-		#validxhtml img {
-			border-width: 0;
-		}
-		div#oldbrowser {
-			display: none;	/* not perfect as IE 4 will follow this and we
-							   don't want it to. but better than nothing. */
-		}
+/* layout.css
+ *
+ * Layout settings which are used by all pages in the site.
+ *
+ * This file was copied and modified from www.wiggy.net, and was
+ * written by Wichert Akkerman (c) 2002, 2003
+ *
+ */
 
-/*
-	The following @media directives should instead be placed in a separate
-	stylesheet and imported using the @import directive or LINK element.
+body {
+	color:			black;
+	background: 		white;
+	padding:		0;
+	margin-left:		0;
+}
 
-		@media all {
-			#oldbrowser {
-				display: none;
-			}
-		}
-		@media print {
-			#copyrightprefix, #pagemenu, #validxhtml {
-				display: none;
-			}
-			#pagebodyframe {
-				margin-left: 0 !important;
-			}
-			#footer a:link, #footer a:visited {
-				text-decoration: none;
-				color: #000;
-			}
-		}
-*/
+div.main {
+	border:			1px solid black;
+	margin-right:		2.5em;
+	margin-left:		14.5em;
+	margin-bottom:		2em;
+	padding:		0 .5em .5em;
+/*	background:		rgb(226,255,244); */
+}
 
+
+div.smallmain {
+	border:			1px solid black;
+	margin-right:		14.5em;
+	margin-left:		14.5em;
+	margin-bottom:		2em;
+	padding:		0 .5em .5em;
+/*	background:		rgb(226,255,244); */
+}
+
+div.copyright {
+	font-size:		smaller;
+	color:			black;
+
+	border:			none;
+	float: 			bottom;
+	margin-bottom:		1em;
+	clear:			both;
+	text-align: right;
+
+}
+
+h3 {
+	text-align: center;
+}
+
+
+div.nav {
+	position:		fixed;
+	float:			left;
+	clear:			both;
+	margin-left:		1em;
+	border:			1px solid black;
+	border-collapse:	collapse;
+	width:			12em;
+	background:		rgb(230,230,230);
+}
+
+div.nav ul {
+	list-style-position:	outside;
+	margin-left:		1em;
+	padding-left:		1em;
+}
+
+
+div.nav ul ul {
+	padding-left:		0;
+}
+
+
+div.nav li.closedfolder {
+	list-style-image:	url("/css/folder-closed.gif");
+}
+
+
+div.nav li.openfolder {
+	list-style-image:	url("/css/folder-open.gif");
+}
+
+
+div.nav li.item {
+	list-style:		disc;
+}
+
+
+div.nav a {
+	text-decoration:	none;
+}
+
+
+div.nav a:hover {
+/*	background:	rgb(69,232,177); */
+}
+
+
+div.news {
+	position:		relative;
+	float:			right;
+	clear:			both;
+	margin-left:		1em;
+	margin-right:		1em;
+	border:			1px solid black;
+	border-collapse:	collapse;
+	width:			12em;
+	background:		rgb(230,230,230);
+}
+
+
+table.overview {
+	text-align:	left;
+}
+
+table.overview th {
+	text-align:	left;
+	vertical-align:	top;
+}
+
+
+pre.example {
+	overflow:	auto;
+	background:	rgb(230,230,230);
+	border:		solid;
+	border-width:	thin;
+}
+
+pre.code {
+	overflow:	auto;
+	padding:	1em;
+	border:		solid;
+	border-width:	thin;
+	background:	rgb(230, 230, 230);
+}
+
+span.command {
+	font-family:	monospace;
+}
+
+dt {
+	font-weight:	bold;
+}

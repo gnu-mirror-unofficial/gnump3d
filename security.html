@@ -1,57 +1,50 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>GNUMP3d [GNU MP3/Media Streamer] - Security - GNU Project - Free Software Foundation (FSF)</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css" media="all">@import url(style.css);</style>
-</head>
-<body>
-	<div id="oldbrowser">
-		<p>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="Keywords" content="x86, asm, Linux, shellcode,Steve Kemp, skx"/>
+    <meta name="Description" content="Shellcode Site"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>[Shellcode.org: Home]</title>
+  </head>
 
-			This site will look much better in a browser that supports
-			<a href="http://www.webstandards.org/upgrade/"
-			title="Download a browser that complies with Web standards.">web
-			standards</a>, but it is accessible to any browser or Internet
-			device.
-		</p>
-	</div>
-	<div id="masthead">
-		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
-	</div>
-	<div id="pagemenu">
-		<div id="menuframe">
-<div><a href="index.html">Index</a></div>
-<div> <a href="documents.html">Documentation</a> </div>
-<div> <a href="lists.html">Mailing Lists</a> </div>
-<div> <a href="FAQ.html">FAQ</a> </div>
-<div> <a href="download.html">Download</a> </div>
-<div> <a href="cvs.html">CVS</a> </div>
-<div> <a href="developer.html">Developers</a> </div>
-<div> <a href="screenshots.html">Screenshots</a> </div>
-<div> <a href="logos.html">Logos</a> </div>
-<div> <a href="bugs.html">Bugs</a> </div>
-<div> <a href="links.html">Links</a> </div>
-<div> <a href="thanks.html">Thanks</a> </div>
-<div> <a href="history.html">History</a> </div>
-<div> <a href="dedication.html">Dedication</a> </div>
-		</div>
-	</div>
-	<div id="pagebodyframe">
+  <body>
+<div style="text-align: center;" ><p><a href="http://www.gnump3d.org/"><img src="gnump3d.jpg" alt="Logo"/></a></p></div>
+    <div class="nav">
 
-		<div id="pagebody">
+	<ul>
+<li> <a href="index.html">About GNUMP3d</a> </li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+	</ul>
+    </div>
+    <div class="main">
+      <div id="content">
 <a name="Security"><!-- Anchor--></a>
 
 <h3><a name="TOC101">Security .. or why I think its safe</a></h3>
 
-<p>&nbsp;One of the goals of this project was to make sure that
+<p>One of the goals of this project was to make sure that
  the server was small, stable, and <i>secure</i>.</p>
 
 <h4><a name="TOC102">What does that mean?</a></h4>
 
-<p>&nbsp;By this I mean that your server should not be compromised,
+<p>By this I mean that your server should not be compromised,
  in any way simply because it is running this software.</p>
-<p>&nbsp;With this in mind there are three important things that the
+<p>With this in mind there are three important things that the
  server should protect against:</p>
 
 <ol>
@@ -61,30 +54,30 @@
 </ol>
 
 <h4><a name="TOC103">Confidence</a></h4>
-<p>&nbsp;I'm confident that these things can't happen, because I had them in mind when I was writing the software, but nobody is perfect and I would not like to suggest this software is perfect.</p>
-<p>&nbsp;Most of the common buffer overflows should be impossible due to the implementation language of Perl.  Likewise signal attacks, or format string attacks shouldn't be anything to worry about.</p>
+<p>I'm confident that these things can't happen, because I had them in mind when I was writing the software, but nobody is perfect and I would not like to suggest this software is perfect.</p>
+<p>Most of the common buffer overflows should be impossible due to the implementation language of Perl.  Likewise signal attacks, or format string attacks shouldn't be anything to worry about.</p>
 
 <h4><a name="TOC104">Vulnerabilities</a></h4>
-<p>&nbsp;Of all the common attacks I believe the only thing that this server is likely to be vulnerable to are "cross site scripting attacks" - this basically means that it may be possible for people to steal the cookies which you are using.</p>
-<p>&nbsp;As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
+<p>Of all the common attacks I believe the only thing that this server is likely to be vulnerable to are "cross site scripting attacks" - this basically means that it may be possible for people to steal the cookies which you are using.</p>
+<p>As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
 
 <h4><a name="TOC105">Testing</a></h4>
-<p>&nbsp;I believe that my server, (this software), doesn't do allow anybody
+<p>I believe that my server, (this software), doesn't do allow anybody
  to subvert your machine - and I've tested this to the best of my ability.</p>
 
 <h4><a name="TOC106">Security Notifications</a></h4>
-<p>&nbsp;After reading BugTrack, etc, I know that having a good
+<p>After reading BugTrack, etc, I know that having a good
  contact address is essential - my email address is listed at the bottom of each page on this website, so you shouldn't have too much difficulty in finding it ;)
 </p>
-<p>&nbsp;(If you wish you may use my <a href="gnump3d@steve.org.uk.gpg">gpg key</a>).</p>
+<p>(If you wish you may use my <a href="gnump3d@steve.org.uk.gpg">gpg key</a>).</p>
 
 <h4><a name="TOC107">Recognition</a></h4>
-<p>&nbsp;Any researcher who discovers a hole in a current release will receive prominent credit upon the front page for a period of not less than one calender month after notifying me.</p>
-<p>&nbsp;<b>This only applies if</b> the author is contacted <i>before</i> making a disclosure; as any ethical researcher should.  (If you do this then I'm happy for you to post to bugtraq/cert/wherever - after all it's important to spread the news).</p>
+<p>Any researcher who discovers a hole in a current release will receive prominent credit upon the front page for a period of not less than one calender month after notifying me.</p>
+<p><b>This only applies if</b> the author is contacted <i>before</i> making a disclosure; as any ethical researcher should.  (If you do this then I'm happy for you to post to bugtraq/cert/wherever - after all it's important to spread the news).</p>
 
 
 <h4><a name="TOC108">Past Vulnerabilities</a></h4>
-<p>&nbsp;To date there have been only one reported verified vulnerability in this server.</p>
+<p>To date there have been only one reported verified vulnerability in this server.</p>
 <ul>
 <li><a href="attacks.html#attacks">Malicious Password File Download</a>
 <ul>
@@ -95,23 +88,13 @@
 
 
 
-		</div>
-	</div>
-	<div id="footer">
-		<hr />
+      </div>
+    </div>
 
-		<div id="validxhtml">
-			<a href="http://validator.w3.org/check/referer"><img
-				src="http://www.w3.org/Icons/valid-xhtml10.png"
-				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-		</div>
-		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
-			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
-			<p>Page Last modified : 15 March 2004
-</p>
-		</div>
-
-	</div>
-</body>
+    <div class="copyright">
+      <p>Last modified: 25 March 2004
+ - Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
+      </p>
+    </div>
+  </body>
 </html>

@@ -9,6 +9,65 @@
 	v0.1     - v0.9.9.3   Were coded in C
 	v0.9.9.4 - v1.0       Were coded in C++
 	v1.0     - Current    Were coded in Perl
+	
+
+	
+  2.7  [ 25th March 2004 ]
+
+    - MISC: New module 'sorter.pm'
+	- MISC: Removed module 'playlist.pm'
+	- MISC: Updated the Debian rcfile, to source /etc/default/gnump3d
+	- MISC: Fixed the display of version on the templates and startup.
+	- MISC: Available themes are sorted upon the preferences page.
+	- MISC: .wma is recognised as an audio file.
+	- MISC: .m4p is recognised as an audio file.
+	- MISC: Make sure each plugin is mentioned in each theme directory.
+	- MISC: Added startup script for Gentoo Linux.
+	- MISC: Allow caching of downsampled files.
+	- MISC: Report perl version on --help and --version output
+	- MISC: New module gnump3d::MD5
+
+	- FEATURES: Much improved installation system
+	- FEATURES: Sorting of playlists and track display are *identical*
+	- FEATURES: Enhanced logfile writing, the user may specify the format.
+	- FEATURES: Massive speedup of indexing via file modification date cache.
+	
+	- THEMES: Fixed to use the $RELEASE variable instead of hardcoding.
+	- THEMES: Corrected a couple of typos and HTML errors.
+	- THEMES: Fixed obsolete references to /last/
+	- THEMES: Font tweaking and cosmetics in default theme.
+	- THEMES: Added new 'SchwartzNGrau' theme by Pat Riehecky
+	- THEMES: Several minor cleanups.
+	- THEMES: dotNet cleanup.
+	- THEMES: Updated version numbers in static pages to 2.7
+	- THEMES: Removed `simple`
+
+    - BUGFIX: Don't escape the ':' character.  (Broke banners).
+    - BUGFIX: Allow downsampling commands to work case insensitively of
+	          filename suffix.
+    - BUGFIX: 'Random Selection' on the directory index links properly.
+	- BUGFIX: Added several new test scripts.
+	- BUGFIX: Advanced playlists contain the track lengths in seconds.
+	- BUGFIX: gnump3d-index has a valid shebang line.
+	- BUGFIX: Searching with no terms returns an error rather than all files.
+	- BUGFIX: Searching on genre fixed.
+	- BUGFIX: XHTML 1.0 output cleanups (default theme only).
+	- BUGFIX: Default preference is to show all file types, not hide them.
+	- BUGFIX: Don't offer to play the prefs panel
+	- BUGFIX: gnump3d-index '--root' argument works correctly.
+	- BUGFIX: Indexing ignores 0-byte files.
+	- BUGFIX: Document log_format, and remove mention of maximum_connections.
+	- BUGFIX: Quieten gnump3d2 debugging output.
+	- BUGFIX: Make sure the 'accept' call succeeds.
+	- BUGFIX: Committed fix from rpmohn for filenames with '.' in their names.
+	- BUGFIX: Persist downsample quality in pre-made playlists.
+	- BUGFIX: Ignore zero-byte sized files when indexing.
+
+	- PLUGINS: Preferences plugin shows installed languages.
+		(doesn't allow switching; wanna encourage more contributions)
+	- PLUGINS: Now possible to search on artist, album, or song title.
+	- PLUGINS: Browsing by categories such as artist, year, genre.
+
 
 
   2.6  [ 16th October 2003  ]
@@ -53,7 +112,14 @@
 	- MISC: .WMV is now marked as being a movie filetype.
 	- MISC: The 'Tabular' theme now has fixed menus.
 	- MISC: Make cookies persist "indefinately".	
+
+   Updates:
 	
+	- PLUGINS: The random plugin honours downsampling settings.
+	- PLUGINS: The currently playing plugin shows the times of tracks
+	- BUGFIX:  Escape the HTML banner section.
+	- BUGFIX:  Now playing works properly.
+
 
   2.5b [ 2nd July 2003 ]
 	- CLEANUP: Don't duplicate commented lines in gnump3d.conf.win

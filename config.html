@@ -1,124 +1,107 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>GNUMP3d [GNU MP3/Media Streamer] - Config File - GNU Project - Free Software Foundation (FSF)</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css" media="all">@import url(style.css);</style>
-</head>
-<body>
-	<div id="oldbrowser">
-		<p>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="Keywords" content="x86, asm, Linux, shellcode,Steve Kemp, skx"/>
+    <meta name="Description" content="Shellcode Site"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>[Shellcode.org: Home]</title>
+  </head>
 
-			This site will look much better in a browser that supports
-			<a href="http://www.webstandards.org/upgrade/"
-			title="Download a browser that complies with Web standards.">web
-			standards</a>, but it is accessible to any browser or Internet
-			device.
-		</p>
-	</div>
-	<div id="masthead">
-		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
-	</div>
-	<div id="pagemenu">
-		<div id="menuframe">
-<div><a href="index.html">Index</a></div>
-<div> <a href="documents.html">Documentation</a> </div>
-<div> <a href="lists.html">Mailing Lists</a> </div>
-<div> <a href="FAQ.html">FAQ</a> </div>
-<div> <a href="download.html">Download</a> </div>
-<div> <a href="cvs.html">CVS</a> </div>
-<div> <a href="developer.html">Developers</a> </div>
-<div> <a href="screenshots.html">Screenshots</a> </div>
-<div> <a href="logos.html">Logos</a> </div>
-<div> <a href="bugs.html">Bugs</a> </div>
-<div> <a href="links.html">Links</a> </div>
-<div> <a href="thanks.html">Thanks</a> </div>
-<div> <a href="history.html">History</a> </div>
-<div> <a href="dedication.html">Dedication</a> </div>
-		</div>
-	</div>
-	<div id="pagebodyframe">
+  <body>
+<div style="text-align: center;" ><p><a href="http://www.gnump3d.org/"><img src="gnump3d.jpg" alt="Logo"/></a></p></div>
+    <div class="nav">
 
-		<div id="pagebody">
+	<ul>
+<li> <a href="index.html">About GNUMP3d</a> </li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+	</ul>
+    </div>
+    <div class="main">
+      <div id="content">
 <a name="Config"><!-- Anchor--></a>
 
 
 <h3><a name="TOC15">The Configuration File</a></h3>
 
 <h4><a name="TOC16">Where is it?</a></h4>
-<p>&nbsp;GNUMP3d is configured exclusively through the use of a
+<p>GNUMP3d is configured exclusively through the use of a
  configuration file.
 </p>
-<p>&nbsp;By default GNUMP3d will read the system-wide
+<p>By default GNUMP3d will read the system-wide
  configuration file &quot;/etc/gnump3d/gnump3d.conf&quot; however it will read the file &quot;~/.gnump3drc&quot; in preference to the system wide file if it exists.</p>
-<p>&nbsp;If you wish to use a different configuration file then you may specify one with the command line option  "--config fileName".
+<p>If you wish to use a different configuration file then you may specify one with the command line option  "--config fileName".
 </p>
 
 
 <h4><a name="TOC17">What can I configure?</a></h4>
 
-<p>&nbsp;Each of the configuration file options of the current version are
+<p>Each of the configuration file options of the current version are
  listed below, alphabetically, along with an brief explaination of what they mean.</p>
-<p>&nbsp;More detailed information is included within the configuration file itself, as this is extensively commented.</p>
-<p>&nbsp;<b>Please note</b> that only the 'user', 'root', and 'port' are strictly necessary - the rest of the values can probably be left as-is, unless you have a special requirement..</p>
+<p>More detailed information is included within the configuration file itself, as this is extensively commented.</p>
+<p><b>Please note</b> that only the 'user', 'root', and 'port' are strictly necessary - the rest of the values can probably be left as-is, unless you have a special requirement..</p>
 
 <table border="1">
-<tr><td valign='top'><b>allowed_clients</b></td><td valign='top'><p>&nbsp;  This value allows you to set client IP addresses which are always allowed to connect to your server.  This is the logical counterpart to 'denied_clients'.</p></td></tr>
-<tr><td valign='top'><b>always_stream</b></td><td valign='top'><p>&nbsp;  When the server builds up links to files there are two ways they can be formed, a straight link to the file, or a link to a playlist containing that file.</p><p>&nbsp;  The two are subtly different.  When a playlist is formed, via 'always_stream=1' the song may begin playing immediately, without this the file will typically be downloaded in its entirity to the client and then played.</p><p>&nbsp;  It is recommended this option is enabled for most cases.</p></td></tr>
-<tr><td valign='top'><b>binding_host</b></td><td valign='top'><p>&nbsp;  If your machine has multiple ethernet interfaces then this setting will allow you to control which interface the server listens upon.</p></td></tr>
-<tr><td valign='top'><b>directory_format</b></td><td valign='top'><p>&nbsp;  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used in the output file for each directory name which is found.</p></td></tr>
-<tr><td valign='top'><b>enable_browsing</b></td><td valign='top'><p>&nbsp;  This value allows you to disable browsing your servers GUI interface.  This would be ideal if you just wished your clients to be restricted to random playing of songs.</p></td></tr>
-<tr><td valign='top'><b>enable_password_protection</b></td><td valign='top'><p>&nbsp;  Password protection is enabled by default, with this option you may disable it.</p><p>&nbsp;  Password protection requires that you place a file '.password' within each directory you wish to restrict access to.  This file contains lines of the form 'username:password'.</p></td></tr>
-<tr><td valign='top'><b>errorlog</b></td><td valign='top'><p>&nbsp;  The name of the file to write all error messages to.  When the server is ran in debug mode (with '\-\-debug' specified upon the command line) this file is not used, instead the output is sent to the console.</p></td></tr>
-<tr><td valign='top'><b>file_format</b></td><td valign='top'><p>&nbsp;  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used to generate the output for each file which is found.</p></td></tr>
-<tr><td valign='top'><b>hostname</b></td><td valign='top'><p>&nbsp;  The hostname setting allows you to control the hostname which is used in all the generated links within the GUI.  It may be useful if the server has multiple DNS names.</p></td></tr>
-<tr><td valign='top'><b>logfile</b></td><td valign='top'><p>&nbsp;  The name of the file to write all accesses to.  The logfile is written in the Apache common logfile format  so it may be analysed by common tools, including the gnump3d-top script.</p></td></tr>
-<tr><td valign='top'><b>maximum_connections</b></td><td valign='top'><p>&nbsp;   This gives the maximum number of simultaneous connections which the server will handle.  Any additional connections will be served a simple error page and denied access.</p></td></tr>
-<tr><td valign='top'><b>mime_file</b></td><td valign='top'><p>&nbsp;  As part of it's role the server is a fully featured HTTP server, which is capable of serving, or streaming, audio and video files.  To set the type of file correctly when serving it a registry is used.</p><p>&nbsp;  The mime.types file is that registry, and this setting should be used to point to the file you're using.</p></td></tr>
-<tr><td valign='top'><b>play_all_text</b></td><td valign='top'><p>&nbsp;  This setting contains the text which is displayed for the 'play all' links.</p></td></tr>
-<tr><td valign='top'><b>play_recursively_text</b></td><td valign='top'><p>&nbsp;  This setting controls the text which is displayed for the recursive playlist links.</p></td></tr>
-<tr><td valign='top'><b>plugin_directory</b></td><td valign='top'><p>&nbsp;  When the server is installed upon your system a collection of plugins are also installed, as some of these represent core features of the server.</p>
-<p>&nbsp;This setting allows you to tell the server where these plugins are located upon your system.  (This should be set by the installation script in versions 2.3 or higher).</p></td></tr>
-<tr><td valign='top'><b>port</b></td><td valign='top'><p>&nbsp;  The port upon which the server listens, this may be any port which is not already in use upon your machine.</p></td></tr>
-<tr><td valign='top'><b>recursive_randomize</b></td><td valign='top'><p>&nbsp;  This option controls whether recursive playlists are randomized, or sent in filename order.</p></td></tr>
-<tr><td valign='top'><b>read_time</b></td><td valign='top'><p>&nbsp;  This setting controls how long the server should listen for a request from incoming clients.  The default of 10 seconds should be sufficient.</p></td></tr>
-<tr><td valign='top'><b>root</b></td><td valign='top'><p>&nbsp;  The root directory where the media content is served from.  This should be the directory containing the MP3/OGG/Movie files which you wish to share.</p><p>&nbsp;  Note that if your server is running under an assumed userid, (see the 'user'configuration value), then that user must have permission to read the files in the root directory.</p></td></tr>
-<tr><td valign='top'><b>shoutcast_streaming</b></td><td valign='top'><p>&nbsp;  If this setting is enabled then shoutcast meta data will be mixed in with any songs which are streamed.</p></td></tr>
-<tr><td valign='top'><b>song_format</b></td><td valign='top'><p>&nbsp;  This is another template string which is used to control what information is displayed for audio files, (for example the name of the song, or the name and artist of a song).</p>
-<p>&nbsp;Much more details may be found in the configuration file itself, along with a few examples..</p></td></tr>
-<tr><td valign='top'><b>sort_order</b></td><td valign='top'><p>&nbsp; This setting allows you to control the order in which songs are listed upon the index pages.  This is especially useful within directories which contain a large number of files.</p></td></tr>
-<tr><td valign='top'><b>stats_program</b></td><td valign='top'><p>&nbsp;  This option allows you to specify the path to the companion program gnump3d-top</p>
-<p>&nbsp;When the server is asked to display the most popular directories, songs, users, etc, it actually invokes this script which presents the output for you.</p></td></tr>
-<tr><td valign='top'><b>stats_arguments</b></td><td valign='top'><p>&nbsp;This option allows you to specify additional options to pass to the gnump3d-top program when it is invoked by the server.</p>
-<p>&nbsp;See the man page for gnump3d-top for more details of supported options.</p></td></tr>
-<tr><td valign='top'><b>theme</b></td><td valign='top'><p>&nbsp;  The servers appearance may be changed by use of a collection of template files, these are known as themes.  This option allows you to specify which theme is presented by default.  (Clients may choose their own theme via the preferences user interface).</p></td></tr>
-<tr><td valign='top'><b>theme_directory</b></td><td valign='top'><p>&nbsp;  The directory where the themes exist may be specified here, if you're installing the software in an unusual configuration.</p></td></tr>
-<tr><td valign='top'><b>truncate_log_files</b></td><td valign='top'><p>&nbsp;  When the server starts it normally appends all new logging information to the existing logfiles which might be present.  With this setting you may force the server to truncate the files first.</p></td></tr>
-<tr><td valign='top'><b>use_client_host</b></td><td valign='top'><p>&nbsp;  This setting controls whether the client's 'Host:' header will be used, if it is sent.  This can be useful if you're performing SSH tunelling operations, or working on a server with more than one hostname.</p></td></tr>
-<tr><td valign='top'><b>user</b></td><td valign='top'><p>&nbsp;  If there is a user value specified then the server will become that user, after creating the listening socket.  This is important for security reasons.</p>
-<p>&nbsp;However please ensure that the user the server becomes once starting has read and execute permissions for the directory containing your music archive, and write permissions for the logfiles you choose.</p></td></tr>
+<tr><td valign='top'><b>allowed_clients</b></td><td valign='top'><p>  This value allows you to set client IP addresses which are always allowed to connect to your server.  This is the logical counterpart to 'denied_clients'.</p></td></tr>
+<tr><td valign='top'><b>always_stream</b></td><td valign='top'><p>  When the server builds up links to files there are two ways they can be formed, a straight link to the file, or a link to a playlist containing that file.</p><p>  The two are subtly different.  When a playlist is formed, via 'always_stream=1' the song may begin playing immediately, without this the file will typically be downloaded in its entirity to the client and then played.</p><p>  It is recommended this option is enabled for most cases.</p></td></tr>
+<tr><td valign='top'><b>binding_host</b></td><td valign='top'><p>  If your machine has multiple ethernet interfaces then this setting will allow you to control which interface the server listens upon.</p></td></tr>
+<tr><td valign='top'><b>directory_format</b></td><td valign='top'><p>  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used in the output file for each directory name which is found.</p></td></tr>
+<tr><td valign='top'><b>enable_browsing</b></td><td valign='top'><p>  This value allows you to disable browsing your servers GUI interface.  This would be ideal if you just wished your clients to be restricted to random playing of songs.</p></td></tr>
+<tr><td valign='top'><b>enable_password_protection</b></td><td valign='top'><p>  Password protection is enabled by default, with this option you may disable it.</p><p>  Password protection requires that you place a file '.password' within each directory you wish to restrict access to.  This file contains lines of the form 'username:password'.</p></td></tr>
+<tr><td valign='top'><b>errorlog</b></td><td valign='top'><p>  The name of the file to write all error messages to.  When the server is ran in debug mode (with '\-\-debug' specified upon the command line) this file is not used, instead the output is sent to the console.</p></td></tr>
+<tr><td valign='top'><b>file_format</b></td><td valign='top'><p>  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used to generate the output for each file which is found.</p></td></tr>
+<tr><td valign='top'><b>hostname</b></td><td valign='top'><p>  The hostname setting allows you to control the hostname which is used in all the generated links within the GUI.  It may be useful if the server has multiple DNS names.</p></td></tr>
+<tr><td valign='top'><b>logfile</b></td><td valign='top'><p>  The name of the file to write all accesses to.  The logfile is written in the Apache common logfile format  so it may be analysed by common tools, including the gnump3d-top script.</p></td></tr>
+<tr><td valign='top'><b>maximum_connections</b></td><td valign='top'><p>   This gives the maximum number of simultaneous connections which the server will handle.  Any additional connections will be served a simple error page and denied access.</p></td></tr>
+<tr><td valign='top'><b>mime_file</b></td><td valign='top'><p>  As part of it's role the server is a fully featured HTTP server, which is capable of serving, or streaming, audio and video files.  To set the type of file correctly when serving it a registry is used.</p><p>  The mime.types file is that registry, and this setting should be used to point to the file you're using.</p></td></tr>
+<tr><td valign='top'><b>play_all_text</b></td><td valign='top'><p>  This setting contains the text which is displayed for the 'play all' links.</p></td></tr>
+<tr><td valign='top'><b>play_recursively_text</b></td><td valign='top'><p>  This setting controls the text which is displayed for the recursive playlist links.</p></td></tr>
+<tr><td valign='top'><b>plugin_directory</b></td><td valign='top'><p>  When the server is installed upon your system a collection of plugins are also installed, as some of these represent core features of the server.</p>
+<p>This setting allows you to tell the server where these plugins are located upon your system.  (This should be set by the installation script in versions 2.3 or higher).</p></td></tr>
+<tr><td valign='top'><b>port</b></td><td valign='top'><p>  The port upon which the server listens, this may be any port which is not already in use upon your machine.</p></td></tr>
+<tr><td valign='top'><b>recursive_randomize</b></td><td valign='top'><p>  This option controls whether recursive playlists are randomized, or sent in filename order.</p></td></tr>
+<tr><td valign='top'><b>read_time</b></td><td valign='top'><p>  This setting controls how long the server should listen for a request from incoming clients.  The default of 10 seconds should be sufficient.</p></td></tr>
+<tr><td valign='top'><b>root</b></td><td valign='top'><p>  The root directory where the media content is served from.  This should be the directory containing the MP3/OGG/Movie files which you wish to share.</p><p>  Note that if your server is running under an assumed userid, (see the 'user'configuration value), then that user must have permission to read the files in the root directory.</p></td></tr>
+<tr><td valign='top'><b>shoutcast_streaming</b></td><td valign='top'><p>  If this setting is enabled then shoutcast meta data will be mixed in with any songs which are streamed.</p></td></tr>
+<tr><td valign='top'><b>song_format</b></td><td valign='top'><p>  This is another template string which is used to control what information is displayed for audio files, (for example the name of the song, or the name and artist of a song).</p>
+<p>Much more details may be found in the configuration file itself, along with a few examples..</p></td></tr>
+<tr><td valign='top'><b>sort_order</b></td><td valign='top'><p> This setting allows you to control the order in which songs are listed upon the index pages.  This is especially useful within directories which contain a large number of files.</p></td></tr>
+<tr><td valign='top'><b>stats_program</b></td><td valign='top'><p>  This option allows you to specify the path to the companion program gnump3d-top</p>
+<p>When the server is asked to display the most popular directories, songs, users, etc, it actually invokes this script which presents the output for you.</p></td></tr>
+<tr><td valign='top'><b>stats_arguments</b></td><td valign='top'><p>This option allows you to specify additional options to pass to the gnump3d-top program when it is invoked by the server.</p>
+<p>See the man page for gnump3d-top for more details of supported options.</p></td></tr>
+<tr><td valign='top'><b>theme</b></td><td valign='top'><p>  The servers appearance may be changed by use of a collection of template files, these are known as themes.  This option allows you to specify which theme is presented by default.  (Clients may choose their own theme via the preferences user interface).</p></td></tr>
+<tr><td valign='top'><b>theme_directory</b></td><td valign='top'><p>  The directory where the themes exist may be specified here, if you're installing the software in an unusual configuration.</p></td></tr>
+<tr><td valign='top'><b>truncate_log_files</b></td><td valign='top'><p>  When the server starts it normally appends all new logging information to the existing logfiles which might be present.  With this setting you may force the server to truncate the files first.</p></td></tr>
+<tr><td valign='top'><b>use_client_host</b></td><td valign='top'><p>  This setting controls whether the client's 'Host:' header will be used, if it is sent.  This can be useful if you're performing SSH tunelling operations, or working on a server with more than one hostname.</p></td></tr>
+<tr><td valign='top'><b>user</b></td><td valign='top'><p>  If there is a user value specified then the server will become that user, after creating the listening socket.  This is important for security reasons.</p>
+<p>However please ensure that the user the server becomes once starting has read and execute permissions for the directory containing your music archive, and write permissions for the logfiles you choose.</p></td></tr>
 
 </table>
 
 
 
-		</div>
-	</div>
-	<div id="footer">
-		<hr />
+      </div>
+    </div>
 
-		<div id="validxhtml">
-			<a href="http://validator.w3.org/check/referer"><img
-				src="http://www.w3.org/Icons/valid-xhtml10.png"
-				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-		</div>
-		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
-			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
-			<p>Page Last modified : 15 March 2004
-</p>
-		</div>
-
-	</div>
-</body>
+    <div class="copyright">
+      <p>Last modified: 25 March 2004
+ - Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
+      </p>
+    </div>
+  </body>
 </html>

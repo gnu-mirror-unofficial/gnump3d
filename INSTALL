@@ -6,7 +6,7 @@ PREREQUISITES
  fork() function implemented.
 
   In practice this means some for of Unix system, or a Microsoft Windows
- system with a very recent version of Perl.
+ system with a very recent version of ActiveState's Perl port.
 
 
 INSTALLATION
@@ -54,4 +54,4 @@ Total playlength     : 5 days, 18 hours, 6 mins 13 seconds
 
 Steve
 ---
-$Revision: 1.1 $
+$Revision: 1.2 $

@@ -1,122 +1,105 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>GNUMP3d [GNU MP3/Media Streamer] - History - GNU Project - Free Software Foundation (FSF)</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css" media="all">@import url(style.css);</style>
-</head>
-<body>
-	<div id="oldbrowser">
-		<p>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="Keywords" content="x86, asm, Linux, shellcode,Steve Kemp, skx"/>
+    <meta name="Description" content="Shellcode Site"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>[Shellcode.org: Home]</title>
+  </head>
 
-			This site will look much better in a browser that supports
-			<a href="http://www.webstandards.org/upgrade/"
-			title="Download a browser that complies with Web standards.">web
-			standards</a>, but it is accessible to any browser or Internet
-			device.
-		</p>
-	</div>
-	<div id="masthead">
-		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
-	</div>
-	<div id="pagemenu">
-		<div id="menuframe">
-<div><a href="index.html">Index</a></div>
-<div> <a href="documents.html">Documentation</a> </div>
-<div> <a href="lists.html">Mailing Lists</a> </div>
-<div> <a href="FAQ.html">FAQ</a> </div>
-<div> <a href="download.html">Download</a> </div>
-<div> <a href="cvs.html">CVS</a> </div>
-<div> <a href="developer.html">Developers</a> </div>
-<div> <a href="screenshots.html">Screenshots</a> </div>
-<div> <a href="logos.html">Logos</a> </div>
-<div> <a href="bugs.html">Bugs</a> </div>
-<div> <a href="links.html">Links</a> </div>
-<div> <a href="thanks.html">Thanks</a> </div>
-<div> <em>History</em> </div>
-<div> <a href="dedication.html">Dedication</a> </div>
-		</div>
-	</div>
-	<div id="pagebodyframe">
+  <body>
+<div style="text-align: center;" ><p><a href="http://www.gnump3d.org/"><img src="gnump3d.jpg" alt="Logo"/></a></p></div>
+    <div class="nav">
 
-		<div id="pagebody">
+	<ul>
+<li> <a href="index.html">About GNUMP3d</a> </li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <em>History</em> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+	</ul>
+    </div>
+    <div class="main">
+      <div id="content">
 <a name="History"><!-- Anchor--></a>
 
 
 <h3><a name="TOC116">The History of GNUMP3d</a></h3>
 
-<p>&nbsp;After receiving a few emails from interested individuals I've decided to document the history of this server here.</p>
-<p>&nbsp;I've had a large MP3 collection for a few years now which I've ripped from my large CD collection.</p>
-<p>&nbsp;(Nowadays I prefer to encode my songs as <a href="http://www.vorbis.com/">OGG Vorbis files</a> - but I'd guess my archive is 50/50 at the moment).</p>
+<p>After receiving a few emails from interested individuals I've decided to document the history of this server here.</p>
+<p>I've had a large MP3 collection for a few years now which I've ripped from my large CD collection.</p>
+<p>(Nowadays I prefer to encode my songs as <a href="http://www.vorbis.com/">OGG Vorbis files</a> - but I'd guess my archive is 50/50 at the moment).</p>
 
 <h4><a name="TOC117">Introducing Edna</a></h4>
-<p>&nbsp;Once I'd setup my home network (three GNU/Linux machines) I wanted a simple solution for streaming them from a central location.  After looking around for a while I came across <a href="http://edna.sourceforge.net/">Edna</a> which is a small media server written in Python.</p>
-<p>&nbsp;Edna sufficed my needs for a very long time.  Although it appears that all practical development has ceased it serves it's purpose extremely well.</p>
+<p>Once I'd setup my home network (three GNU/Linux machines) I wanted a simple solution for streaming them from a central location.  After looking around for a while I came across <a href="http://edna.sourceforge.net/">Edna</a> which is a small media server written in Python.</p>
+<p>Edna sufficed my needs for a very long time.  Although it appears that all practical development has ceased it serves it's purpose extremely well.</p>
 
 <h4><a name="TOC118">Edna's deficiencies</a></h4>
-<p>&nbsp;After a few months use I found that I was missing several things which would have made the server a lot nicer - Such as the ability to search the archive, and view statistics.</p>
-<p>&nbsp;Unfortunately my Python knowledge is minimal.  I hacked around with a for a little while but then decided to recode the server in Perl, I did this because it seemed sensible to move from one scripting language to another.</p>
+<p>After a few months use I found that I was missing several things which would have made the server a lot nicer - Such as the ability to search the archive, and view statistics.</p>
+<p>Unfortunately my Python knowledge is minimal.  I hacked around with a for a little while but then decided to recode the server in Perl, I did this because it seemed sensible to move from one scripting language to another.</p>
 
 <h4><a name="TOC119">The Perl Server</a></h4>
-<p>&nbsp;The perl server whas quite honestly a mess.  I only used it for a short while before thinking of recoding it in C.</p>
-<p>&nbsp;This was mostly due to me attempting to rewrite the Python code in Perl, something that was a mistake; picking a more appropriate design would probably have resulted in a great server right from the start.</p>
+<p>The perl server whas quite honestly a mess.  I only used it for a short while before thinking of recoding it in C.</p>
+<p>This was mostly due to me attempting to rewrite the Python code in Perl, something that was a mistake; picking a more appropriate design would probably have resulted in a great server right from the start.</p>
 
 <h4><a name="TOC120">The C server</a></h4>
-<p>&nbsp;As an excuse to play with writing a server in C with threading support I began to recode the server one rainy weekend.  Although it wasn't very complete, in 2 days I'd managed to build a nice simple server which did the basic listing and streaming of MP3's.  This sufficed my needs for a short while.</p>
-<p>&nbsp;The C code was released to <a href="http://www.freshmeat.net/projects/gnump3d/">Freshmeat.net</a> on the following Monday.</p>
-<p>&nbsp;I received around 20 emails that week from users who liked it.  To my intense suprise I actually started to recieve patches for various things too.</p>
-<p>&nbsp;Like many other developers I'd released software before but this was the first time I'd received patches from multiple users in such a short amount of time.  (I put this down to the fact that there aren't many simple streaming servers, and the server has the magic three letters 'MP3' in its name ;).</p>
-<p>&nbsp;Development continued with regular bugfix releases and feature updates.</p>
+<p>As an excuse to play with writing a server in C with threading support I began to recode the server one rainy weekend.  Although it wasn't very complete, in 2 days I'd managed to build a nice simple server which did the basic listing and streaming of MP3's.  This sufficed my needs for a short while.</p>
+<p>The C code was released to <a href="http://www.freshmeat.net/projects/gnump3d/">Freshmeat.net</a> on the following Monday.</p>
+<p>I received around 20 emails that week from users who liked it.  To my intense suprise I actually started to recieve patches for various things too.</p>
+<p>Like many other developers I'd released software before but this was the first time I'd received patches from multiple users in such a short amount of time.  (I put this down to the fact that there aren't many simple streaming servers, and the server has the magic three letters 'MP3' in its name ;).</p>
+<p>Development continued with regular bugfix releases and feature updates.</p>
 
 <h4><a name="TOC121">The Move To C++</a></h4>
-<p>&nbsp;After a few releases it became apparent that there were several problems with the codebase that weren't going to be simple to fix.  (Mostly because of complications with the multi-threaded nature of the server)</p>
-<p>&nbsp;The flaws in the codebase were primarily concerned with string handling and memory management.  (Two areas where C is traditionaly prone to misuse and abuse).</p>
-<p>&nbsp;I've previously written a lot of code in Java but I didn't want to alienate any users who were without a Java runtime environment.  This meant that C++ was a natural choice for the new implementation as it led to a natural reuse of the existing code.</p>
-<p>&nbsp;(Looking back on it maybe I would have been better of going for Java; it has built in support for both threading and networking - who can tell what the server would look like if I'd decided to go with Java instead?)</p>
-<p>&nbsp;Migrating the code to C++ took a couple of days.  Really making the code object orientated took slightly longer - but eventually it was done.</p>
-<p>&nbsp;There were a few problems with the first C++ release, but they were fixed fairly quickly and know I made the correct choice in doing the re-write.</p>
+<p>After a few releases it became apparent that there were several problems with the codebase that weren't going to be simple to fix.  (Mostly because of complications with the multi-threaded nature of the server)</p>
+<p>The flaws in the codebase were primarily concerned with string handling and memory management.  (Two areas where C is traditionaly prone to misuse and abuse).</p>
+<p>I've previously written a lot of code in Java but I didn't want to alienate any users who were without a Java runtime environment.  This meant that C++ was a natural choice for the new implementation as it led to a natural reuse of the existing code.</p>
+<p>(Looking back on it maybe I would have been better of going for Java; it has built in support for both threading and networking - who can tell what the server would look like if I'd decided to go with Java instead?)</p>
+<p>Migrating the code to C++ took a couple of days.  Really making the code object orientated took slightly longer - but eventually it was done.</p>
+<p>There were a few problems with the first C++ release, but they were fixed fairly quickly and know I made the correct choice in doing the re-write.</p>
 <h4><a name="TOC122">More Users</a></h4>
-<p>&nbsp;After a while I started getting curious as to how many users I had - so I started running websearches - this is when I discovered it had made it into Gentoo GNU/Linux, and the FreeBSD ports collection.</p>
-<p>&nbsp;Many people were beginning to complain that the server was too hard to modify; which I thought was a shame, especially since I'd put such a lot of effort into the plugin system.</p>
-<p>&nbsp;Two other problems were starting to show up:</p>
+<p>After a while I started getting curious as to how many users I had - so I started running websearches - this is when I discovered it had made it into Gentoo GNU/Linux, and the FreeBSD ports collection.</p>
+<p>Many people were beginning to complain that the server was too hard to modify; which I thought was a shame, especially since I'd put such a lot of effort into the plugin system.</p>
+<p>Two other problems were starting to show up:</p>
 <ul>
 <li>Buggy versions of the standard C++ library causing random crashes</li>
 <li>The difficulty of integrating database support.</li>
 </ul>
-<p>&nbsp;Database support was something that originally I'd resisted - as it would increase the dependancies of the code.  But with an active userbase of people with large collections of music I was coming round to the idea of supporting this.</p>
-<p>&nbsp;Around this time I decided that the idea of using a scripting language with good database interoperability would be a good thing.</p>
-<p>&nbsp;Perl was the obvious candidate for me, <a href="http://www.ruby-lang.org/">Ruby</a> was an interesting contender but a little too new for me.</p>
-<p>&nbsp;Python I'd already moved away from, and it's still a language I don't know.</p>
+<p>Database support was something that originally I'd resisted - as it would increase the dependancies of the code.  But with an active userbase of people with large collections of music I was coming round to the idea of supporting this.</p>
+<p>Around this time I decided that the idea of using a scripting language with good database interoperability would be a good thing.</p>
+<p>Perl was the obvious candidate for me, <a href="http://www.ruby-lang.org/">Ruby</a> was an interesting contender but a little too new for me.</p>
+<p>Python I'd already moved away from, and it's still a language I don't know.</p>
 
 <h4><a name="TOC123">The Future?</a></h4>
-<p>&nbsp;In the past I had considered the version 1 release to be feature complete; it did everything I'd ever wanted it to do.  Streaming, searching, stability, and extensibility were all there.</p>
-<p>&nbsp;But now with the added power of Perl <sup>tm</sup> interesting new possibilities are presenting themselfs - the ability to rate songs, and choose to listen only to songs that have been rated positively, the ability for the server to track your music and suggest similar things, both these ideas and more will be possible in the future.</p>
-<p>&nbsp;After that .. who knows?</p>
-<p>&nbsp;I guess it will come down to people making interesting suggestions.</p>
+<p>In the past I had considered the version 1 release to be feature complete; it did everything I'd ever wanted it to do.  Streaming, searching, stability, and extensibility were all there.</p>
+<p>But now with the added power of Perl <sup>tm</sup> interesting new possibilities are presenting themselfs - the ability to rate songs, and choose to listen only to songs that have been rated positively, the ability for the server to track your music and suggest similar things, both these ideas and more will be possible in the future.</p>
+<p>After that .. who knows?</p>
+<p>I guess it will come down to people making interesting suggestions.</p>
 <h4><a name="TOC124">GNU</a></h4>
-<p>&nbsp;I was recently contacted by RMS who asked if I intended the program to become part of the <a href="http://www.gnu.org/">GNU Project</a>.  I hadn't considered this, despite the name of the software.</p>
-<p>&nbsp;However after some discussion we both decided it would be.</p>
-<p>&nbsp;This led to the migration of all the webpages from <a href="http://sourceforge.net/">SourceForge</a> to the hosting facilities that are provided at <a href="http://savannah.gnu.org/">Savannah</a>, and closes another chapter in the projects history.</p>
+<p>I was recently contacted by RMS who asked if I intended the program to become part of the <a href="http://www.gnu.org/">GNU Project</a>.  I hadn't considered this, despite the name of the software.</p>
+<p>However after some discussion we both decided it would be.</p>
+<p>This led to the migration of all the webpages from <a href="http://sourceforge.net/">SourceForge</a> to the hosting facilities that are provided at <a href="http://savannah.gnu.org/">Savannah</a>, and closes another chapter in the projects history.</p>
 
 
 
-		</div>
-	</div>
-	<div id="footer">
-		<hr />
+      </div>
+    </div>
 
-		<div id="validxhtml">
-			<a href="http://validator.w3.org/check/referer"><img
-				src="http://www.w3.org/Icons/valid-xhtml10.png"
-				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-		</div>
-		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
-			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
-			<p>Page Last modified : 15 March 2004
-</p>
-		</div>
-
-	</div>
-</body>
+    <div class="copyright">
+      <p>Last modified: 25 March 2004
+ - Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
+      </p>
+    </div>
+  </body>
 </html>

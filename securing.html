@@ -1,55 +1,48 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>GNUMP3d [GNU MP3/Media Streamer] - Securing Your Server - GNU Project - Free Software Foundation (FSF)</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css" media="all">@import url(style.css);</style>
-</head>
-<body>
-	<div id="oldbrowser">
-		<p>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="Keywords" content="x86, asm, Linux, shellcode,Steve Kemp, skx"/>
+    <meta name="Description" content="Shellcode Site"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>[Shellcode.org: Home]</title>
+  </head>
 
-			This site will look much better in a browser that supports
-			<a href="http://www.webstandards.org/upgrade/"
-			title="Download a browser that complies with Web standards.">web
-			standards</a>, but it is accessible to any browser or Internet
-			device.
-		</p>
-	</div>
-	<div id="masthead">
-		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
-	</div>
-	<div id="pagemenu">
-		<div id="menuframe">
-<div><a href="index.html">Index</a></div>
-<div> <a href="documents.html">Documentation</a> </div>
-<div> <a href="lists.html">Mailing Lists</a> </div>
-<div> <a href="FAQ.html">FAQ</a> </div>
-<div> <a href="download.html">Download</a> </div>
-<div> <a href="cvs.html">CVS</a> </div>
-<div> <a href="developer.html">Developers</a> </div>
-<div> <a href="screenshots.html">Screenshots</a> </div>
-<div> <a href="logos.html">Logos</a> </div>
-<div> <a href="bugs.html">Bugs</a> </div>
-<div> <a href="links.html">Links</a> </div>
-<div> <a href="thanks.html">Thanks</a> </div>
-<div> <a href="history.html">History</a> </div>
-<div> <a href="dedication.html">Dedication</a> </div>
-		</div>
-	</div>
-	<div id="pagebodyframe">
+  <body>
+<div style="text-align: center;" ><p><a href="http://www.gnump3d.org/"><img src="gnump3d.jpg" alt="Logo"/></a></p></div>
+    <div class="nav">
 
-		<div id="pagebody">
+	<ul>
+<li> <a href="index.html">About GNUMP3d</a> </li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+	</ul>
+    </div>
+    <div class="main">
+      <div id="content">
 <a name="Securing"><!-- Anchor--></a>
 
 <h3><a name="TOC19">Securing Your Server</a></h3>
 
 
-<p>&nbsp;By default the server is open to the world; which means that
+<p>By default the server is open to the world; which means that
  anybody who can connect to your server can browse or play any of your
  available music, see your statistics, or perform searches.</p>
 
-<p>&nbsp;If you wish to impose tighter controls you have two options:</p>
+<p>If you wish to impose tighter controls you have two options:</p>
 
 <ol>
 <li><a href="securing.html#Securing-IP">Restrict access by the IP Address of the client</a>.</li>
@@ -61,18 +54,16 @@
 <h3><a name="TOC20">IP Address Restriction</a></h3>
 <h4><a name="TOC21">Allowing Addresses</a></h4>
 
-<p>&nbsp;This is the simplest method of restricting which visitors can
+<p>This is the simplest method of restricting which visitors can
  browse and stream your music.  Edit the configuration file and include
  all the IP addresses, or ranges which you'd like to be able to use your
  via the 'allowed_clients' setting.
 </p>
-<p>&nbsp;If you wish to enable everybody to access the server then
+<p>If you wish to enable everybody to access the server then
 leave the setting as it is by default 'allowed_clients = all' - otherwise
  follow the examples to limit access, eg:</p>
 
-<table>
-<tr><td bgcolor="#CCCCCC">
-<pre>
+<pre class="example">
 #  Limit the clients who can connect and use your server by IP address.
 #
 #  Multiple entries are allowed - simply seperate the values by ';' as
@@ -91,66 +82,47 @@ leave the setting as it is by default 'allowed_clients = all' - otherwise
 # allowed_clients = 192.168.2.x; 194.237.82.x
 #
 </pre>
-</td></tr></table>
+
 
 <h4><a name="TOC22">Denying Addresses</a></h4>
-<p>&nbsp;To complement the 'allowed_clients' option there is a matching
+<p>To complement the 'allowed_clients' option there is a matching
  'denied_clients' setting which allows you to deny particular address.</p>
-<p>&nbsp;The deny options <b>take precendence</b> over the allowed options,
+<p>The deny options <b>take precendence</b> over the allowed options,
  so in the following example all the IP addresses in the 192.168.2.x range
  have acesses except 192.168.2.2, and 192.168.2.44</p>
 
-
-<table>
-<tr><td bgcolor="#CCCCCC">
-<pre>
+<pre class="example">
 allowed_clients = 192.168.2.0/8
 denied_clients  = 192.168.2.2; 192.168.2.44
 </pre>
-</td></tr></table>
-
 
 <a name="Securing-Pass"><!-- Anchor--></a>
 <h4><a name="TOC23">Restrict access via password protection</a></h4>
-<p>&nbsp;You may also restrict access to the server by username + password.
+<p>You may also restrict access to the server by username + password.
  This is enabled by default you just need to create a password file inside
  your music repository.</p>
-<p>&nbsp;The password file must be called '<b>.password</b>' and should contain
+<p>The password file must be called '<b>.password</b>' and should contain
  a list of all the usernames and passwords which are accepted.  (Note that this file must be readable to the user which the server is running as).</p>
-<p>&nbsp;The password file is assumed to be in the following format:</p>
-<table>
-<tr><td bgcolor="#CCCCCC">
-<pre>
+<p>The password file is assumed to be in the following format:</p>
+<pre class="example">
 username1:password1
 username2:password2
 username3:password3
 ...
 usernameN:passwordN
 </pre>
-</td></tr>
-</table>
-<p>&nbsp;If the visitor enters a valid username and password they will be
+<p>If the visitor enters a valid username and password they will be
  able to browse - otherwise they won't.</p>
 
 
 
-		</div>
-	</div>
-	<div id="footer">
-		<hr />
+      </div>
+    </div>
 
-		<div id="validxhtml">
-			<a href="http://validator.w3.org/check/referer"><img
-				src="http://www.w3.org/Icons/valid-xhtml10.png"
-				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-		</div>
-		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
-			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
-			<p>Page Last modified : 15 March 2004
-</p>
-		</div>
-
-	</div>
-</body>
+    <div class="copyright">
+      <p>Last modified: 25 March 2004
+ - Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
+      </p>
+    </div>
+  </body>
 </html>

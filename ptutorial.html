@@ -1,56 +1,49 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-	<title>GNUMP3d [GNU MP3/Media Streamer] - Plugin Creation Tutorial - GNU Project - Free Software Foundation (FSF)</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <style type="text/css" media="all">@import url(style.css);</style>
-</head>
-<body>
-	<div id="oldbrowser">
-		<p>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <meta name="Keywords" content="x86, asm, Linux, shellcode,Steve Kemp, skx"/>
+    <meta name="Description" content="Shellcode Site"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <title>[Shellcode.org: Home]</title>
+  </head>
 
-			This site will look much better in a browser that supports
-			<a href="http://www.webstandards.org/upgrade/"
-			title="Download a browser that complies with Web standards.">web
-			standards</a>, but it is accessible to any browser or Internet
-			device.
-		</p>
-	</div>
-	<div id="masthead">
-		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
-	</div>
-	<div id="pagemenu">
-		<div id="menuframe">
-<div><a href="index.html">Index</a></div>
-<div> <a href="documents.html">Documentation</a> </div>
-<div> <a href="lists.html">Mailing Lists</a> </div>
-<div> <a href="FAQ.html">FAQ</a> </div>
-<div> <a href="download.html">Download</a> </div>
-<div> <a href="cvs.html">CVS</a> </div>
-<div> <a href="developer.html">Developers</a> </div>
-<div> <a href="screenshots.html">Screenshots</a> </div>
-<div> <a href="logos.html">Logos</a> </div>
-<div> <a href="bugs.html">Bugs</a> </div>
-<div> <a href="links.html">Links</a> </div>
-<div> <a href="thanks.html">Thanks</a> </div>
-<div> <a href="history.html">History</a> </div>
-<div> <a href="dedication.html">Dedication</a> </div>
-		</div>
-	</div>
-	<div id="pagebodyframe">
+  <body>
+<div style="text-align: center;" ><p><a href="http://www.gnump3d.org/"><img src="gnump3d.jpg" alt="Logo"/></a></p></div>
+    <div class="nav">
 
-		<div id="pagebody">
+	<ul>
+<li> <a href="index.html">About GNUMP3d</a> </li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+	</ul>
+    </div>
+    <div class="main">
+      <div id="content">
 <a name="plugin-tutorial"><!-- Anchor--></a>
 <h3><a name="TOC79">Plugin Creation Tutorial</a></h3>
 
 <h4><a name="TOC80">Overview</a></h4>
-<p>&nbsp;This page contains a step by step guide to writing a plugin for
+<p>This page contains a step by step guide to writing a plugin for
  GNUMP3d.  This will be a simple one which will just display the current
  system load upon the server.</p>
-<p>&nbsp;For this we'll only make minimal use of the servers internal API.</p>
+<p>For this we'll only make minimal use of the servers internal API.</p>
 
 <h4><a name="TOC81">Requirements</a></h4>
-<p>&nbsp;To follow along with this tutorial you'll need the following:</p>
+<p>To follow along with this tutorial you'll need the following:</p>
 <ul>
 <li>Perl</li>
 <li>GNUMP3d v2.2+</li>
@@ -58,20 +51,20 @@
 
 
 <h4><a name="TOC82">Getting started.</a></h4>
-<p>&nbsp;To write a plugin we need to decide what path will be used to
+<p>To write a plugin we need to decide what path will be used to
  call it.  In this case the URL &quot;http://server:port/<b>load/</b>&quot;
  will be used - as that seems like an appropriate access point for the
  server functionality.</p>
 
 <h4><a name="TOC83">Adding The Plugin To The Source</a></h4>
-<p>&nbsp;With that decided we can start coding - the first thing to do
+<p>With that decided we can start coding - the first thing to do
  is to create a new source file within the 'lib/gnump3d/plugin' directory.</p>
-<p>&nbsp;We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
+<p>We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
 
 
 <h4><a name="TOC84">Implementing the plugin</a></h4>
-<p>&nbsp;For our plugin we need to include some functions the main server expects.</p>
-<p>&nbsp;The mandatory functions are:</p>
+<p>For our plugin we need to include some functions the main server expects.</p>
+<p>The mandatory functions are:</p>
 <ul>
 <li>getAuthor()
 <ul>
@@ -87,9 +80,9 @@
 </ul></li>
 </ul>
 
-<p>&nbsp;The minimal implementation would be this:</p>
+<p>The minimal implementation would be this:</p>
 <hr />
-<pre>
+<pre class="example">
 # lib/gnump3d/plugins/load.pm
 
 sub getAuthor()
@@ -120,20 +113,20 @@ sub handlePath( $ )
 </pre>
 <hr/>
 
-<p>&nbsp;All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
+<p>All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
 
 <h4><a name="TOC85">Testing It</a></h4>
-<p>&nbsp;Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
-<p>&nbsp;Once that's done start the server and request the '/load/' via your browser.  All being well you'll see an output page containing the response from the server.</p>
-<p>&nbsp;If you receive a blank page you should investigate the contents of the server error file, (this will be printed to the console if you start the server with '--debug').</p>
-<p>&nbsp;Assuming that you got this far then we can move on to actually determining the server load - and coding the rest of the plugin.</p>
+<p>Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
+<p>Once that's done start the server and request the '/load/' via your browser.  All being well you'll see an output page containing the response from the server.</p>
+<p>If you receive a blank page you should investigate the contents of the server error file, (this will be printed to the console if you start the server with '--debug').</p>
+<p>Assuming that you got this far then we can move on to actually determining the server load - and coding the rest of the plugin.</p>
 
 <h4><a name="TOC86">Final Stages</a></h4>
-<p>&nbsp;One of the simplest ways of testing the server load would be to
+<p>One of the simplest ways of testing the server load would be to
  look at the output of the 'uptime' command, which contains the current system load.</p>
-<p>&nbsp;The following code shows how this could be done:</p>
+<p>The following code shows how this could be done:</p>
 
-<pre>
+<pre class="example">
 	    my $uptime = `uptime`;
 	    chomp( $uptime );
 
@@ -144,34 +137,24 @@ sub handlePath( $ )
 </pre>
 
 <h4><a name="TOC87">The Finished Article</a></h4>
-<p>&nbsp;If you've followed along you should have code which looks this:</p>
+<p>If you've followed along you should have code which looks this:</p>
 <ul>
 <li><a href="load.pm">load.pm - sample module</a></li>
 </ul>
-<p>&nbsp;The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
+<p>The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
 
 <h4><a name="TOC88">Comments / Questions?</a></h4>
-<p>&nbsp;Any comments or questions can be posted to the <a href="lists.html#Lists">developer mailing list</a>.</p>
+<p>Any comments or questions can be posted to the <a href="lists.html#Lists">developer mailing list</a>.</p>
 
 
 
-		</div>
-	</div>
-	<div id="footer">
-		<hr />
+      </div>
+    </div>
 
-		<div id="validxhtml">
-			<a href="http://validator.w3.org/check/referer"><img
-				src="http://www.w3.org/Icons/valid-xhtml10.png"
-				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
-		</div>
-		<div id="copyright">
-			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a></span>
-			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
-			<p>Page Last modified : 15 March 2004
-</p>
-		</div>
-
-	</div>
-</body>
+    <div class="copyright">
+      <p>Last modified: 25 March 2004
+ - Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
+      </p>
+    </div>
+  </body>
 </html>
