@@ -27,8 +27,10 @@ Installation
 
    3. Make any changes to c:\gnump3d2\etc\gnump3d.conf.win.
 
-   4. Run 'run.bat', editing the location of your MP3s if necessary,
-      (the script assumes your music is in C:\MP3), and enjoy.
+   4. Run c:\gnump3d2\bin\gnump3d-index.bat once.
+
+   4. Run 'C:\gnump3d\bin\run.bat', editing the location of your MP3s
+      if necessary, (the script assumes your music is in C:\MP3), and enjoy.
   
 
 
