@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.15 $
+.define TEMPLATE-VERSION $Revision: 1.16 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -799,24 +799,21 @@ there are two thing to check:</p>
 .HEADING CVS - Unstable releases
 
 
-<p>This page gives simple instructions on how to download
- the latest version of GNUMP3d via anonymous CVS.</p>
+<p>This page gives simple instructions on how to download the latest version of GNUMP3d via anonymous CVS.</p>
 <p>All the development work for GNUMP3d is carried out via CVS, with regular check-ins.  Once there has been a large enough rise in features to justify it a <a href="$(Download)">release</a> is packaged together, and released.</p>
 <p>If you're interested in supplying fixes/patches, or want to live in <i>interesting times</i>, then the CVS version is what you want to be using.</p>
 
 <h4>Initial Download</h4>
-<p>To checkout the initial version of the code run the following
- commands:</p>
+<p>To checkout the initial version of the code run the following commands:</p>
 <pre class="example">
-cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/gnump3d login
-cvs -z3 -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/gnump3d co gnump3d
+export CVS_RSH="ssh"
+cvs -d:ext:anoncvs@subversions.gnu.org:/cvsroot/gnump3d login
+cvs -z3 -d:ext:anoncvs@savannah.gnu.org:/cvsroot/gnump3d co gnump3d
 </pre>
 <p>[When prompted for a password just press return - ie. use an empty password]</p>
 
 <h4>Getting updates</h4>
-<p>Once you have made the initial checkout, as described above,
- you will be able to keep your code up-to-date, by changing to the gnump3d
- directory and running:</p>
+<p>Once you have made the initial checkout, as described above, you will be able to keep your code up-to-date by changing to the gnump3d directory and running:</p>
 
 <pre class="example">
 cvs -z6 -q update -P -d
@@ -825,6 +822,14 @@ cvs -z6 -q update -P -d
 <h4>Viewing sources throught the web.</h4>
 <p>You can also view the repository throught the web,
   by using <a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d">This link to CVSWeb</a>.</p>
+
+
+<h4>CVS Help?</h4>
+<p>If you need help with the CVS repository please see the following Savannah page:</p>
+<ul>
+<li><a href="https://savannah.gnu.org/cvs/?group=gnump3d">https://savannah.gnu.org/cvs/?group=gnump3d</a></li>
+</ul>
+
 
 
 
