@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.5 $
+.define TEMPLATE-VERSION $Revision: 1.6 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -775,7 +775,7 @@ there are two thing to check:</p>
 .HEADING Download GNUMP3d v$(VERSION)
 
 <p>&nbsp;The latest release is available from the links below, in a variety of different formats - simply choose the format with which you are most comfortable with.</p>
-
+<!--
 <h4>Security / Paranoia</h4>
 <p>&nbsp;After several high profile server compromises in the past all the release files upon this page are signed with <a href="$(GPGKEY)">my GPG key</a> - to verify them run '<a href="http://www.gnupg.org/">gpg</a> --verify $file', after importing my key.</p>
 <p>&nbsp;If the signatures do not match please let me know - and <b>do not</b> install the software.</p>
@@ -799,6 +799,14 @@ there are two thing to check:</p>
 <tr bgcolor="#CCCCCC"><td><a href="$(READMEWIN)">README.Windows</a></td><td><a href="$(README-SERVICE)">Running As A Service On Windows</a></td></tr>
 <tr><td><a href="$(READMEMAC)">README.MacOSX</a></td><td>&nbsp;</td></tr>
 </table>
+-->
+
+<h4>Download Area</h4>
+<p>Due to the recent compromise of the Savannah machine which hosts this software and these pages I've setup a temporary download location for GNUMp3d:</p>
+<ul>
+<Li><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/">http://www.steve.org.uk/Software/GNUMP3d/tmp</a></li>
+</ul>
+<p>In the future this will become an official mirror.</p>
 
 <h4>Freshmeat Rating</h4>
 <p>&nbsp;If you came here from <a href="http://freshmeat.net/projects/gnump3d">Freshmeat</a>, then it'd be great if you could <a href="http://freshmeat.net/rate/20517/">rate</a> this software once you've tried it ;)</p>

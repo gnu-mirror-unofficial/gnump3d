@@ -43,10 +43,10 @@
 <!-- Page content -->
 <a name="Plugins"><!-- Anchor--></a>
 
-<h3><a name="TOC74">Plugin Development Notes.</a></h3>
+<h3><a name="TOC75">Plugin Development Notes.</a></h3>
 
 
-<h4><a name="TOC75">GNUMP3d Plugin Support</a></h4>
+<h4><a name="TOC76">GNUMP3d Plugin Support</a></h4>
 <p>&nbsp;GNUMP3d now has support for external plugins, which are Perl modules loaded upon demand by the server when incoming requests are recieved.</p>
 <p>&nbsp;The plugins may extend the server by handling the processing of a given URL.  When an incoming request is made each of the loaded plugins is given the opertunity to handle it, if none does so then the request is handled by the server proper.</p>
 <p>&nbsp;Included with each release are several 'core' plugins - these plugins are all considered to be part of the core of the server, because they're linked to from the included templates.  However if you wish to remove them you're entirely welcome to do so.</p>
@@ -58,12 +58,12 @@
 </ul>
 
 
-<h4><a name="TOC76">How it all works</a></h4>
+<h4><a name="TOC77">How it all works</a></h4>
 <p>&nbsp;Currently the plugin system is rather simplistic, it assumes that the name of a plugin matches the path upon the server which it handles.</p>
 <p>&nbsp;For example a plugin to handle the path "/stats/" must be called "stats.pm".</p>
 <p>&nbsp;This will change in the near future - although I will ensure that all user contributed plugins are updated to work with the new system when it is ready.</p>
 
-<h4><a name="TOC77">Creating A Plugin</a></h4>
+<h4><a name="TOC78">Creating A Plugin</a></h4>
 <p>&nbsp;This is the simple overview for creating a plugin, there's a more
  detailed <a href="ptutorial.html#plugin-tutorial">plugin creation tutorial</a> if you'd
  like step by step instructions.</p>
@@ -75,7 +75,7 @@
 <p>&nbsp;Have a look at the source to the included plugins for more details,
  '<a href="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/gnump3d/gnump3d/lib/gnump3d/plugins/COPYING.pm?rev=HEAD">COPYING.pm</a>' is the simplest plugin, (it just displays the GNU Public License, regardless of how it was called).</p>
 
-<h4><a name="TOC78">Todo</a></h4>
+<h4><a name="TOC79">Todo</a></h4>
 <p>&nbsp;1. I need to plan plugin priorities.  What should happen if multiple
  plugins all claim a given path?</p>
 <p>&nbsp;2. Could plugins be called for more than just regexps on the request path?</p>
@@ -86,7 +86,7 @@
 <table width="100%">
 <tr>
 <td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;</a>&gt;</strong><br />
-Page Last modified : 16 October 2003
+Page Last modified : 15 January 2004
 </td>
 <td>&nbsp;</td>
 <td align="right" valign="top">
