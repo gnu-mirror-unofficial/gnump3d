@@ -57,6 +57,7 @@
 <ol>
 <li><a href="FAQ.html#faq-reload-themes">Do I have to restart the server to update the template files?</a></li>
 <li><a href="FAQ.html#faq-hostname">The server uses the wrong hostname, how do I change this?</a></li>
+<li><a href="FAQ.html#faq-proxy">The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</a></li>
 <li><a href="FAQ.html#faq-securing">How do I secure my music archive?</a></li>
 </ol>
 
@@ -78,7 +79,6 @@
 
 <h4><a name="TOC30">Platform/Distribution Specific</a></h4>
 <ul>
-<li><a href="FAQ.html#faq-mime">I get errors about MIME::Base64</a></li>
 <li><a href="FAQ.html#faq-win32">Will the Perl server run under Windows?</a></li>
 <li>[<font color="red">Updated</font>] <a href="FAQ.html#faq-win32-service">Will the Perl server run as a service under Windows?</a></li>
 <li><a href="FAQ.html#faq-macosx-startup">How can I make the server run at startup on Mac OS X?</a></li>
@@ -207,8 +207,27 @@
 hostname = mp3d.foo.org
 </pre>
 
+
+<a name="faq-proxy"><!-- Anchor--></a>
+<h4><a name="TOC44">The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</a></h4>
+<p>The hostname used in the links can be set fairly easily, simply update the configuration file <tt>gnump3d.conf</tt> paying attention to the following setting:</p>
+<pre>
+##
+#
+# Set this option to rewrite the hostname:port combination in the URLs in
+# your playlist.  Most people won't need this unless they are proxying
+# their connection or running multiple streaming servers through a load
+# balancer or DNS rotor.
+#
+# Note: If you set this you will almost certainly need to set
+#       "use_client_host=0"
+##
+# host_rewrite = ""
+</pre>
+
+
 <a name="faq-securing"><!-- Anchor--></a>
-<h4><a name="TOC44">How do I secure my music archive?</a></h4>
+<h4><a name="TOC45">How do I secure my music archive?</a></h4>
 <p>You can secure your archive in two ways, see the following URL's for details:</p>
 <ul>
 <li><a href="securing.html#Securing-IP">Restrict access by the IP Address of the browser</a>.</li>
@@ -219,19 +238,19 @@ hostname = mp3d.foo.org
 <hr width="50%" />
 
 <a name="faq-template"><!-- Anchor--></a>
-<h4><a name="TOC45">Can I change the HTML that's generated?</a></h4>
+<h4><a name="TOC46">Can I change the HTML that's generated?</a></h4>
 <p>Yes you can change almost everything!</p>
 <p>The server will read in a bunch of template files when it starts, from the directory /usr/share/gnump3d/$THEMENAME/ - edit those and the output will change.</p>
 <p>Note that you don't have to restart the server for changes in the template files to take effect, any changes you make will be reflected immediately.</p>
 <p>The name of the theme is set in the <a href="config.html#Config">configuration file</a> -look for a line like 'theme = default' to see some of the available choices.</p>
 
 <a name="faq-themes"><!-- Anchor--></a>
-<h4><a name="TOC46">How do I build a theme?</a></h4>
+<h4><a name="TOC47">How do I build a theme?</a></h4>
 <p>Create a directory in /usr/share/gnump3d/ with the name of your theme 'foo', and copy all the files from /usr/share/gnump3d/default into it.  Edit those files to suit your tastes - then set theme=foo in your gnump3d.conf file.</p>
 <p>There's a more detailed explaination upon the <a href="theme.html#Theme">theme creation</a> page - after reading that you might want to look at the <a href="advancedtheming.html#Theme-advanced">advanced theming page</a>.</p>
 
 <a name="faq-expand"><!-- Anchor--></a>
-<h4><a name="TOC47">What variables are expanded in the templates?</a></h4>
+<h4><a name="TOC48">What variables are expanded in the templates?</a></h4>
 <p>The template files, which are mentioned <a href="FAQ.html#faq-template">above</a>, can contain special variables which are expanded upon display.
 </p>
 <p>The following variables are supported:</p>
@@ -245,7 +264,7 @@ hostname = mp3d.foo.org
 <p>There are more which control where the output will appear - these will be documented soon.</p>
 
 <a name="faq-theme-location"><!-- Anchor--></a>
-<h4><a name="TOC48">Can I load themes from other directories?</a></h4>
+<h4><a name="TOC49">Can I load themes from other directories?</a></h4>
 <p>You can specify a different base directory for the themes by setting the following option in the gnump3d.conf file:</p>
 
 <pre class="example">
@@ -260,7 +279,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-what-plugins"><!-- Anchor--></a>
-<h4><a name="TOC49">What are plugins, why are they used?</a></h4>
+<h4><a name="TOC50">What are plugins, why are they used?</a></h4>
 <p>Plugins are nothing more than external libraries which contain code the main program, gnump3d, can call.</p>
 <p>They are used to simplify the main code, and keep certain tricky or complicated, functions out of the main code where they would get in the way.</p>
 <p>A good example of this is the search plugin.  By moving out all the searching code from the main program it becomes easier for somebody to read the short plugin and add, for example, the ability to search by genre.</p>
@@ -269,7 +288,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-special"><!-- Anchor--></a>
-<h4><a name="TOC50">What are the <i>special</i> URLS?</a></h4>
+<h4><a name="TOC51">What are the <i>special</i> URLS?</a></h4>
 <p>There are several <i>special</i> URL's which are handled by external plugins.</p>
 <p>(If you have installed extra plugins in addition to those which come with the server you may have more special URLs not listed here).</p>
 
@@ -288,7 +307,7 @@ theme_directory = /home/mp3/themes/
 
 
 <a name="faq-stats"><!-- Anchor--></a>
-<h4><a name="TOC51">I don't see any statistics</a></h4>
+<h4><a name="TOC52">I don't see any statistics</a></h4>
 <p>First of all check that accesses to your server are being
  logged correctly into the file you have specified with the 'access_log' configuration directive.</p>
 <p>If this is correct ensure that you have the "gnump3d-top" script
@@ -307,7 +326,7 @@ there are two thing to check:</p>
 
 
 <a name="faq-plugin-overview"><!-- Anchor--></a>
-<h4><a name="TOC52">How do I write a plugin?</a></h4>
+<h4><a name="TOC53">How do I write a plugin?</a></h4>
 <p>Please see the <a href="plugins.html#Plugins">plugin section</a> of the
  developer notes, and the <a href="ptutorial.html#plugin-tutorial">plugin tutorial</a>.</p>
 
@@ -315,7 +334,7 @@ there are two thing to check:</p>
 <hr width="50%" />
 
 <a name="faq-logfile"><!-- Anchor--></a>
-<h4><a name="TOC53">I installed the RPM but the server won't start</a></h4>
+<h4><a name="TOC54">I installed the RPM but the server won't start</a></h4>
 <p>This is almost certainly a problem with the logfile you're trying
  to use not existing.</p>
 <p>There are two solutions to this:</p>
@@ -324,11 +343,6 @@ there are two thing to check:</p>
 <li>Change the logfile setting in the 'gnump3d.conf' file to point to a directory which already exists, eg. 'logfile = /var/log/gnump3d.log'.</li>
 </ul>
 
-
-<a name="faq-mime"><!-- Anchor--></a>
-<h4><a name="TOC54">I get errors about MIME::Base64</a></h4>
-<p>I didn't include this in the distribution for version 2.0 of the server because I thought it was part of the basic Perl installation.</p>
-<p>As of release 2.2 this is no longer needed - I've included a minimal decoding module of my own; so please upgrade if you see this error.</p>
 
 <a name="faq-win32"><!-- Anchor--></a>
 <h4><a name="TOC55">Will the Perl server run under Windows?</a></h4>
@@ -387,7 +401,7 @@ there are two thing to check:</p>
     </div>
 
     <div class="copyright">
-      <p>Last modified: 18 February 2005
+      <p>Last modified: 19 February 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>

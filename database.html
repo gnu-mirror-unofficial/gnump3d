@@ -41,6 +41,7 @@
 <p>To that end GNUMP3d v2.5 and higher will no longer directly read the song tags from your audio files upon each directory access, instead song tags are read from a &quot;database file&quot;</p>
 <p>When the server starts it will index all the files which are found beneath your defined 'root' directory - writing out the filename and tag informatin from each file it finds.</p>
 <p>At any time you may update the database by manually running the installed script 'gnump3d-index', this script may also give you statistics upon your archive if you run with the '--stats' argument:</p>
+<p>Alternatively (since version 2.9.2) you may cause the server to re-index itself by sending it a SIGHUP signal on Unix or GNU platforms.  Note that this only works when you're not running with the <tt>--debug</tt> flag.</p>
 
 <pre class="example">
 skx@hell:~$ gnump3d-index  --stats
@@ -49,7 +50,7 @@ Beneath /home/mp3 there are:
 </pre>
 
 <p>The song tag information is then used for searching your archive via the search plugin, and for building up the web interface.</p>
-<p>(The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.)</p>
+<p>The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.</p>
 <p>To control where the database resides you may specify it's path within the <a href="config.html#Config">gnump3d.conf</a> file - using the setting below:</p>
 <pre class="example">
 #
@@ -69,7 +70,7 @@ tag_cache = /var/cache/gnump3d/song.tags
     </div>
 
     <div class="copyright">
-      <p>Last modified: 18 February 2005
+      <p>Last modified: 19 February 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>
