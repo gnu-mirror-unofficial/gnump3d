@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.17 $
+.define TEMPLATE-VERSION $Revision: 1.18 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -29,20 +29,22 @@
 <li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
 </ul>
 
-<h4>GNUMP3d v2.8 Released</h4>
+<h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v2.8, which was released upon the 18th of May 2004.</p>
-<p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 10th of January 2005.</p>
+<p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
+<p>Prominent changes for this release include:</p>
 <ul>
-<li>Improved support for Microsoft Windows Platforms.</li>
-<li>Updated playlist generator.</li>
+<li>Several additional new themes.</li>
+<li>URL Rewriting support for hosting a server behind a proxy such as Apache's mod_proxy module.</li>
+<li>Playlist handling is much improved.</li>
 </ul>
 <p>Please find the archives on the <a href="$(Download)">download page</a> - note that there is now a simplified, seperate, version for the Microsoft Windows platform.</p>
 
 
 <h4>Contribute</h4>
 
-<p>I still welcome the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, <a href="$(Logos)">logo designs</a>, <a href="$(Theme)">theme designs</a>, or ideas - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a> ;)</p>
+<p>I still welcome the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, <a href="$(Logos)">logo</a> or <a href="$(Theme)">theme designs</a> - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a> ;)</p>
 <p>I owe a large part of the success of this project to the many suggestions, and patches from <a href="$(Thanks)">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
 
 
@@ -745,6 +747,7 @@ there are two thing to check:</p>
 
 <p>The latest release is available from the links below, in a variety of different formats - simply choose the format with which you are most comfortable with.</p>
 <p><b>Note for Microsoft Windows users</b>: If you wish to install this in a simplified manner please see the seperate version labelled <b>windows</b>.</p>
+<p>(The Microsoft Windows download tends to lag behind the official releases due to the increased problems of testing upon that platform.  Your patience is appreciated).</p>
 
 <h4>Security / Paranoia</h4>
 <p>After several high profile server compromises in the past all the release files upon this page are signed with <a href="$(GPGKEY)">my GPG key</a> - to verify them run '<a href="http://www.gnupg.org/">gpg</a> --verify $file', after importing my key.</p>
@@ -763,12 +766,11 @@ there are two thing to check:</p>
 <td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip">gnump3d-$(VERSION).zip</a></td>
 <td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip.sig">gnump3d-$(VERSION).zip.sig</a></td>
 </tr>
-<tr><td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION)-windows.zip">gnump3d-$(VERSION)-<b>windows</b>.zip</a></td><td>For Microsoft Windows running ActiveState Perl</td></tr>
-<tr bgcolor="#CCCCCC" ><td><a href="$(CHANGELOG)">ChangeLog</a></td><td></td></tr>
-<tr><td><a href="$(README)">README</a></td><td></td></tr>
-<tr bgcolor="#CCCCCC"><td><a href="$(INSTALL)">INSTALL</a></td><td></td></tr>
-<tr><td><a href="$(READMEWIN)">README.Windows</a></td><td><a href="$(README-SERVICE)">Running As A Service On Windows</a></td></tr>
-<tr bgcolor="#CCCCCC"><td><a href="$(READMEMAC)">README.MacOSX</a></td><td></td></tr>
+<tr><td><a href="$(CHANGELOG)">ChangeLog</a></td><td></td></tr>
+<tr bgcolor="#CCCCCC"><td><a href="$(README)">README</a></td><td></td></tr>
+<tr><td><a href="$(INSTALL)">INSTALL</a></td><td></td></tr>
+<tr><td bgcolor="#CCCCCC"><a href="$(READMEWIN)">README.Windows</a></td><td><a href="$(README-SERVICE)">Running As A Service On Windows</a></td></tr>
+<tr><td><a href="$(READMEMAC)">README.MacOSX</a></td><td></td></tr>
 </table>
 
 <h4>Download Mirror</h4>
