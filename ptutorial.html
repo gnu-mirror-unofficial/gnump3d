@@ -34,15 +34,15 @@
     <div class="main">
       <div id="content">
 <a name="plugin-tutorial"><!-- Anchor--></a>
-<h3><a name="TOC80">Plugin Creation Tutorial</a></h3>
+<h3><a name="TOC79">Plugin Creation Tutorial</a></h3>
 
-<h4><a name="TOC81">Overview</a></h4>
+<h4><a name="TOC80">Overview</a></h4>
 <p>This page contains a step by step guide to writing a plugin for
  GNUMP3d.  This will be a simple one which will just display the current
  system load upon the server.</p>
 <p>For this we'll only make minimal use of the servers internal API.</p>
 
-<h4><a name="TOC82">Requirements</a></h4>
+<h4><a name="TOC81">Requirements</a></h4>
 <p>To follow along with this tutorial you'll need the following:</p>
 <ul>
 <li>Perl</li>
@@ -50,19 +50,19 @@
 </ul>
 
 
-<h4><a name="TOC83">Getting started.</a></h4>
+<h4><a name="TOC82">Getting started.</a></h4>
 <p>To write a plugin we need to decide what path will be used to
  call it.  In this case the URL &quot;http://server:port/<b>load/</b>&quot;
  will be used - as that seems like an appropriate access point for the
  server functionality.</p>
 
-<h4><a name="TOC84">Adding The Plugin To The Source</a></h4>
+<h4><a name="TOC83">Adding The Plugin To The Source</a></h4>
 <p>With that decided we can start coding - the first thing to do
  is to create a new source file within the 'lib/gnump3d/plugin' directory.</p>
 <p>We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
 
 
-<h4><a name="TOC85">Implementing the plugin</a></h4>
+<h4><a name="TOC84">Implementing the plugin</a></h4>
 <p>For our plugin we need to include some functions the main server expects.</p>
 <p>The mandatory functions are:</p>
 <ul>
@@ -115,13 +115,13 @@ sub handlePath( $ )
 
 <p>All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
 
-<h4><a name="TOC86">Testing It</a></h4>
+<h4><a name="TOC85">Testing It</a></h4>
 <p>Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
 <p>Once that's done start the server and request the '/load/' via your browser.  All being well you'll see an output page containing the response from the server.</p>
 <p>If you receive a blank page you should investigate the contents of the server error file, (this will be printed to the console if you start the server with '--debug').</p>
 <p>Assuming that you got this far then we can move on to actually determining the server load - and coding the rest of the plugin.</p>
 
-<h4><a name="TOC87">Final Stages</a></h4>
+<h4><a name="TOC86">Final Stages</a></h4>
 <p>One of the simplest ways of testing the server load would be to
  look at the output of the 'uptime' command, which contains the current system load.</p>
 <p>The following code shows how this could be done:</p>
@@ -136,14 +136,14 @@ sub handlePath( $ )
 	    }
 </pre>
 
-<h4><a name="TOC88">The Finished Article</a></h4>
+<h4><a name="TOC87">The Finished Article</a></h4>
 <p>If you've followed along you should have code which looks this:</p>
 <ul>
 <li><a href="load.pm">load.pm - sample module</a></li>
 </ul>
 <p>The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
 
-<h4><a name="TOC89">Comments / Questions?</a></h4>
+<h4><a name="TOC88">Comments / Questions?</a></h4>
 <p>Any comments or questions can be posted to the <a href="lists.html#Lists">developer mailing list</a>.</p>
 
 
@@ -152,7 +152,7 @@ sub handlePath( $ )
     </div>
 
     <div class="copyright">
-      <p>Last modified: 10 January 2005
+      <p>Last modified: 18 February 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>
