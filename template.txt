@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.18 $
+.define TEMPLATE-VERSION $Revision: 1.19 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -396,7 +396,6 @@ part1.title
 <li><a href="$(faq-more-info)">Where can I find more information?</a></li>
 <li><a href="$(faq-key)">Do you have a PGP key, or GPG key?</a></li>
 <li><a href="$(faq-donate)">I like this software - can I give you something?</a></li>
-<li><a href="$(faq-commercial)">Can I base a commercial product on this code?</a></li>
 <li><a href="$(faq-money)">You're just doing this to solicit freebies, aren't you?</a></li>
 </ol>
 
@@ -445,12 +444,12 @@ part1.title
 
 <h4>What systems does it run on?</h4>
 <p>GNUMP3d is written in portable Perl, and should run on any system which is capable of running perl code.</p>
-<p>The only additional requirement is a working 'fork()' call - which in practice means the system must be either Unix, or running a recent version of <a href="$(ACTIVESTATE)">ActiveState Perl</a> for Windows</p>
+<p>The only additional requirement is a working 'fork' call - which in practice means the system must be either GNU, Unix, or running a recent version of <a href="$(ACTIVESTATE)">ActiveState Perl port</a> for Microsoft Windows</p>
 <p>Supported platforms include:</p>
 <ul>
-<li>GNU/Linux - <a href="http://www.redhat.com/">RedHat</a>, <a href="http://www.debian.org/">Debian</a>, <a href="http://www.suse.de/uk/">SuSE</a>, <a href="http://www.linux-mandrake.com/">Mandrake</a>, etc.</li>
+<li>GNU/Linux - Debian, Gentoo, Mandrake, RedHat, SuSE, etc.</li>
 <li>Solaris - Sparc, and Intel.</li>
-<li><a href="http://www.freebsd.org/">FreeBSD</a>, <a href="http://www.netbsd.org/">NetBSD</a>, and <a href="http://www.openbsd.org/">OpenBSD</a>.</li>
+<li>FreeBSD, NetBSD, and OpenBSD.</li>
 <li>Cygwin / Native Microsoft Windows.</li>
 </ul>
 
@@ -511,15 +510,7 @@ part1.title
 .build anchor faq-donate
 <h4>I like this software - can I give you something?</h4>
 <p>If you want to give me something 'big' then there's a small Amazon wishlist <a href="$(WISHLIST)">here</a>.  If you just wish to express your appreciation just drop me or the <a href="$(Lists)">mailing lists</a> an email - its always nice to receive feedback, (good <b>or</b> bad).</p>
-
-
-.build anchor faq-commercial
-<h4>Can I base a commercial product on this code?</h4>
-<p>Yes you can if you abide by the terms of the GNU Public License which
- this software is distributed under.</p>
-<p>(If this isn't acceptable to you then you shouldn't use the software,
- <i>or</i> get in touch and negotiate a different license).</p>
-
+<p>If you wish to work on the code the contributions are always welcome.  Working on any free software is a good way to thank other users.</p>
 
 .build anchor faq-money
 <h4>You're just doing this to solicit freebies, aren't you?</h4>
@@ -907,7 +898,7 @@ cvs -z6 -q update -P -d
 <p>Your plugin will be called once for each incoming request
  which matches the path it handles, where it will be assumed that the request was handled..</p>
 <p>Have a look at the source to the included plugins for more details,
- '<a href="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/gnump3d/gnump3d/lib/gnump3d/plugins/COPYING.pm?rev=HEAD">COPYING.pm</a>' is the simplest plugin, (it just displays the GNU Public License, regardless of how it was called).</p>
+ '<a href="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/gnump3d/gnump3d/lib/gnump3d/plugins/COPYING.pm?rev=HEAD">COPYING.pm</a>' is the simplest plugin, (it just displays the GNU General Public License, regardless of how it was called).</p>
 
 <h4>Todo</h4>
 <p>1. I need to plan plugin priorities.  What should happen if multiple
