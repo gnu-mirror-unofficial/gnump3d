@@ -17,7 +17,7 @@
 	- FEATURES:  Show .shn files as audio files too.
 	- FEATURES:  Show all audio files in the statistics page.
 	
-	- BUGFIX:    Applied patch from Martine Lohmeier for broken tag handling.
+	- BUGFIX:    Applied patch from Martin Lohmeier for broken tag handling.
 	- BUGFIX:    Quoting files is handled slightly better.
 
 	- PLUGINS:   Added a new link to serve a random directory's playlist.
