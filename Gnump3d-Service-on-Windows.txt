@@ -1,0 +1,160 @@
+Installing Gnump3d as a Windows service - How To
+By: Andrew Ott
+Ver: 1.0
+
+=============================================================================
+
+Contents
+	1. Introduction
+	2. Needed Programs
+	3. Installing Firedaemon
+	4. Added the Gunmp3d Service
+	5. Trouble Shooting
+	6. Contact Author and Credits
+
+
+=============================================================================
+
+Section 1: Introduction
+
+	This document is meant to walk you through setting up Gnump3d to run 
+as a service on your Windows 2k, XP, or 3k computer.  We will be going over
+how to setup Firedaemon to start the gnump3d service at boot, and setting 
+the service up to restart if it fails or crashes, which can happen unless 
+you have 100% compatible mp3 files. If you download a lot of mp3's rather 
+then rip your own their is a good chance that you have some that just won't 
+play or might even crash Gnump3d.  Nice to have a way to auto-restart when 
+you are miles away trying to use it over the web. :)
+
+	This document assumes that you have Gnump3d installed and tested to 
+work with the supplied run.bat script.  If you have not done this yet please 
+do so, you can receive help for install questions here: http://gnump3d.
+sourceforge.net/install.html#Install
+
+	This document also was wrote using version 1.6 of Firedaemon and 
+version 2.4 of gnump3d.  If your versions are different, there may be some 
+discrepancies.
+
+=============================================================================
+
+Section 3: Needed Programs
+
+	1. A working installed copy of Gnump3d.
+	   Description:  GNUMP3d is a streaming server for MP3's, OGG 
+	   Vorbis, and other streamable audio files, it is designed to 
+	   be: 
+	   Small, stable, portable, self-contained, and secure.
+	   Simple to install, configure, and use.
+	   Portable across different varieties of Unix.
+	   Compatible with Perl install on Windows 2k or newer
+	   Get it here: http://gnump3d.sourceforge.net
+
+	2. A copy of Firedaemon Lite  (this was wrote using ver. 1.6)
+	   Description:  FireDaemon is a utility that allows you to 
+	   install and run virtually any native Win32 application or 
+	   script (eg. BAT/CMD, Perl, Java, Python, TCL/TK) as a Windows 
+	   NT/2K/XP/2K3 service. FireDaemon features easy configuration 
+	   (via GUI or XML), a low memory/CPU overhead, subprocess 
+	   prioritisation, custom environments, CPU binding plus 
+	   monitoring and logging to the event log and on-disk log files.
+	   Get it here: http://www.firedaemon.com/
+
+	You should also pick up a 20oz bottle of your favorite beverage.
+This should be a 1 bottle project.  If it takes longer then one bottle your 
+drinking too much.  :)
+
+=============================================================================
+
+Section 4: Installing Firedaemon
+
+	1.  Download Firedaemon Lite (http://www.firedaemon.com) to your 
+desktop.  (Side note on Firedaemon: In the newer free ie. lite versions you 
+can only have 1 service running, which will suffice for this project.  If 
+you want to run more then one service with Firedaemon you need the pro 
+version $25.00 or version 0.9 or older that did not have the 1 service 
+restriction. Also a warning the older Firedaemon programs are completely 
+different form the current one, so this how-to might be only minimal help 
+for you.)
+	
+	2.  Double Click on the FireDaemon.exe that you downloaded to start 
+the install.  The Typical Install will be fine
+
+=============================================================================
+
+Section 5: Added the Gunmp3d Service
+
+	1.  Start Firedaemon by clicking on start, programs, Firedaemon, 
+	    FireDaemon Service Manager.
+
+	2.  Click the Service menu and choose New
+
+	3.  Fill out the Tabs according to below:
+	    
+	    Program Tab
+	    Short Name = Gnump3d
+	    Display Name = Gnump3d
+	    Check the box by "Custom Prefix String" this way if you see 
+	    the service running in the normal services window you will 
+	    know that you need to go into FireDaemon to change anything 
+	    on it.
+	    Description = Gnump3d Streaming Media Server
+	    Console Application should be Unchecked
+	    Working Directory = c:\gnump3d2
+		(That is if you haven't changed it)
+	    Executable = c:\Perl\bin\perl.exe
+		(If your perl install is somewhere else search your hard 
+		drive for perl.exe and put in the path to it here.)
+	    Parameters = -Ilib/ bin/gnump3d2 --config etc/gnump3d.conf.win --root c:\mp3
+		(Remember that the c:\mp3 needs to be changed to wherever 
+		you mp3 root folder is)
+	    Start-up Time(msec) = 3000
+
+	    Settings
+	    Show Window = Hidden
+	    Start-Up Mode = Automatic
+	    Upon Program Exit = Restart the Program
+		(This is what allows gnump3d to be restarted on a crash)
+
+	4.  Click the "Install" button to install the service.  You should 
+	    get a box telling you theat the Gnump3d service was installed 
+	    successfully.  You can now close the new service box by clicking 
+	    the x if the box is still there.  After you return to the main 
+	    window of the FireDaemon Lite Service Manager you should see the 
+	    Gnump3d Service listing and its Status.  If it is not running 
+	    already you can click the "play" symbol to start it up.
+
+	5.  Thats all there is to it.  You can now close the FireDaemon Lite 
+	    Service Manager Window.
+
+=============================================================================
+
+Section 5: Trouble Shooting
+	
+	Currently this section is small, since it is the first revision, if 
+this is ever updated, I'm sure there will be more to add to this section.
+
+	1. No songs are showing up if Firedaemon starts the gnump3d 
+	   what's up with that?
+		Edit the service and check under the programs tab and
+		look at the Parameters line at the end you will likely 
+		see "c:\mp3" as the notes stated above you need to change
+		this to be the directory that your mp3 files are in on
+		YOUR computer.
+
+=============================================================================
+
+Section 6: Author and Credits
+
+	First I would like to say a awesome thank you to Steve Kemp for 
+making such a great streaming media server.  I've had been looking for 
+something along these lines for a long time.
+
+	If you have any problems with this How-To you can try contacting me 
+at gonecrazy@gonecrazy.com Personally I have this working on a Windows 2000 
+server with service pack 4, with no issues whatsoever.
+
+The most current version of the How-To should be linked on http://gnump3d.
+sourceforge.net
+Created by: Andrew Ott 6-27-03
+
+============================================================================= 

@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>GNUMP3d - The GNU MP3/Media Streamer - GNU Project - Free Software Foundation (FSF)</title>
+<title>GNUMP3d - Indexing Your Music - GNU Project - Free Software Foundation (FSF)</title>
 <meta content="Steve Kemp" name="author" />
 <style type="text/css" media="all">@import url(style.css);</style>
 <link rel="icon" href="/favicon.ico" type="image/ico" />
@@ -46,29 +46,37 @@
 <td valign="top">
 
 <!-- Page content -->
-<a name="Introduction"><!-- Anchor--></a>
+<a name="gnump3d-index"><!-- Anchor--></a>
 
-<h3><a name="TOC1">GNUMP3d - The GNU Streaming MP3 / Media Server</a></h3>
+<h3><a name="TOC18">Indexing Your Music</a></h3>
 
-<p>&nbsp;GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis files</a>, and other media.   It is designed to be:
-</p>
-<ul>
-<li>Small, stable, portable, self-contained, and <a href="security.html#Security">secure</a>.</li>
-<li>Simple to <a href="install.html#Install">install</a>, <a href="config.html#Config">configure</a>, and <a href="screenshots.html#Screenshots">use</a>.</li>
-<li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
-</ul>
+<p>&nbsp;One of the goals of the <a href="version2.html#version2">version 2 rewrite</a> was to investigate ways of speeding up the server, and working with databases.</p>
+<p>&nbsp;To that end GNUMP3d v2.5 and higher will no longer directly read the song tags from your audio files upon each directory access, instead song tags are read from a &quot;database file&quot;</p>
+<p>&nbsp;When the server starts it will index all the files which are found beneath your defined 'root' directory - writing out the filename and tag informatin from each file it finds.</p>
+<p>&nbsp;At any time you may update the database by manually running the installed script 'gnump3d-index', this script may also give you statistics upon your archive if you run with the '--stats' argument:</p>
 
-<h4><a name="TOC2">GNUMP3d v2.6 Released</a></h4>
-<p>&nbsp;I am proud to announce the immediate availability of GNUMP3 v2.6, which can be found at the <a href="download.html#Download">download page</a>.</p>
-<p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="ChangeLog">ChangeLog</a>.  Prominent changes include:</p>
-<ul>
-<li>Full support for internationlised interfaces.</li>
-<li>Several new plugins</li>
-</ul>
+<pre>
+skx@hell:~$ gnump3d-index  --stats
+Beneath /home/mp3 there are:
+505 audio files - totalling 2GB.
+</pre>
 
-<h4><a name="TOC3">Contribute</a></h4>
-<p>&nbsp;I still welcome the contribution of <a href="developer.html#Developer">code</a>, <a href="documents.html#Documentation">documentation</a>, <a href="logos.html#Logos">logo designs</a>, <a href="theme.html#Theme">theme designs</a>, or ideas - not to mention items from my <a href="http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to">Amazon wishlist</a> ;)</p>
-<p>&nbsp;I owe a large part of the success of this project to the many suggestions, and patches from <a href="thanks.html#Thanks">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
+<p>&nbsp;The song tag information is then used for searching your archive via the search plugin, and for building up the web interface.</p>
+<p>&nbsp;(The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.)</p>
+<p>&nbsp;To control where the database resides you may specify it's path within the <a href="config.html#Config">gnump3d.conf</a> file - using the setting below:</p>
+<pre>
+#
+#  As a speedup and optimisation song tag is read via a companion script
+# which is called 'gnump3d-index'.  This will be run automatically when
+# the server starts if possible.
+#
+#  This next setting controls where that script will write its tag database
+# to.
+#
+tag_cache = /var/cache/gnump3d/song.tags
+</pre>
+<p>&nbsp;To keep this database up to date when you install the server it is recommended that you add a cron job to re-index your music once a day, or so.  (The <a href="http://www.debian.org/">Debian GNU/Linux</a> package will do this automatically when it is installed).</p>
+
 
 </td></tr></table>
 <p><hr /></p>

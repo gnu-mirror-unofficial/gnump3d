@@ -1,0 +1,134 @@
+.---------------------------------------------------------------------
+.-  prelude.def
+.-
+.-  I like to use a single file to collect all definitions such as
+.-  links to external pages, headers, footers, etc.
+.-
+.---------------------------------------------------------------------
+
+
+.- Homepage of the software
+.define SERVER  http://www.gnump3d.org/
+
+.- Me
+.define AUTHOR  &#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;
+
+.- The date when the pages are built.
+.define DATE &(`date +"%d %B %Y"`)
+
+.- The current released verision of GNUMP3d
+.define VERSION 2.6
+
+.- Version of this file, as recorded by CVS.
+.define PRELUDE-VERSION $Revision: 1.1 $
+
+.- Reward me ;)
+.define WISHLIST http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to
+
+.- Perl for Windows
+.define ACTIVESTATE http://www.activestate.com/Solutions/Programmer/Perl.plex
+
+.-
+.-  These are links to the particular files.
+.-
+.define GNUMP3D.CONF gnump3d.conf
+.define AUTHORS AUTHORS
+.define README README
+.define READMEMAC  README.MacOSX
+.define READMEWIN  README.Windows
+.define README-SERVICE  Gnump3d-Service-on-Windows.txt
+.define INSTALL INSTALL
+.define CHANGELOG ChangeLog
+.define GPGKEY skx@tardis.ed.ac.uk.gpg
+
+.-
+.- A centered heading
+.-
+.macro HEADING <h3>$*</h3>
+
+.-
+.- A macro to automatically insert the correct height and width inside
+.- and IMG tag.
+.-
+.macro IMAGE <img src="$1" width="&image_width("$1")" height="&image_height("$1")" alt="$2" />
+
+.-
+.-  This header is given at the start of each page.
+.-
+.block header
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>GNUMP3d - $(TITLE) - GNU Project - Free Software Foundation (FSF)</title>
+<meta content="Steve Kemp" name="author" />
+<style type="text/css" media="all">@import url(style.css);</style>
+<link rel="icon" href="/favicon.ico" type="image/ico" />
+</head>
+<body bgcolor="#ffffff">
+
+<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="top" rowspan="5" width="200">
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" width="129" height="122" />
+<p><b>GNU</b></p>
+<ul>
+<li><a href="/">GNU Project</a></li>
+<li><a href="http://www.gnu.org/philosophy/free-sw.html" title="Read about what Free Software is">Free Software</a></li>
+</ul>
+
+<p><b>GNUMP3d</b></p>
+<ul>
+<li><a href="index.html">About</a></li>
+.build index
+</ul>
+
+<p><b>Interact</b></p>
+<ul>
+<li><a href="http://gnump3d.sourceforge.net/forum/">Forums</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">View Guestbook</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi">Sign Guestbook</a></li>
+</ul>
+</td>
+<td valign="top">
+
+<!-- Page content -->
+.endblock
+
+
+
+.-
+.-  Listed at the bottom of each page.
+.-
+.block footer
+</td></tr></table>
+<p><hr /></p>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:$(AUTHOR)">$(AUTHOR)</a>&gt;</strong><br />
+Page Last modified : $(DATE)
+</td>
+<td>&nbsp;</td>
+<td align="right" valign="top">
+Copyright (c) 2001,2002,2003 Steve Kemp<br />
+Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.<br />
+</td></tr></table>
+</body></html>
+.endblock
+
+.block index_open
+.block index_entry
+<li> &pageref("$(INDEX_PAGE)","<em>$(INDEX_TITLE)</em>") </li>
+.endblock
+
+.block anchor
+<a name="$(ANCHOR)"><!-- Anchor--></a>
+.end
+
+.block dir_open
+<pre>
+.block dir_entry
+$(*DIR_HREF="$(DIR_NAME)") $(DIR_SIZE) $(DIR_DATE) $(DIR_TIME)  $($(DIR_EXT))
+.block dir_close
+</pre>
+.end
+

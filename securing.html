@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>GNUMP3d - Securing Your Server - GNU Project - Free Software Foundation (FSF)</title>
+<meta content="Steve Kemp" name="author" />
+<style type="text/css" media="all">@import url(style.css);</style>
+<link rel="icon" href="/favicon.ico" type="image/ico" />
+</head>
+<body bgcolor="#ffffff">
+
+<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="top" rowspan="5" width="200">
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" width="129" height="122" />
+<p><b>GNU</b></p>
+<ul>
+<li><a href="/">GNU Project</a></li>
+<li><a href="http://www.gnu.org/philosophy/free-sw.html" title="Read about what Free Software is">Free Software</a></li>
+</ul>
+
+<p><b>GNUMP3d</b></p>
+<ul>
+<li><a href="index.html">About</a></li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download GNUMP3d v2.6</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+</ul>
+
+<p><b>Interact</b></p>
+<ul>
+<li><a href="http://gnump3d.sourceforge.net/forum/">Forums</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">View Guestbook</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi">Sign Guestbook</a></li>
+</ul>
+</td>
+<td valign="top">
+
+<!-- Page content -->
+<a name="Securing"><!-- Anchor--></a>
+
+<h3><a name="TOC19">Securing Your Server</a></h3>
+
+
+<p>&nbsp;By default the server is open to the world; which means that
+ anybody who can connect to your server can browse or play any of your
+ available music, see your statistics, or perform searches.</p>
+
+<p>&nbsp;If you wish to impose tighter controls you have two options:</p>
+
+<ol>
+<li><a href="securing.html#Securing-IP">Restrict access by the IP Address of the client</a>.</li>
+<li><a href="securing.html#Securing-Pass">Restrict access via password protection</a>.</li>
+</ol>
+
+
+<a name="Securing-IP"><!-- Anchor--></a>
+<h3><a name="TOC20">IP Address Restriction</a></h3>
+<h4><a name="TOC21">Allowing Addresses</a></h4>
+
+<p>&nbsp;This is the simplest method of restricting which visitors can
+ browse and stream your music.  Edit the configuration file and include
+ all the IP addresses, or ranges which you'd like to be able to use your
+ via the 'allowed_clients' setting.
+</p>
+<p>&nbsp;If you wish to enable everybody to access the server then
+leave the setting as it is by default 'allowed_clients = all' - otherwise
+ follow the examples to limit access, eg:</p>
+
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+#  Limit the clients who can connect and use your server by IP address.
+#
+#  Multiple entries are allowed - simply seperate the values by ';' as
+# shown in some of the examples below.
+#
+#  Only people on the same subnet, (class C):
+# allowed_clients = 192.168.2.x
+#
+#  Only one machine may connect:
+# allowed_clients = 192.168.2.12
+#
+#  Everybody local, and one remote address:
+# allowed_clients = 192.168.2.x; 194.247.82.33
+#
+#  Everybody local, and one remote range:
+# allowed_clients = 192.168.2.x; 194.237.82.x
+#
+</pre>
+</td></tr></table>
+
+<h4><a name="TOC22">Denying Addresses</a></h4>
+<p>&nbsp;To complement the 'allowed_clients' option there is a matching
+ 'denied_clients' setting which allows you to deny particular address.</p>
+<p>&nbsp;The deny options <b>take precendence</b> over the allowed options,
+ so in the following example all the IP addresses in the 192.168.2.x range
+ have acesses except 192.168.2.2, and 192.168.2.44</p>
+
+
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+allowed_clients = 192.168.2.0/8
+denied_clients  = 192.168.2.2; 192.168.2.44
+</pre>
+</td></tr></table>
+
+
+<a name="Securing-Pass"><!-- Anchor--></a>
+<h4><a name="TOC23">Restrict access via password protection</a></h4>
+<p>&nbsp;You may also restrict access to the server by username + password.
+ This is enabled by default you just need to create a password file inside
+ your music repository.</p>
+<p>&nbsp;The password file must be called '<b>.password</b>' and should contain
+ a list of all the usernames and passwords which are accepted.  (Note that this file must be readable to the user which the server is running as).</p>
+<p>&nbsp;The password file is assumed to be in the following format:</p>
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+username1:password1
+username2:password2
+username3:password3
+...
+usernameN:passwordN
+</pre>
+</td></tr>
+</table>
+<p>&nbsp;If the visitor enters a valid username and password they will be
+ able to browse - otherwise they won't.</p>
+
+
+
+</td></tr></table>
+<p><hr /></p>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;</a>&gt;</strong><br />
+Page Last modified : 15 October 2003
+</td>
+<td>&nbsp;</td>
+<td align="right" valign="top">
+Copyright (c) 2001,2002,2003 Steve Kemp<br />
+Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.<br />
+</td></tr></table>
+</body></html>

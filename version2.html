@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>GNUMP3d - The GNU MP3/Media Streamer - GNU Project - Free Software Foundation (FSF)</title>
+<title>GNUMP3d - GNUMP3d v2.x - GNU Project - Free Software Foundation (FSF)</title>
 <meta content="Steve Kemp" name="author" />
 <style type="text/css" media="all">@import url(style.css);</style>
 <link rel="icon" href="/favicon.ico" type="image/ico" />
@@ -46,29 +46,30 @@
 <td valign="top">
 
 <!-- Page content -->
-<a name="Introduction"><!-- Anchor--></a>
+<a name="version2"><!-- Anchor--></a>
 
-<h3><a name="TOC1">GNUMP3d - The GNU Streaming MP3 / Media Server</a></h3>
+<h3><a name="TOC9">GNUMP3d v2.x development</a></h3>
 
-<p>&nbsp;GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis files</a>, and other media.   It is designed to be:
-</p>
+<p>&nbsp;Version 1.0 of GNUMP3d was feature complete when it was released; to the limits I set myself when I originally started coding it.</p>
+
+<h4><a name="TOC10">Why another release, then?</a></h4>
+<p>&nbsp;For future versions of GNUMP3d I'd like to concentrate on improving the stability, and reliability of the current codebase - as well as adding some new features.</p>
+<p>&nbsp;Some of then new features I'm anticipating are:</p>
 <ul>
-<li>Small, stable, portable, self-contained, and <a href="security.html#Security">secure</a>.</li>
-<li>Simple to <a href="install.html#Install">install</a>, <a href="config.html#Config">configure</a>, and <a href="screenshots.html#Screenshots">use</a>.</li>
-<li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
+<li>The ability to rate or vote for songs.</li>
+<li>An intergrated system to allow users to upload songs.</li>
+<li><i>Much</i> more powerful sorting and browsing options.</li>
+<li>A more open architechure - with more core functionality migrated to external plugins.</li>
+<li>The ability to view recently added music.</li>
+<li>Ideas from users??</li>
 </ul>
 
-<h4><a name="TOC2">GNUMP3d v2.6 Released</a></h4>
-<p>&nbsp;I am proud to announce the immediate availability of GNUMP3 v2.6, which can be found at the <a href="download.html#Download">download page</a>.</p>
-<p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="ChangeLog">ChangeLog</a>.  Prominent changes include:</p>
-<ul>
-<li>Full support for internationlised interfaces.</li>
-<li>Several new plugins</li>
-</ul>
 
-<h4><a name="TOC3">Contribute</a></h4>
-<p>&nbsp;I still welcome the contribution of <a href="developer.html#Developer">code</a>, <a href="documents.html#Documentation">documentation</a>, <a href="logos.html#Logos">logo designs</a>, <a href="theme.html#Theme">theme designs</a>, or ideas - not to mention items from my <a href="http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to">Amazon wishlist</a> ;)</p>
-<p>&nbsp;I owe a large part of the success of this project to the many suggestions, and patches from <a href="thanks.html#Thanks">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
+<h4><a name="TOC11">Current Development</a></h4>
+<p>&nbsp;With the need to organize voting and ranking I'm tending towards the idea that some sort of database is required.  (This doesn't necessarily have to be a &quot;real&quot; database - flat files could well be good enough).</p>
+<p>&nbsp;To this end I started putting together a Perl release of GNUMP3d, this was originally intended to be a prototype system; but soon it was almost completely compatible with the existing release.  At this point I decided Perl was the way of the future!.</p>
+<p>&nbsp;If you'd like to look at the code you can see it online via the <a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d/">online gnump3d2 CVS repository</a> - to check your copy please see the instructions on the <a href="cvs.html#CVS">CVS page</a></p>
+
 
 </td></tr></table>
 <p><hr /></p>

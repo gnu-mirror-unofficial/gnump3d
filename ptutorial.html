@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>GNUMP3d - Plugin Creation Tutorial - GNU Project - Free Software Foundation (FSF)</title>
+<meta content="Steve Kemp" name="author" />
+<style type="text/css" media="all">@import url(style.css);</style>
+<link rel="icon" href="/favicon.ico" type="image/ico" />
+</head>
+<body bgcolor="#ffffff">
+
+<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="top" rowspan="5" width="200">
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" width="129" height="122" />
+<p><b>GNU</b></p>
+<ul>
+<li><a href="/">GNU Project</a></li>
+<li><a href="http://www.gnu.org/philosophy/free-sw.html" title="Read about what Free Software is">Free Software</a></li>
+</ul>
+
+<p><b>GNUMP3d</b></p>
+<ul>
+<li><a href="index.html">About</a></li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download GNUMP3d v2.6</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+</ul>
+
+<p><b>Interact</b></p>
+<ul>
+<li><a href="http://gnump3d.sourceforge.net/forum/">Forums</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">View Guestbook</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi">Sign Guestbook</a></li>
+</ul>
+</td>
+<td valign="top">
+
+<!-- Page content -->
+<a name="plugin-tutorial"><!-- Anchor--></a>
+<h3><a name="TOC79">Plugin Creation Tutorial</a></h3>
+
+<h4><a name="TOC80">Overview</a></h4>
+<p>&nbsp;This page contains a step by step guide to writing a plugin for
+ GNUMP3d.  This will be a simple one which will just display the current
+ system load upon the server.</p>
+<p>&nbsp;For this we'll only make minimal use of the servers internal API.</p>
+
+<h4><a name="TOC81">Requirements</a></h4>
+<p>&nbsp;To follow along with this tutorial you'll need the following:</p>
+<ul>
+<li>Perl</li>
+<li>GNUMP3d v2.2+</li>
+</ul>
+
+
+<h4><a name="TOC82">Getting started.</a></h4>
+<p>&nbsp;To write a plugin we need to decide what path will be used to
+ call it.  In this case the URL &quot;http://server:port/<b>load/</b>&quot;
+ will be used - as that seems like an appropriate access point for the
+ server functionality.</p>
+
+<h4><a name="TOC83">Adding The Plugin To The Source</a></h4>
+<p>&nbsp;With that decided we can start coding - the first thing to do
+ is to create a new source file within the 'lib/gnump3d/plugin' directory.</p>
+<p>&nbsp;We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
+
+
+<h4><a name="TOC84">Implementing the plugin</a></h4>
+<p>&nbsp;For our plugin we need to include some functions the main server expects.</p>
+<p>&nbsp;The mandatory functions are:</p>
+<ul>
+<li>getAuthor()
+<ul>
+<li>Returns a text string containing the authors name.</li>
+</ul></li>
+<li>getVersion()
+<ul>
+<li>Return a text string containing the version number of the plugin.</li>
+</ul></li>
+<li>handlePath( $ );
+<ul>
+<li>The main body of the plugin where a response is handled.</li>
+</ul></li>
+</ul>
+
+<p>&nbsp;The minimal implementation would be this:</p>
+<hr />
+<pre>
+# lib/gnump3d/plugins/load.pm
+
+sub getAuthor()
+{
+   return( "Steve Kemp" );
+}
+
+sub getVersion( )
+{
+   return( "1.0" );
+}
+
+sub handlePath( $ )
+{
+   my ( $request ) = ( @_ );
+
+   my $header = &amp;getHTTPHeader( 200, "text/plain" );
+   &amp;sendData( $data, $header );
+
+   my $output = "We were called for the URL &lt;b&gt;$request&lt;/b&gt;";
+
+   &amp;sendData( $data, $output );
+   return 1;
+}
+
+# Perl modules must finish with this line...
+1;
+</pre>
+<hr/>
+
+<p>&nbsp;All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
+
+<h4><a name="TOC85">Testing It</a></h4>
+<p>&nbsp;Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
+<p>&nbsp;Once that's done start the server and request the '/load/' via your browser.  All being well you'll see an output page containing the response from the server.</p>
+<p>&nbsp;If you receive a blank page you should investigate the contents of the server error file, (this will be printed to the console if you start the server with '--debug').</p>
+<p>&nbsp;Assuming that you got this far then we can move on to actually determining the server load - and coding the rest of the plugin.</p>
+
+<h4><a name="TOC86">Final Stages</a></h4>
+<p>&nbsp;One of the simplest ways of testing the server load would be to
+ look at the output of the 'uptime' command, which contains the current system load.</p>
+<p>&nbsp;The following code shows how this could be done:</p>
+
+<pre>
+	    my $uptime = `uptime`;
+	    chomp( $uptime );
+
+	    if ( $uptime =~ /load average: ([^,]+),/ )
+	    {
+		$text .= "&lt;b&gt;Current Load: $1&lt;/b&gt;\n";
+	    }
+</pre>
+
+<h4><a name="TOC87">The Finished Article</a></h4>
+<p>&nbsp;If you've followed along you should have code which looks this:</p>
+<ul>
+<li><a href="load.pm">load.pm - sample module</a></li>
+</ul>
+<p>&nbsp;The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
+
+<h4><a name="TOC88">Comments / Questions?</a></h4>
+<p>&nbsp;Any comments or questions can be posted to the <a href="/forum/">Forums</a> or the <a href="lists.html#Lists">developer mailing list</a>.</p>
+
+
+
+</td></tr></table>
+<p><hr /></p>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;</a>&gt;</strong><br />
+Page Last modified : 15 October 2003
+</td>
+<td>&nbsp;</td>
+<td align="right" valign="top">
+Copyright (c) 2001,2002,2003 Steve Kemp<br />
+Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.<br />
+</td></tr></table>
+</body></html>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>GNUMP3d - Security - GNU Project - Free Software Foundation (FSF)</title>
+<meta content="Steve Kemp" name="author" />
+<style type="text/css" media="all">@import url(style.css);</style>
+<link rel="icon" href="/favicon.ico" type="image/ico" />
+</head>
+<body bgcolor="#ffffff">
+
+<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
+<td valign="top" rowspan="5" width="200">
+<img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" width="129" height="122" />
+<p><b>GNU</b></p>
+<ul>
+<li><a href="/">GNU Project</a></li>
+<li><a href="http://www.gnu.org/philosophy/free-sw.html" title="Read about what Free Software is">Free Software</a></li>
+</ul>
+
+<p><b>GNUMP3d</b></p>
+<ul>
+<li><a href="index.html">About</a></li>
+<li> <a href="documents.html">Documentation</a> </li>
+<li> <a href="lists.html">Mailing Lists</a> </li>
+<li> <a href="FAQ.html">FAQ</a> </li>
+<li> <a href="download.html">Download GNUMP3d v2.6</a> </li>
+<li> <a href="cvs.html">CVS</a> </li>
+<li> <a href="developer.html">Developers</a> </li>
+<li> <a href="screenshots.html">Screenshots</a> </li>
+<li> <a href="logos.html">Logos</a> </li>
+<li> <a href="bugs.html">Bugs</a> </li>
+<li> <a href="links.html">Links</a> </li>
+<li> <a href="thanks.html">Thanks</a> </li>
+<li> <a href="history.html">History</a> </li>
+<li> <a href="dedication.html">Dedication</a> </li>
+</ul>
+
+<p><b>Interact</b></p>
+<ul>
+<li><a href="http://gnump3d.sourceforge.net/forum/">Forums</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">View Guestbook</a></li>
+<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi">Sign Guestbook</a></li>
+</ul>
+</td>
+<td valign="top">
+
+<!-- Page content -->
+<a name="Security"><!-- Anchor--></a>
+
+<h3><a name="TOC101">Security .. or why I think its safe</a></h3>
+
+<p>&nbsp;One of the goals of this project was to make sure that
+ the server was small, stable, and <i>secure</i>.</p>
+
+<h4><a name="TOC102">What does that mean?</a></h4>
+
+<p>&nbsp;By this I mean that your server should not be compromised,
+ in any way simply because it is running this software.</p>
+<p>&nbsp;With this in mind there are three important things that the
+ server should protect against:</p>
+
+<ol>
+<li>Nobody should be able to browse your filesystem, except that specific part which you make your server root</li>
+<li>Nobody should be able to crash the server, so that you can't use it. (A denial of service attack).</li>
+<li>Nobody should be able to trick the server into running code of their choosing</li>
+</ol>
+
+<h4><a name="TOC103">Confidence</a></h4>
+<p>&nbsp;I'm confident that these things can't happen, because I had them in mind when I was writing the software, but nobody is perfect and I would not like to suggest this software is perfect.</p>
+<p>&nbsp;Most of the common buffer overflows should be impossible due to the implementation language of Perl.  Likewise signal attacks, or format string attacks shouldn't be anything to worry about.</p>
+
+<h4><a name="TOC104">Vulnerabilities</a></h4>
+<p>&nbsp;Of all the common attacks I believe the only thing that this server is likely to be vulnerable to are "cross site scripting attacks" - this basically means that it may be possible for people to steal the cookies which you are using.</p>
+<p>&nbsp;As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
+
+<h4><a name="TOC105">Testing</a></h4>
+<p>&nbsp;I believe that my server, (this software), doesn't do allow anybody
+ to subvert your machine - and I've tested this to the best of my ability.</p>
+
+<h4><a name="TOC106">Security Notifications</a></h4>
+<p>&nbsp;After reading BugTrack, etc, I know that having a good
+ contact address is essential - my email address is listed at the bottom of each page on this website, so you shouldn't have too much difficulty in finding it ;)
+</p>
+<p>&nbsp;(If you wish you may use my <a href="skx@tardis.ed.ac.uk.gpg">gpg key</a>).</p>
+
+<h4><a name="TOC107">Recognition</a></h4>
+<p>&nbsp;Any researcher who discovers a hole in a current release will receive prominent credit upon the front page for a period of not less than one calender month after notifying me.</p>
+<p>&nbsp;<b>This only applies if</b> the author is contacted <i>before</i> making a disclosure; as any ethical researcher should.  (If you do this then I'm happy for you to post to bugtraq/cert/wherever - after all it's important to spread the news).</p>
+
+
+<h4><a name="TOC108">Past Vulnerabilities</a></h4>
+<p>&nbsp;To date there have been only one reported verified vulnerability in this server.</p>
+<ul>
+<li><a href="attacks.html#attacks">Malicious Password File Download</a>
+<ul>
+<li>by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; [Notifed 3/02/2003 - Fixed 3/02/2003]</li>
+</ul></li>
+</ul>
+
+
+
+
+</td></tr></table>
+<p><hr /></p>
+<table width="100%">
+<tr>
+<td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;</a>&gt;</strong><br />
+Page Last modified : 15 October 2003
+</td>
+<td>&nbsp;</td>
+<td align="right" valign="top">
+Copyright (c) 2001,2002,2003 Steve Kemp<br />
+Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.<br />
+</td></tr></table>
+</body></html>

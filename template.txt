@@ -1,0 +1,1664 @@
+.---------------------------------------------------------------------
+.-  template.txt  Template file for the GNUMP3d.org website.
+.-
+.-
+.define BASE      index
+.define EXT	  html
+.-
+.-  These variables get put into the header of each HTML file.
+.-
+
+.define TEMPLATE-VERSION $Revision: 1.1 $
+.-
+.-  The prelude.def file centralises various definitions that I don't
+.-  want to clutter-up this file with.  This is just one of my habits.
+.-
+.include prelude.def
+
+.---------------------------------------------------------------------
+.ignore page
+.page index.html=The GNU MP3/Media Streamer
+.build anchor Introduction
+
+.HEADING GNUMP3d - The GNU Streaming MP3 / Media Server
+
+<p>&nbsp;GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis files</a>, and other media.   It is designed to be:
+</p>
+<ul>
+<li>Small, stable, portable, self-contained, and <a href="$(Security)">secure</a>.</li>
+<li>Simple to <a href="$(Install)">install</a>, <a href="$(Config)">configure</a>, and <a href="$(Screenshots)">use</a>.</li>
+<li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
+</ul>
+
+<h4>GNUMP3d v2.6 Released</h4>
+<p>&nbsp;I am proud to announce the immediate availability of GNUMP3 v2.6, which can be found at the <a href="$(Download)">download page</a>.</p>
+<p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
+<ul>
+<li>Full support for internationlised interfaces.</li>
+<li>Several new plugins</li>
+</ul>
+
+<h4>Contribute</h4>
+<p>&nbsp;I still welcome the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, <a href="$(Logos)">logo designs</a>, <a href="$(Theme)">theme designs</a>, or ideas - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a> ;)</p>
+<p>&nbsp;I owe a large part of the success of this project to the many suggestions, and patches from <a href="$(Thanks)">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
+
+.---------------------------------------------------------------------
+.page documents.html=Documentation
+.build anchor Documentation
+
+.HEADING  Documentation for GNUMP3d
+
+<p>&nbsp;This page is the index of all the documentation for this
+   program - more documentation needs to be written.  If you wish
+  to volunteer then please send mail to one of the 
+  <a href="$(Lists)">mailing list</a>.</p>
+
+<ul>
+<li><a href="$(Install)">Installation Guide</a>
+<ul>
+<li><a href="$(gnump3d-index)">Working with the song database</a></li>
+</ul>
+<li><a href="$(Config)">Configuration guide</a></li>
+<li><a href="$(Developer)">Developer Documentation</a></li>
+<li><a href="$(FAQ)">Frequently Asked Questions</a></li>
+<li><a href="$(Bugs)">Known bugs</a></li>
+<li><a href="$(FAQ-platforms)">Supported Platforms</a></li>
+<li><a href="$(FAQ-players)">Supported MP3/OGG Players</a></li>
+<li><a href="$(Security)">Notes on security testing</a>
+<ul>
+<li><a href="$(attacks)">Past security attacks upon GNUMP3d</a> (1 to date)</li>
+</ul></li>
+<li><a href="$(Securing)">Notes on securing your music archive</a></li>
+<li><a href="$(TitleOverride)">Overriding the information displayed</a></li>
+<li><a href="$(Plugins)">Plugin Introduction Page</a>
+<li><a href="$(plugin-tutorial)">Plugin Creation Tutorial</a>
+<li><a href="$(Theme)">Themes Creation Documentation</a>.</li>
+<li><a href="$(Theme-advanced)">Advanced Theming Notes</a>.</li>
+</ul>
+
+<p>&nbsp;If you have detailed questions which you would like answered,
+  or are needing customizations, etc, then your best option <b>after</b>
+  reading the available documentation is to join one of the
+  <a href="$(Lists)">mailing lists</a>, or post a message in one of 
+ the <a href="/forum/">discussion forums</a>.</p>
+
+
+
+.---------------------------------------------------------------------
+.page lists.html=Mailing Lists
+.build anchor Lists
+
+.HEADING GNUMP3d Mailing Lists
+
+<p>&nbsp;There are several mailing lists which have been created for discussion
+ related to gnump3d - below you can find descriptions of each of them.
+</p>
+
+<h4>gnump3d-users</h4>
+<p>&nbsp;This is a list for discussions by users of the software, its
+ a handy place to make suggestions, share templates, and offer/receive
+ assistance from users.</p>
+<p>&nbsp;The list is <a href="http://mail.gnu.org/archive/html/gnump3d-users">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-users">subscribe/unsubscribe here</a></p>
+
+<h4>gnump3d-devel</h4>
+<p>&nbsp;This is a list for development discussions of the software.</p>
+<p>&nbsp;The list is <a href="http://mail.gnu.org/archive/html/gnump3d-devel">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-devel">subscribe/unsubscribe here</a></p>
+
+
+
+<h4>gnump3d-commits</h4>
+<p>&nbsp;This is a list for CVS commit notifications for this software.  Each commit to the programs <a href="$(CVS)">CVS Repository</a> will trigger a mail to this list.</p>
+<p>&nbsp;The list is <a href="http://mail.gnu.org/archive/html/gnump3d-commits">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-commits">subscribe/unsubscribe here</a></p>
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page version2.html=GNUMP3d v2.x
+.build anchor version2
+
+.HEADING GNUMP3d v2.x development
+
+<p>&nbsp;Version 1.0 of GNUMP3d was feature complete when it was released; to the limits I set myself when I originally started coding it.</p>
+
+<h4>Why another release, then?</h4>
+<p>&nbsp;For future versions of GNUMP3d I'd like to concentrate on improving the stability, and reliability of the current codebase - as well as adding some new features.</p>
+<p>&nbsp;Some of then new features I'm anticipating are:</p>
+<ul>
+<li>The ability to rate or vote for songs.</li>
+<li>An intergrated system to allow users to upload songs.</li>
+<li><i>Much</i> more powerful sorting and browsing options.</li>
+<li>A more open architechure - with more core functionality migrated to external plugins.</li>
+<li>The ability to view recently added music.</li>
+<li>Ideas from users??</li>
+</ul>
+
+
+<h4>Current Development</h4>
+<p>&nbsp;With the need to organize voting and ranking I'm tending towards the idea that some sort of database is required.  (This doesn't necessarily have to be a &quot;real&quot; database - flat files could well be good enough).</p>
+<p>&nbsp;To this end I started putting together a Perl release of GNUMP3d, this was originally intended to be a prototype system; but soon it was almost completely compatible with the existing release.  At this point I decided Perl was the way of the future!.</p>
+<p>&nbsp;If you'd like to look at the code you can see it online via the <a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d/">online gnump3d2 CVS repository</a> - to check your copy please see the instructions on the <a href="$(CVS)">CVS page</a></p>
+
+
+.---------------------------------------------------------------------
+.ignore page 
+.page install.html=Install Guide
+.build anchor Install
+
+
+.HEADING  Installing GNUMP3d
+
+
+<h4>Platforms</h4>
+<p>&nbsp;There's a list of all the supported, or tested, platforms
+ <a href="$(FAQ-platforms)">in the FAQ</a>.  If you are on one of those
+ then you should be able to run GNUMP3d without any problems.  (Essentially the softare should run as advertised under all Unix platforms with a recent version of Perl, and additionally Microsoft Windows platforms higher than Windows NT 4).</p>
+<p>&nbsp;If you try the software on a new platform then I'd be
+ very greatful if you could report it to me</p>
+
+<h4>Installation</h4>
+<p>&nbsp;Once you have <a href="$(Download)">downloaded</a> the source
+ code, (or retrieved it through <a href="$(CVS)">CVS</a>), you should
+ be able to install the software with a simple 'make install' on a typical Unix platform.</p>
+
+<p>&nbsp;More detailed information is contained in the 
+<a href="$(INSTALL)">INSTALL</a> file contained within the download.</p>
+<p>&nbsp;If you wish to run the software under Microsoft Windows you should probably read the <a href="$(READMEWIN)">Windows README</a> too, and optionally the <a href="$(README-SERVICE)">guide to running as a service</a>.</p>
+
+
+
+.---------------------------------------------------------------------
+.ignore page 
+.page config.html=Config File
+.build anchor Config
+
+
+.HEADING The Configuration File
+
+<h4>Where is it?</h4>
+<p>&nbsp;GNUMP3d is configured exclusively through the use of a
+ configuration file.
+</p>
+<p>&nbsp;By default GNUMP3d will read the system-wide
+ configuration file &quot;/etc/gnump3d/gnump3d.conf&quot; however it will read the file &quot;~/.gnump3drc&quot; in preference to the system wide file if it exists.</p>
+<p>&nbsp;If you wish to use a different configuration file then you may specify one with the command line option  "--config fileName".
+</p>
+
+
+<h4>What can I configure?</h4>
+
+<p>&nbsp;Each of the configuration file options of the current version are
+ listed below, alphabetically, along with an brief explaination of what they mean.</p>
+<p>&nbsp;More detailed information is included within the configuration file itself, as this is extensively commented.</p>
+<p>&nbsp;<b>Please note</b> that only the 'user', 'root', and 'port' are strictly necessary - the rest of the values can probably be left as-is, unless you have a special requirement..</p>
+
+<table border="1">
+<tr><td valign='top'><b>allowed_clients</b></td><td valign='top'><p>&nbsp;  This value allows you to set client IP addresses which are always allowed to connect to your server.  This is the logical counterpart to 'denied_clients'.</p></td></tr>
+<tr><td valign='top'><b>always_stream</b></td><td valign='top'><p>&nbsp;  When the server builds up links to files there are two ways they can be formed, a straight link to the file, or a link to a playlist containing that file.</p><p>&nbsp;  The two are subtly different.  When a playlist is formed, via 'always_stream=1' the song may begin playing immediately, without this the file will typically be downloaded in its entirity to the client and then played.</p><p>&nbsp;  It is recommended this option is enabled for most cases.</p></td></tr>
+<tr><td valign='top'><b>binding_host</b></td><td valign='top'><p>&nbsp;  If your machine has multiple ethernet interfaces then this setting will allow you to control which interface the server listens upon.</p></td></tr>
+<tr><td valign='top'><b>directory_format</b></td><td valign='top'><p>&nbsp;  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used in the output file for each directory name which is found.</p></td></tr>
+<tr><td valign='top'><b>enable_browsing</b></td><td valign='top'><p>&nbsp;  This value allows you to disable browsing your servers GUI interface.  This would be ideal if you just wished your clients to be restricted to random playing of songs.</p></td></tr>
+<tr><td valign='top'><b>enable_password_protection</b></td><td valign='top'><p>&nbsp;  Password protection is enabled by default, with this option you may disable it.</p><p>&nbsp;  Password protection requires that you place a file '.password' within each directory you wish to restrict access to.  This file contains lines of the form 'username:password'.</p></td></tr>
+<tr><td valign='top'><b>errorlog</b></td><td valign='top'><p>&nbsp;  The name of the file to write all error messages to.  When the server is ran in debug mode (with '\-\-debug' specified upon the command line) this file is not used, instead the output is sent to the console.</p></td></tr>
+<tr><td valign='top'><b>file_format</b></td><td valign='top'><p>&nbsp;  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used to generate the output for each file which is found.</p></td></tr>
+<tr><td valign='top'><b>hostname</b></td><td valign='top'><p>&nbsp;  The hostname setting allows you to control the hostname which is used in all the generated links within the GUI.  It may be useful if the server has multiple DNS names.</p></td></tr>
+<tr><td valign='top'><b>logfile</b></td><td valign='top'><p>&nbsp;  The name of the file to write all accesses to.  The logfile is written in the Apache common logfile format  so it may be analysed by common tools, including the gnump3d-top script.</p></td></tr>
+<tr><td valign='top'><b>maximum_connections</b></td><td valign='top'><p>&nbsp;   This gives the maximum number of simultaneous connections which the server will handle.  Any additional connections will be served a simple error page and denied access.</p></td></tr>
+<tr><td valign='top'><b>mime_file</b></td><td valign='top'><p>&nbsp;  As part of it's role the server is a fully featured HTTP server, which is capable of serving, or streaming, audio and video files.  To set the type of file correctly when serving it a registry is used.</p><p>&nbsp;  The mime.types file is that registry, and this setting should be used to point to the file you're using.</p></td></tr>
+<tr><td valign='top'><b>play_all_text</b></td><td valign='top'><p>&nbsp;  This setting contains the text which is displayed for the 'play all' links.</p></td></tr>
+<tr><td valign='top'><b>play_recursively_text</b></td><td valign='top'><p>&nbsp;  This setting controls the text which is displayed for the recursive playlist links.</p></td></tr>
+<tr><td valign='top'><b>plugin_directory</b></td><td valign='top'><p>&nbsp;  When the server is installed upon your system a collection of plugins are also installed, as some of these represent core features of the server.</p>
+<p>&nbsp;This setting allows you to tell the server where these plugins are located upon your system.  (This should be set by the installation script in versions 2.3 or higher).</p></td></tr>
+<tr><td valign='top'><b>port</b></td><td valign='top'><p>&nbsp;  The port upon which the server listens, this may be any port which is not already in use upon your machine.</p></td></tr>
+<tr><td valign='top'><b>recursive_randomize</b></td><td valign='top'><p>&nbsp;  This option controls whether recursive playlists are randomized, or sent in filename order.</p></td></tr>
+<tr><td valign='top'><b>read_time</b></td><td valign='top'><p>&nbsp;  This setting controls how long the server should listen for a request from incoming clients.  The default of 10 seconds should be sufficient.</p></td></tr>
+<tr><td valign='top'><b>root</b></td><td valign='top'><p>&nbsp;  The root directory where the media content is served from.  This should be the directory containing the MP3/OGG/Movie files which you wish to share.</p><p>&nbsp;  Note that if your server is running under an assumed userid, (see the 'user'configuration value), then that user must have permission to read the files in the root directory.</p></td></tr>
+<tr><td valign='top'><b>shoutcast_streaming</b></td><td valign='top'><p>&nbsp;  If this setting is enabled then shoutcast meta data will be mixed in with any songs which are streamed.</p></td></tr>
+<tr><td valign='top'><b>song_format</b></td><td valign='top'><p>&nbsp;  This is another template string which is used to control what information is displayed for audio files, (for example the name of the song, or the name and artist of a song).</p>
+<p>&nbsp;Much more details may be found in the configuration file itself, along with a few examples..</p></td></tr>
+<tr><td valign='top'><b>sort_order</b></td><td valign='top'><p>&nbsp; This setting allows you to control the order in which songs are listed upon the index pages.  This is especially useful within directories which contain a large number of files.</p></td></tr>
+<tr><td valign='top'><b>stats_program</b></td><td valign='top'><p>&nbsp;  This option allows you to specify the path to the companion program gnump3d-top</p>
+<p>&nbsp;When the server is asked to display the most popular directories, songs, users, etc, it actually invokes this script which presents the output for you.</p></td></tr>
+<tr><td valign='top'><b>stats_arguments</b></td><td valign='top'><p>&nbsp;This option allows you to specify additional options to pass to the gnump3d-top program when it is invoked by the server.</p>
+<p>&nbsp;See the man page for gnump3d-top for more details of supported options.</p></td></tr>
+<tr><td valign='top'><b>theme</b></td><td valign='top'><p>&nbsp;  The servers appearance may be changed by use of a collection of template files, these are known as themes.  This option allows you to specify which theme is presented by default.  (Clients may choose their own theme via the preferences user interface).</p></td></tr>
+<tr><td valign='top'><b>theme_directory</b></td><td valign='top'><p>&nbsp;  The directory where the themes exist may be specified here, if you're installing the software in an unusual configuration.</p></td></tr>
+<tr><td valign='top'><b>truncate_log_files</b></td><td valign='top'><p>&nbsp;  When the server starts it normally appends all new logging information to the existing logfiles which might be present.  With this setting you may force the server to truncate the files first.</p></td></tr>
+<tr><td valign='top'><b>use_client_host</b></td><td valign='top'><p>&nbsp;  This setting controls whether the client's 'Host:' header will be used, if it is sent.  This can be useful if you're performing SSH tunelling operations, or working on a server with more than one hostname.</p></td></tr>
+<tr><td valign='top'><b>user</b></td><td valign='top'><p>&nbsp;  If there is a user value specified then the server will become that user, after creating the listening socket.  This is important for security reasons.</p>
+<p>&nbsp;However please ensure that the user the server becomes once starting has read and execute permissions for the directory containing your music archive, and write permissions for the logfiles you choose.</p></td></tr>
+
+</table>
+
+
+
+.---------------------------------------------------------------------
+.ignore page 
+.page database.html=Indexing Your Music
+.build anchor gnump3d-index
+
+.HEADING Indexing Your Music
+
+<p>&nbsp;One of the goals of the <a href="$(version2)">version 2 rewrite</a> was to investigate ways of speeding up the server, and working with databases.</p>
+<p>&nbsp;To that end GNUMP3d v2.5 and higher will no longer directly read the song tags from your audio files upon each directory access, instead song tags are read from a &quot;database file&quot;</p>
+<p>&nbsp;When the server starts it will index all the files which are found beneath your defined 'root' directory - writing out the filename and tag informatin from each file it finds.</p>
+<p>&nbsp;At any time you may update the database by manually running the installed script 'gnump3d-index', this script may also give you statistics upon your archive if you run with the '--stats' argument:</p>
+
+<pre>
+skx@hell:~$ gnump3d-index  --stats
+Beneath /home/mp3 there are:
+505 audio files - totalling 2GB.
+</pre>
+
+<p>&nbsp;The song tag information is then used for searching your archive via the search plugin, and for building up the web interface.</p>
+<p>&nbsp;(The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.)</p>
+<p>&nbsp;To control where the database resides you may specify it's path within the <a href="$(Config)">gnump3d.conf</a> file - using the setting below:</p>
+<pre>
+#
+#  As a speedup and optimisation song tag is read via a companion script
+# which is called 'gnump3d-index'.  This will be run automatically when
+# the server starts if possible.
+#
+#  This next setting controls where that script will write its tag database
+# to.
+#
+tag_cache = /var/cache/gnump3d/song.tags
+</pre>
+<p>&nbsp;To keep this database up to date when you install the server it is recommended that you add a cron job to re-index your music once a day, or so.  (The <a href="http://www.debian.org/">Debian GNU/Linux</a> package will do this automatically when it is installed).</p>
+
+
+.---------------------------------------------------------------------
+.ignore page 
+.page securing.html=Securing Your Server
+.build anchor Securing
+
+.HEADING Securing Your Server
+
+
+<p>&nbsp;By default the server is open to the world; which means that
+ anybody who can connect to your server can browse or play any of your
+ available music, see your statistics, or perform searches.</p>
+
+<p>&nbsp;If you wish to impose tighter controls you have two options:</p>
+
+<ol>
+<li><a href="$(Securing-IP)">Restrict access by the IP Address of the client</a>.</li>
+<li><a href="$(Securing-Pass)">Restrict access via password protection</a>.</li>
+</ol>
+
+
+.build anchor Securing-IP
+<h3>IP Address Restriction</h3>
+<h4>Allowing Addresses</h4>
+
+<p>&nbsp;This is the simplest method of restricting which visitors can
+ browse and stream your music.  Edit the configuration file and include
+ all the IP addresses, or ranges which you'd like to be able to use your
+ via the 'allowed_clients' setting.
+</p>
+<p>&nbsp;If you wish to enable everybody to access the server then
+leave the setting as it is by default 'allowed_clients = all' - otherwise
+ follow the examples to limit access, eg:</p>
+
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+#  Limit the clients who can connect and use your server by IP address.
+#
+#  Multiple entries are allowed - simply seperate the values by ';' as
+# shown in some of the examples below.
+#
+#  Only people on the same subnet, (class C):
+# allowed_clients = 192.168.2.x
+#
+#  Only one machine may connect:
+# allowed_clients = 192.168.2.12
+#
+#  Everybody local, and one remote address:
+# allowed_clients = 192.168.2.x; 194.247.82.33
+#
+#  Everybody local, and one remote range:
+# allowed_clients = 192.168.2.x; 194.237.82.x
+#
+</pre>
+</td></tr></table>
+
+<h4>Denying Addresses</h4>
+<p>&nbsp;To complement the 'allowed_clients' option there is a matching
+ 'denied_clients' setting which allows you to deny particular address.</p>
+<p>&nbsp;The deny options <b>take precendence</b> over the allowed options,
+ so in the following example all the IP addresses in the 192.168.2.x range
+ have acesses except 192.168.2.2, and 192.168.2.44</p>
+
+
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+allowed_clients = 192.168.2.0/8
+denied_clients  = 192.168.2.2; 192.168.2.44
+</pre>
+</td></tr></table>
+
+
+.build anchor Securing-Pass
+<h4>Restrict access via password protection</h4>
+<p>&nbsp;You may also restrict access to the server by username + password.
+ This is enabled by default you just need to create a password file inside
+ your music repository.</p>
+<p>&nbsp;The password file must be called '<b>.password</b>' and should contain
+ a list of all the usernames and passwords which are accepted.  (Note that this file must be readable to the user which the server is running as).</p>
+<p>&nbsp;The password file is assumed to be in the following format:</p>
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+username1:password1
+username2:password2
+username3:password3
+...
+usernameN:passwordN
+</pre>
+</td></tr>
+</table>
+<p>&nbsp;If the visitor enters a valid username and password they will be
+ able to browse - otherwise they won't.</p>
+
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page title.html=Overiding Displayed Text
+.build anchor TitleOverride
+
+<h4>Overriding the information displayed</h4>
+<p>&nbsp;The server typically displays song tag information when it's listing songs, unfortunately this doesn't work for all audio formats, or for movies.</p>
+<p>&nbsp;To work around this problem I've created a simple solution which allows you to choose the text to be displayed for any filetype with a &quot;title file&quot;</p>
+<p>&nbsp;If you have a song/movie which you wish to have a particular title simply create a text file with the same name as the song and a ".title" suffix.</p>
+<p>&nbsp;Insert into this file the text you would like displayed, on one line.</p>
+<P>&nbsp;For example you can see the following directory listing:</p>
+<table><tr><td bgcolor="#CCCCCC">
+<pre>
+part1.mpeg
+part1.title
+</pre>
+</td></tr></table>
+<p>&nbsp;The file "part1.title" contains the text "Happy Birthday - Part One", which is actually displayed upon the index page.</p>
+
+
+
+
+.---------------------------------------------------------------------
+.page FAQ.html=FAQ
+.build anchor FAQ
+
+
+.HEADING Frequently Asked Questions
+
+
+<h4>General Questions</h4>
+<ol>
+<li><a href="$(FAQ-platforms)">What systems does it run on?</a></li>
+<li><a href="$(FAQ-players)">What MP3/OGG players are supported?</a></li>
+<li><a href="$(faq-lame)">Can you change the bitrate, in real-time?</a></li>
+<li><a href="$(faq-hack)">I've found a security hole...</a></li>
+<li><a href="$(faq-add)">Will you add ...?</a></li>
+<li><a href="$(faq-assoc)">I have the server setup, but I don't hear anything...</a></li>
+<li><a href="$(faq-more-info)">Where can I find more information?</a></li>
+<li><a href="$(faq-key)">Do you have a PGP key, or GPG key?</a></li>
+<li><a href="$(faq-donate)">I like this software - can I give you something?</a></li>
+<li><a href="$(faq-commercial)">Can I base a commercial product on this code?</a></li>
+<li><a href="$(faq-money)">You're just doing this to solicit freebies, aren't you?</a></li>
+</ol>
+
+<h4>Configuration Questions</h4>
+<ol>
+<li><a href="$(faq-reload-themes)">Do I have to restart the server to update the template files?</a></li>
+<li><a href="$(faq-hostname)">The server uses the wrong hostname, how do I change this?</a></li>
+<li><a href="$(faq-securing)">How do I secure my music archive?</a></li>
+</ol>
+
+<h4>Theme support questions</h4>
+<ol>
+<li><a href="$(faq-template)">Can I change the HTML that's generated?</a></li>
+<li><a href="$(faq-themes)">How do I build a theme?</a></li>
+<li><a href="$(faq-expand)">What variables are expanded in the templates?</a></li>
+<li><a href="$(faq-theme-location)">Can I load themes from other directories?</a></li>
+</ol>
+
+<h4>Plugin Questions</h4>
+<ol>
+<li><a href="$(faq-what-plugins)">What are plugins, why are they used?</a></li>
+<li><a href="$(faq-special)">What are the <i>special</i> URLS?</a></li>
+<li><a href="$(faq-stats)">I don't see any statistics</a></li>
+<li><a href="$(faq-plugin-overview)">How do I write a plugin?</a></li>
+</ol>
+
+<h4>Platform/Distribution Specific</h4>
+<ul>
+<li><a href="$(faq-tie-hash)">I get errors about TIEHASH under Mandrake 9.1</a></li>
+<li><a href="$(faq-mime)">I get errors about MIME::Base64</a></li>
+<li><a href="$(faq-win32)">Will the Perl server run under Windows?</a></li>
+<li>[<font color="red">Updated</font>] <a href="$(faq-win32-service)">Will the Perl server run as a service under Windows?</a></li>
+<li><a href="$(faq-macosx-startup)">How can I make the server run at startup on Mac OS X?</a></li>
+</ul>
+
+<h4>Development Questions</h4>
+<ul>
+<li><a href="$(faq-perl)">Why did you switch to perl?</a></li>
+<li><a href="$(faq-v2-help)">How can I help with version 2.x development?</a></li>
+</ul>
+
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+
+.build anchor FAQ-platforms
+
+<h4>What systems does it run on?</h4>
+<p>&nbsp;GNUMP3d is written in portable Perl, and should run on any system which is capable of running perl code.</p>
+<p>&nbsp;The only additional requirement is a working 'fork()' call - which in practice means the system must be either Unix, or running a recent version of <a href="$(ACTIVESTATE)">ActiveState Perl</a> for Windows</p>
+<p>&nbsp;Supported platforms include:</p>
+<ul>
+<li>GNU/Linux - <a href="http://www.redhat.com/">RedHat</a>, <a href="http://www.debian.org/">Debian</a>, <a href="http://www.suse.de/uk/">SuSE</a>, <a href="http://www.linux-mandrake.com/">Mandrake</a>, etc.</li>
+<li>Solaris - Sparc, and Intel.</li>
+<li><a href="http://www.freebsd.org/">FreeBSD</a>, <a href="http://www.netbsd.org/">NetBSD</a>, and <a href="http://www.openbsd.org/">OpenBSD</a>.</li>
+<li>Cygwin / Native Microsoft Windows.</li>
+</ul>
+
+
+.build anchor FAQ-players
+<h4>What MP3/OGG players are supported?</h4>
+<p>&nbsp;Any player which supports streaming over HTTP should work just fine,
+ although some will work better than others.</p>
+<p>&nbsp;Players which are reported to work well include:</p>
+<ul>
+<li><a href="http://www.xmms.org/">XMMS</a></li>
+<li><a href="http://www.winamp.com/">WinAmp</a></li>
+<li><a href="http://www.zinf.org/">Zinf</a> - Zinf Is Not FreeAmp</li>
+<li><a href="http://www.apple.com/itunes/">iTunes</a></li>
+</ul>
+
+
+.build anchor faq-lame
+<h4>Can you change the bitrate, in real-time?</h4>
+<p>&nbsp;Yes you can.  It's not as flexable as I'd like due to the nature of the serving.  Because in the majority of cases it's your MP3/OGG player which fetches the tracks I can't use cookies - they don't XMMS/FreeAmp/WinAmp don't support them.</p>
+<p>&nbsp;More documentation will be available online soon.
+
+
+.build anchor faq-hack
+<h4>I've found a security hole...</h4>
+<p>&nbsp;This software was designed to be secure, and I believe it is.
+ If you believe you've found a problem then please let me know.</p>
+<p>&nbsp;There's a <a href="$(Security)">specific security page</a>, in the documentation section, which describes the security of this server, and gives a contact address.</p>
+<p>&nbsp;Anybody who reports a legitimate security hole within a current release will receive credit and thanks upon our <a href="$(attacks)">security attacks</a> page.  We hope this we encourage responsible disclosure.</p>
+
+.build anchor faq-add
+<h4>Will you add ...?</h4>
+<p>&nbsp;If you have a suggestion then I'd be happy to hear, simply make a post in the <a href="http://gnump3d.sourceforge.net/forum/viewforum.php?f=3">Feature Request Forum</a>, or suggest it upon one of the <a href="$(Lists)">mailing lists</a>.</p>
+<p>&nbsp;If you have a patch, or a rough idea of how it would be implemented, then that is even better.</p>
+
+
+
+
+.build anchor faq-assoc
+<h4>I have the server setup, but I don't hear anything...</h4>
+<p>&nbsp;Check that you have the .m3u, .mp3, and .ogg extensions associated
+ with your music player - XMMS, WinAmp, FreeAmp, or whatever else you're using - otherwise you'll just have the files being downloaded and not played.</p>
+
+
+
+.build anchor faq-more-info
+<h4>Where can I find more information?</h4>
+<p>&nbsp;All of the currently available documentation is listed in the
+ <a href="$(Documentation)">documentation</a> index - if you're not 
+ satisfied with the information there, then you should checkout the
+ <a href="$(Lists)">mailing lists</a>, or <a href="http://www.gnump3d.org/forum/">forums</a>.</p>
+
+
+.build anchor faq-key
+<h4>Do you have a PGP key, or GPG key?</h4>
+<p>&nbsp;I have a key which may be used with <a href="http://www.gnupg.org/">GNU Privacy Guard</a> (gpg) - you may find it <a href="$(GPGKEY)">here</a>.</p>
+
+.build anchor faq-donate
+<h4>I like this software - can I give you something?</h4>
+<p>&nbsp;If you want to give me something 'big' then there's a small Amazon wishlist <a href="$(WISHLIST)">here</a>.  If you just wish to express your appreciation then please sign the <a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">guestbook</a>, or drop me an email - its always nice to receive feedback, (good <b>or</b> bad).</p>
+
+
+.build anchor faq-commercial
+<h4>Can I base a commercial product on this code?</h4>
+<p>&nbsp;Yes you can if you abide by the terms of the GNU Public License which
+ this software is distributed under.</p>
+<p>&nbsp;(If this isn't acceptable to you then you shouldn't use the software,
+ <i>or</i> get in touch and negotiate a different license).</p>
+
+
+.build anchor faq-money
+<h4>You're just doing this to solicit freebies, aren't you?</h4>
+<p>&nbsp;Nope.   Accepting donations was suggested by a friend when I
+ was having a hard time looking for a new job.  I'm entirely happy to give
+ away the source for free both in terms of speech, and beer. </p>
+<p>(I did find a new job BTW ;)</p>
+<p>&nbsp;I believe very strongly in the idea of free software, and stand
+ firmly behind the <a href="http://www.gnu.org/">FSF</a>, this software is  hopefully a small recompense to the community which has given us such wonderful applications as <a href="http://www.apache.org/">Apache</a>, <a href="http://www.perl.com/">Perl</a>, <a href="http://www.samba.org/">Samba</a>, <a href="http://www.squid-cache.org/">Squid</a>, and of course the <a href="http://www.kernel.org/">Linux Kernel</a>.</p>
+<p>&nbsp;If you choose to donate then that's appreciated but entirely optional.  I can quite honestly say that this code will continue to exist under the GPL for the rest of it's life - so it will always remain open.</p>
+
+
+<hr width="50%" />
+
+
+.build anchor faq-reload-themes
+<h4>Do I have to restart the server to update the template files?</h4>
+<p>&nbsp;No.  The theme files are cached but will be re-read when they are modified.  The only exception to this is the theme override file which will not be re-read.</p>
+<p>&nbsp;This makes it simple to modify the template files in place.</p>
+ 
+.build anchor faq-hostname
+<h4>The server uses the wrong hostname, how do I change this?</h4>
+<p>&nbsp;If you've got the server running, but the hostname which is
+ used in the playlists is wrong - then this section applies to you.</p>
+<p>&nbsp;Simply place lines such as the following in your gnump3d.conf file:</p>
+<table>
+<tr><td bgcolor="#CCCCCC">
+<pre>
+#
+#  Set the hostname that is used in all the generated links,
+# and playlists.
+#
+#  (This defaults to the name of the server machine, with no
+# domain suffix).
+#
+#  You won't need this unless the machine which is serving on
+# MUST be accessed via its fully qualified name.
+#
+#  See `binding_host' instead if you have a machine which has multiple
+# IP addresses
+#
+hostname = mp3d.foo.org
+</pre>
+</td></tr></table>
+
+.build anchor faq-securing
+<h4>How do I secure my music archive?</h4>
+<p>&nbsp;You can secure your archive in two ways, see the following URL's for details:</p>
+<ul>
+<li><a href="$(Securing-IP)">Restrict access by the IP Address of the browser</a>.</li>
+<li><a href="$(Securing-Pass)">Restrict access via password protection</a>.</li>
+</ul>
+
+
+<hr width="50%" />
+
+.build anchor faq-template
+<h4>Can I change the HTML that's generated?</h4>
+<p>&nbsp;Yes you can change almost everything!</p>
+<p>&nbsp;The server will read in a bunch of template files when it starts, from the directory /usr/share/gnump3d/$THEMENAME/ - edit those and the output will change.</p>
+<p>&nbsp;Note that you don't have to restart the server for changes in the template files to take effect, any changes you make will be reflected immediately.</p>
+<p>&nbsp;The name of the theme is set in the <a href="$(Config)">configuration file</a> -look for a line like 'theme = default' to see some of the available choices.</p>
+
+.build anchor faq-themes
+<h4>How do I build a theme?</h4>
+<p>&nbsp;Create a directory in /usr/share/gnump3d/ with the name of your theme 'foo', and copy all the files from /usr/share/gnump3d/default into it.  Edit those files to suit your tastes - then set theme=foo in your gnump3d.conf file.</p>
+<p>&nbsp;There's a more detailed explaination upon the <a href="$(Theme)">theme creation</a> page - after reading that you might want to look at the <a href="$(Theme-advanced)">advanced theming page</a>.</p>
+
+.build anchor faq-expand
+<h4>What variables are expanded in the templates?</h4>
+<p>&nbsp;The template files, which are mentioned <a href="$(faq-template)">above</a>, can contain special variables which are expanded upon display.
+</p>
+<p>&nbsp;The following variables are supported:</p>
+<table>
+<tr><td>Text</td><td>Expansion</td></tr>
+<tr><td>$DIRECTORY</td><td>The directory the user has browsed to</td></tr>
+<tr><td>$HOSTNAME</td><td>The name of the host upon which the server is running.</td></tr>
+<tr><td>$HOST</td><td>The name of the host upon which the server is running, minus any trailing domain.</td></tr>
+<tr><td>$VERSION</td><td>The version of the server</td></tr>
+</table>
+<p>&nbsp;There are more which control where the output will appear - these will be documented soon.</p>
+
+.build anchor faq-theme-location
+<h4>Can I load themes from other directories?</h4>
+<p>&nbsp;You can specify a different base directory for the themes by setting the following option in the gnump3d.conf file:</p>
+
+<table><tr><td bgcolor="#CCCCCC">
+<pre>
+#
+# Specify a different root directory for loading the themes from,
+# (this defaults to /usr/share/gnump3d).
+#
+theme_directory = /home/mp3/themes/
+</pre>
+</td></tr></table>
+
+<hr width="50%" />
+
+
+.build anchor faq-what-plugins
+<h4>What are plugins, why are they used?</h4>
+<p>&nbsp;Plugins are nothing more than external libraries which contain code the main program, gnump3d, can call.</p>
+<p>&nbsp;They are used to simplify the main code, and keep certain tricky or complicated, functions out of the main code where they would get in the way.</p>
+<p>&nbsp;A good example of this is the search plugin.  By moving out all the searching code from the main program it becomes easier for somebody to read the short plugin and add, for example, the ability to search by genre.</p>
+<p>&nbsp;For more information on creating a plugin see the later question <a href="$(faq-plugin-overview)">How do I write a plugin?</a></p>
+
+
+
+.build anchor faq-special
+<h4>What are the <i>special</i> URLS?</h4>
+<p>&nbsp;There are several <i>special</i> URL's which are handled by external plugins.</p>
+<p>&nbsp;(If you have installed extra plugins in addition to those which come with the server you may have more special URLs not listed here).</p>
+
+<table>
+<tr><td>URL</td><td>Meaning</td></tr>
+<tr><td>/bug/</td><td>This is the integrated bug reporting plugin.</td></tr>
+<tr><td>/last/</td><td>Will display the last 20 tracks which have been served, along with the directory they were served from.</td></tr>
+<tr><td>/now/</td><td>Will show you all the songs that are playing at the moment.</td></tr>
+<tr><td>/random/</td><td>Will present a list of 20/40/50 random tracks and allow you to play them, or regenerate another selection.</td></tr>
+<tr><td>/stats/</td><td>Will show the most popular songs, directories, and active users</td></tr>
+<tr><td>/search/</td><td>Will show the search from read from the search.html template.</td></tr>
+<tr><td>/search?q=foo</td><td>Will perform a search for the term "foo"</td></tr>
+<tr><td>/search?p=foo</td><td>Will return a playlist containing the results of searching for "foo"</td></tr>
+<tr><td>/prefs/</td><td>Will list the preferences page, allowing you to change theme, and more.</td></tr>
+</table>
+
+
+.build anchor faq-stats
+<h4>I don't see any statistics</h4>
+<p>&nbsp;First of all check that accesses to your server are being
+ logged correctly into the file you have specified with the 'access_log' configuration directive.</p>
+<p>&nbsp;If this is correct ensure that you have the "gnump3d-top" script
+ installed.</p>
+</p>
+<p>&nbsp;"gnump3d-top" is a Perl script, so test running it from the
+ command line, running 'gnump3d-top --help' should give you a few
+ ideas as to whats going on.</p>
+<p>&nbsp;If you have the script installed and apparently working
+there are two thing to check:</p>
+
+<ul>
+<li>Is the logfile is specified in the gnump3d.conf file as an <i>absolute</i> path?</li>
+<li>Are you changing to user 'nobody' in the config file; and if so can that user read the stats file?</li>
+</ul>
+
+
+.build anchor faq-plugin-overview
+<h4>How do I write a plugin?</h4>
+<p>&nbsp;Please see the <a href="$(Plugins)">plugin section</a> of the 
+ developer notes, and the <a href="$(plugin-tutorial)">plugin tutorial</a>.</p>
+
+
+<hr width="50%" />
+
+.build anchor faq-logfile
+<h4>I installed the RPM but the server won't start</h4>
+<p>&nbsp;This is almost certainly a problem with the logfile you're trying
+ to use not existing.</p>
+<p>&nbsp;There are two solutions to this:</p>
+<ul>
+<li>Create the directory where the logfile is going to be written : <b>mkdir /var/log/gnump3d</b>
+<li>Change the logfile setting in the 'gnump3d.conf' file to point to a directory which already exists, eg. 'logfile = /var/log/gnump3d.log'.</li>
+</ul>
+<p>&nbsp;For more discussion on this subject please see <a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=3">this thread</a> in the <a href="http://gnump3d.sourceforge.net/forum/viewforum.php?f=2">installation problem forum</a></p>
+
+.build anchor faq-tie-hash
+<h4>I get errors about TIEHASH under Mandrake 9.1</h4>
+<p>&nbsp;This suprises me, and I've not looked at it in depth.</p>
+<p>&nbsp;For the moment you can remove the lines which are complained about, <a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=118">see here for details</a></p>
+
+.build anchor faq-mime
+<h4>I get errors about MIME::Base64</h4>
+<p>&nbsp;I didn't include this in the distribution for version 2.0 of the server because I thought it was part of the basic Perl installation.</p>
+<p>&nbsp;As of release 2.2 this is no longer needed - I've included a minimal decoding module of my own; so please upgrade if you see this error.</p>
+
+.build anchor faq-win32
+<h4>Will the Perl server run under Windows?</h4>
+<p>&nbsp;Yes, see the instructions in the <a href="$(READMEWIN)">README.Windows</a> file - and ask upon <a href="$(Lists)">the lists</a> if you have problems.</p>
+
+
+.build anchor faq-win32-service
+<h4><font color="red">Updated</font> Will the Perl server run as a service under Windows?</h4>
+<p>&nbsp;Not natively no.</p>
+<P>&nbsp;However with some help from the Windows NT resource kit you can make it do so - there are some minimal instructions online below:</p>
+<ul>
+<li><a href="http://www.perlmonks.org/index.pl?node_id=230377">Making Perl code run as a Windows service.</a></li>
+</ul>
+<p>&nbsp;GoneCrazy was kind enough to send complete details of how to install this server as a service on Windows using the free (lite) <a href="http://www.firedaemon.com/">FireDaemon</a> tool:</p>
+<ul>
+<li><a href="$(README-SERVICE)">Complete Service Installation Guide from GoneCrazy</a></li>
+</ul>
+
+.build anchor faq-macosx-startup
+<h4>How can I make the server run at startup on Mac OS X?</h4>
+<p>&nbsp;Thanks to a contribution from Eric Lawrence some files, and instructions, are included with the current release.</p>
+<p>&nbsp;Please see instructions in the <a href="$(READMEMAC)">README.MacOSX</a> file.</p>
+
+<p>&nbsp;</p>
+<hr />
+<p>&nbsp;</p>
+
+.build anchor faq-perl
+<h4>Why did you switch to perl?</h4>
+<p>&nbsp;Originally I started coding in Perl because I wanted something fast, and simple to develop in, so that I could experiment with different database formats.</p>
+<p>&nbsp;However sooner than I realised I had recreated almost all the major pieces of code necessary to have a standalone GNUMP3d server.</p>
+<p>&nbsp;Partly this is because I'm familiar with perl, but partly it's because scripting languages are traditionaly quick to develop in.</p>
+<p>&nbsp;Staying with perl, and moving away from the C++ codebase is a big step, but I believe it is worthwhile because:</p>
+<ul>
+<li>This is a network server, which is limitted more by network bandwidth than execution speed.</li>
+<li>None of the nasty threading problems or memory management needs to be so difficult.</li>
+<li>Perl is a very mature and stable language for developing in</li>
+</ul>
+<p>&nbsp;A more detailed explaination of the server's evolution is given in the <a href="$(History)">history page</a>.</p>
+
+
+.build anchor faq-v2-help
+<h4>How can I help with version 2.x development?</h4>
+<p>&nbsp;In the same way that people have previously helped:</p>
+<ul>
+<li>Giving interesting, and useful, feedback, or suggestions.
+<li><a href="$(Logos)">Designing Logos</a>.</li>
+<li><a href="$(Theme)">Designing Themes</a>.</li>
+</ul>
+<p>&nbsp;Plus I still appreciate patches and code submissions; hopefully 
+ switching to perl will make this easier for other developers - as a lot
+ of people are familiar with the language.</p>
+
+
+.---------------------------------------------------------------------
+.page download.html=Download GNUMP3d v$(VERSION)
+.build anchor Download
+
+
+.HEADING Download GNUMP3d v$(VERSION)
+
+<p>&nbsp;The latest release is available from the links below, in a variety of different formats - simply choose the format with which you are most comfortable with.</p>
+
+<h4>Security / Paranoia</h4>
+<p>&nbsp;After several high profile server compromises in the past all the release files upon this page are signed with <a href="$(GPGKEY)">my GPG key</a> - to verify them run '<a href="http://www.gnupg.org/">gpg</a> --verify $file', after importing my key.</p>
+<p>&nbsp;If the signatures do not match please let me know - and <b>do not</b> install the software.</p>
+<table width="100%">
+<tr><td><b>Archive</b></td><td><b>GPG Signatures</b></td></tr>
+<tr bgcolor="#CCCCCC">
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.gz?download">gnump3d-$(VERSION).tar.gz</a></td>
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.gz.asc?download">gnump3d-$(VERSION).tar.gz.asc</a></td>
+</tr>
+<tr>
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.bz2?download">gnump3d-$(VERSION).tar.bz2</a></td>
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.bz2.asc?download">gnump3d-$(VERSION).tar.bz2.asc</a></td>
+</tr>
+<tr bgcolor="#CCCCCC">
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).zip?download">gnump3d-$(VERSION).zip</a></td>
+<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).zip.asc?download">gnump3d-$(VERSION).zip.asc</a></td>
+</tr>
+<tr ><td><a href="$(CHANGELOG)">ChangeLog</a></td><td>&nbsp;</td></tr>
+<tr bgcolor="#CCCCCC"><td><a href="$(README)">README</a></td><td>&nbsp;</td></tr>
+<tr><td><a href="$(INSTALL)">INSTALL</a></td><td>&nbsp;</td></tr>
+<tr bgcolor="#CCCCCC"><td><a href="$(READMEWIN)">README.Windows</a></td><td><a href="$(README-SERVICE)">Running As A Service On Windows</a></td></tr>
+<tr><td><a href="$(READMEMAC)">README.MacOSX</a></td><td>&nbsp;</td></tr>
+</table>
+
+<h4>Freshmeat Rating</h4>
+<p>&nbsp;If you came here from <a href="http://freshmeat.net/projects/gnump3d">Freshmeat</a>, then it'd be great if you could <a href="http://freshmeat.net/rate/20517/">rate</a> this software once you've tried it ;)</p>
+
+<h4>Unstable Code</h4>
+<p>&nbsp;&quot;Unstable&quot; code is always available through the public <a href="$(CVS)">CVS</a> repository.</p>
+
+<h4>Problems</h4>
+<p>&nbsp;If you have some problems with a released version then please 
+ see <a href="$(FAQ)">the FAQ</a> in the first instance.</p>
+<p>&nbsp;For problems with code from the <a href="$(CVS)">CVS</a> repository just wait for me to fix it - or ask your questions on one of the <a href="$(Lists)">mailing list</a>.</p>
+
+
+
+.---------------------------------------------------------------------
+.page cvs.html=CVS
+.build anchor CVS
+
+
+.HEADING CVS - Unstable releases
+
+
+<p>&nbsp;This page gives simple instructions on how to download
+ the latest version of GNUMP3d via anonymous CVS.</p>
+<p>&nbsp;All the development work for GNUMP3d is carried out via CVS, with regular check-ins.  Once there has been a large enough rise in features to justify it a <a href="$(Download)">release</a> is packaged together, and released.</p>
+<p>&nbsp;If you're interested in supplying fixes/patches, or want to live in <i>interesting times</i>, then the CVS version is what you want to be using.</p>
+
+<h4>Initial Download</h4>
+<p>&nbsp;To checkout the initial version of the code run the following
+ commands:</p>
+<table><tr><td bgcolor="#CCCCCC">
+<pre>
+cvs -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/gnump3d login
+cvs -z3 -d:pserver:anoncvs@subversions.gnu.org:/cvsroot/gnump3d co gnump3d
+</pre>
+</td></tr></table>
+<p>&nbsp;[When prompted for a password just press return - ie. use an empty password]</p>
+
+<h4>Getting updates</h4>
+<p>&nbsp;Once you have made the initial checkout, as described above,
+ you will be able to keep your code up-to-date, by changing to the gnump3d
+ directory and running:</p>
+
+<table><tr><td bgcolor="#CCCCCC">
+<pre>
+cvs -z6 -q update -P -d
+</pre>
+</td></tr></table>
+
+<h4>Viewing sources throught the web.</h4>
+<p>&nbsp;You can also view the repository throught the web,
+  by using <a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d">This link to CVSWeb</a>.</p>
+
+
+
+
+.---------------------------------------------------------------------
+.page developer.html=Developers
+.build anchor Developer
+
+.HEADING Developer documentation
+
+<p>&nbsp;One of the goals of this project was to provide a well
+ commented piece of code - this page serves as the start of that effort.</p>
+
+<h4>Source Code Documentation</h4>
+<p>&nbsp;The code should be fairly simple to understand, as there is extensive commentry provided within the source code itself.</p>
+<p>&nbsp;When I have more time I'll sketch out a rough overview of the code upon this page.</p>
+
+<ul>
+<li><a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d">Online Browsable CVS repository</a></li>
+<li><a href="$(Plugins)">Plugin Introduction Page</a>
+    <ul>
+    <li>Provides a simple programmers overview to the plugin system.</li>
+    </ul></li>
+<li><a href="$(plugin-tutorial)">Plugin Creation Tutorial</a>
+    <ul>
+    <li>This document guides you through the creation of your first plugin</li>
+    </ul></li>
+<li><a href="http://ample.sourceforge.net/developers.shtml">Notes on the Shoutcast meta-date format.  [Offsite]</a></li>
+</ul>
+
+
+
+.build anchor developer-theme
+<h4>Themes</h4>
+<p>&nbsp;GNUMP3d is completely themable now via HTML template files, the following documentation describes how to create a theme.</p>
+
+<ul>
+<li><a href="$(Theme)">Theme Creation Documentation</a></li>
+<li><a href="$(Theme-advanced)">Advanced Theme Creation Notes</a></li>
+</ul>
+
+
+.---------------------------------------------------------------------
+.ignore page 
+.page plugins.html=Plugin Development Notes
+.build anchor Plugins
+
+.HEADING Plugin Development Notes.
+
+
+<h4>GNUMP3d Plugin Support</h4>
+<p>&nbsp;GNUMP3d now has support for external plugins, which are Perl modules loaded upon demand by the server when incoming requests are recieved.</p>
+<p>&nbsp;The plugins may extend the server by handling the processing of a given URL.  When an incoming request is made each of the loaded plugins is given the opertunity to handle it, if none does so then the request is handled by the server proper.</p>
+<p>&nbsp;Included with each release are several 'core' plugins - these plugins are all considered to be part of the core of the server, because they're linked to from the included templates.  However if you wish to remove them you're entirely welcome to do so.</p>
+<p>&nbsp;Core plugins include:</p>
+<ul>
+<li>A plugin which handles the server statistics: '/stats/'</li>
+<li>A plugin which will display the last 20 tracks served '/last/'.</li>
+<li>A plugin for searching your archive for music '/search/'.</li>
+</ul>
+
+
+<h4>How it all works</h4>
+<p>&nbsp;Currently the plugin system is rather simplistic, it assumes that the name of a plugin matches the path upon the server which it handles.</p>
+<p>&nbsp;For example a plugin to handle the path "/stats/" must be called "stats.pm".</p>
+<p>&nbsp;This will change in the near future - although I will ensure that all user contributed plugins are updated to work with the new system when it is ready.</p>
+
+<h4>Creating A Plugin</h4>
+<p>&nbsp;This is the simple overview for creating a plugin, there's a more
+ detailed <a href="$(plugin-tutorial)">plugin creation tutorial</a> if you'd
+ like step by step instructions.</p>
+<p>&nbsp;In brief a plugin is a  Perl Module which lives in the 'lib/gnump3d/pluguins/' directory.  (Note that the plugin directory can be changed from the configuration file, or the command line).</p>
+<p>&nbsp;To add a new plugin simply create the file 'lib/gnump3d/plugins/foo.pm', making sure that you include the required functions.</p>
+
+<p>&nbsp;Your plugin will be called once for each incoming request
+ which matches the path it handles, where it will be assumed that the request was handled..</p>
+<p>&nbsp;Have a look at the source to the included plugins for more details,
+ '<a href="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/gnump3d/gnump3d/lib/gnump3d/plugins/COPYING.pm?rev=HEAD">COPYING.pm</a>' is the simplest plugin, (it just displays the GNU Public License, regardless of how it was called).</p>
+
+<h4>Todo</h4>
+<p>&nbsp;1. I need to plan plugin priorities.  What should happen if multiple
+ plugins all claim a given path?</p>
+<p>&nbsp;2. Could plugins be called for more than just regexps on the request path?</p>
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page ptutorial.html=Plugin Creation Tutorial
+.build anchor plugin-tutorial
+.HEADING Plugin Creation Tutorial
+
+<h4>Overview</h4>
+<p>&nbsp;This page contains a step by step guide to writing a plugin for
+ GNUMP3d.  This will be a simple one which will just display the current 
+ system load upon the server.</p>
+<p>&nbsp;For this we'll only make minimal use of the servers internal API.</p>
+
+<h4>Requirements</h4>
+<p>&nbsp;To follow along with this tutorial you'll need the following:</p>
+<ul>
+<li>Perl</li>
+<li>GNUMP3d v2.2+</li>
+</ul>
+
+
+<h4>Getting started.</h4>
+<p>&nbsp;To write a plugin we need to decide what path will be used to 
+ call it.  In this case the URL &quot;http://server:port/<b>load/</b>&quot;
+ will be used - as that seems like an appropriate access point for the
+ server functionality.</p>
+
+<h4>Adding The Plugin To The Source</h4>
+<p>&nbsp;With that decided we can start coding - the first thing to do
+ is to create a new source file within the 'lib/gnump3d/plugin' directory.</p>
+<p>&nbsp;We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
+
+
+<h4>Implementing the plugin</h4>
+<p>&nbsp;For our plugin we need to include some functions the main server expects.</p>
+<p>&nbsp;The mandatory functions are:</p>
+<ul>
+<li>getAuthor()
+<ul>
+<li>Returns a text string containing the authors name.</li>
+</ul></li>
+<li>getVersion()
+<ul>
+<li>Return a text string containing the version number of the plugin.</li>
+</ul></li>
+<li>handlePath( $ );
+<ul>
+<li>The main body of the plugin where a response is handled.</li>
+</ul></li>
+</ul>
+
+<p>&nbsp;The minimal implementation would be this:</p>
+<hr />
+<pre>
+# lib/gnump3d/plugins/load.pm
+
+sub getAuthor()
+{
+   return( "Steve Kemp" );
+}
+
+sub getVersion( )
+{
+   return( "1.0" );
+}
+
+sub handlePath( $ )
+{
+   my ( $request ) = ( @_ );
+
+   my $header = &amp;getHTTPHeader( 200, "text/plain" );
+   &amp;sendData( $data, $header );
+
+   my $output = "We were called for the URL &lt;b&gt;$request&lt;/b&gt;";
+  
+   &amp;sendData( $data, $output );
+   return 1;
+}
+
+# Perl modules must finish with this line...
+1;
+</pre>
+<hr/>
+
+<p>&nbsp;All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
+
+<h4>Testing It</h4>
+<p>&nbsp;Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
+<p>&nbsp;Once that's done start the server and request the '/load/' via your browser.  All being well you'll see an output page containing the response from the server.</p>
+<p>&nbsp;If you receive a blank page you should investigate the contents of the server error file, (this will be printed to the console if you start the server with '--debug').</p>
+<p>&nbsp;Assuming that you got this far then we can move on to actually determining the server load - and coding the rest of the plugin.</p>
+
+<h4>Final Stages</h4>
+<p>&nbsp;One of the simplest ways of testing the server load would be to
+ look at the output of the 'uptime' command, which contains the current system load.</p>
+<p>&nbsp;The following code shows how this could be done:</p>
+
+<pre>
+	    my $uptime = `uptime`;
+	    chomp( $uptime );
+
+	    if ( $uptime =~ /load average: ([^,]+),/ )
+	    {
+		$text .= "&lt;b&gt;Current Load: $1&lt;/b&gt;\n";
+	    }
+</pre>
+
+<h4>The Finished Article</h4>
+<p>&nbsp;If you've followed along you should have code which looks this:</p>
+<ul>
+<li><a href="load.pm">load.pm - sample module</a></li>
+</ul>
+<p>&nbsp;The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
+
+<h4>Comments / Questions?</h4>
+<p>&nbsp;Any comments or questions can be posted to the <a href="/forum/">Forums</a> or the <a href="$(Lists)">developer mailing list</a>.</p>
+
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page theme.html=Theme Creation
+.build anchor Theme
+
+.HEADING Theme Creation
+
+<p>&nbsp;GNUMP3d supports the idea of themes, a collection of template files
+ which can be used to alter the appearance of the server.</p>
+<p>&nbsp;Several themes will be installed when you install the server, such as 'LaFrere', 'Nausicaa', and 'default' - each of the supplied themes is shown upon the <a href="$(Screenshots)">screenshots page</a>.</p>
+
+<p>&nbsp;A theme consists of nothing more than a directory containing a number
+ of HTML files.  The theme name is the name of the directory which contains these files, (by default all themes will be installed in /usr/share/gnump3d).</p>
+
+<h4>HTML Templates</h4>
+<p>&nbsp;The output of the server is generated by inserting text into
+ one of the template files.  Each of the template files is used for a 
+ different type of output:</p>
+<table border="1">
+<tr><td><b>File</b></td><td><b>Purpose</b></td></tr>
+<tr><td>index.html</td><td>Used for displaying directory listings.</td></tr>
+<tr><td>error.html</td><td>Used for all error output.</td></tr>
+<tr><td>plugin.html</td><td>A generic template which can be used by any plugin.</td></tr>
+<tr><td>search.html</td><td>Used for displaying the search form.</td></tr>
+<tr><td>stats.html</td><td>Used for showing song/client statistics.</td></tr>
+<tr><td>results.html</td><td>Used for displaying search results.</td></tr>
+</table>
+
+<h4>Other files</h4>
+<p>&nbsp;Other files may also be placed within the theme directory, for example any graphics or stylesheets you theme requires.</p>
+<p>&nbsp;Files which are placed in the theme directory should be referred to via absolute paths within your HTML files.</p>
+<p>&nbsp;For example if your theme contains an image used as a logo, 'logo.jpg' it should be placed in /usr/share/gnump3d/your-theme-name/logo.jpg.  And in the HTML files it should be referred to as &lt;img src="/logo.jpg"&gt;  (ie. absolutely)</p>
+
+<h4>Theme Overrides</h4>
+<p>&nbsp;The 'gnump3d.conf' configuration file is where the output formats for
+ files and directories is specified.  Rather than requiring the user to 
+ change these settings manually when changing themes it is possible to 
+ <i>override</i> some of these settings in a theme configuration file,
+ 'config.ini'.</p>
+<p>&nbsp;The following settings may be overridden:</p>
+<ul>
+<li>song_format</li>
+<li>file_format</li>
+<li>directory_format</li>
+</ul>
+<p>&nbsp;More overrides may become possible if it becomes obvious they are needed.</p> 
+
+<h4>Theme Credit</h4>
+<p>&nbsp;If you include a file 'AUTHOR' within your theme directory the first line of this will be read and displayed next to your themes name upon the preferences page.</p>
+<p>&nbsp;This file may contain HTML tags, making it ideal for displaying your name, and linking to your homepage.</p>
+
+
+<h3>Advanced Theming</h3>
+<p>&nbsp;Since version 2.3 GNUMP3d supports the ability to include other files, and to include the output of commands.</p>
+<p>&nbsp;See the <a href="$(Theme-advanced)">advanced theming page</a> for further details.</p>
+
+
+<h4>Questions?</h4>
+<p>&nbsp;If after studying the supplied themes you still have some questions about how the system works, or are having problems achieving a particular effect then feel free to mail me, or the <a href="$(Lists)">mailing lists</a></p>
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page advancedtheming.html=Advanced Theme Creation Notes
+.build anchor Theme-advanced
+
+.HEADING Advanced Theme Creation Notes
+
+<p>&nbsp;After reading the <a href="$(Theme)">theme creation notes</a>
+ there may be some more things you wish to do, things that are outside
+ the scope of most themes.</p>
+<p>&nbsp;This page suggests some interesting things you can do to
+ make your work simpler, and the user experience more fun.</p>
+
+<h3>File Inclusion</h3>
+<p>&nbsp;Within the template files themselves you may include other
+ files, such as images and stylesheets - this is all standard HTML.</p>
+<p>&nbsp;In addition to this, though, you can include snippets of HTML
+ from other files, which may be handy for creating menus, etc.</p>
+<p>&nbsp;The process by which this works is very simple; and very similar
+ to how Server Side Includes work with the <a href="http://httpd.apache.org/">Apache Webserver</a>.</p>
+<p>&nbsp;To include a file 'menu.html' from within your template directory
+ insert the following code into your file:</p>
+<pre>
+&lt;!-- include="menu.html" --&gt;
+</pre>
+<p>&nbsp;The file will be read an inserted into your output.  (Note that the inserted files may have any extension, and will be read from the template directory if they're not fully qualified).</p>
+
+<h3>Including Program Output</h3>
+<p>&nbsp;In a similar way to includings you can include the output of
+ commands within your HTML files.</p>
+<p>&nbsp;This could be used for displaying the server load, or displaying
+ a random quotation with the Unix fortune program.</p>
+<p>&nbsp;Usage is as follows:</p>
+<pre>
+&lt;!-- exec="/bin/cmd argumetns .." --&gt;
+</pre>
+
+<h3>Other things?</h3>
+<p>&nbsp;If you can think of other things which you would like to see
+ let me know and I'll think of adding them.</p>
+
+
+
+.---------------------------------------------------------------------
+.page screenshots.html=Screenshots
+.build anchor Screenshots
+
+
+.HEADING Screenshots
+
+<p>&nbsp;Below you can find a collection of screenshots from the
+ latest version of GNUMP3d.</p>
+<p>&nbsp;Each of these shots shows the main index page, with a different theme loaded - Other things such as the preferences page, the search page, and the statistics pages are not visible.</p>
+<p>&nbsp;Click upon the image to load the full sized version.</p>
+
+<table>
+<tr>
+<td><a href='screenshots/thexder.jpg'><img src='screenshots/thumb-thexder.jpg' s
+ize='400' width='400' alt='The theme thexder' title='The theme thexder'>
+</a></td>
+<td><a href='screenshots/frere.jpg'><img src='screenshots/thumb-frere.jpg' size=
+'400' width='400' alt='The theme La Frere title='The theme LaFrere'></a></td
+>
+</tr>
+<tr>
+<td><a href='screenshots/nausicaa.jpg'><img src='screenshots/thumb-nausicaa.jpg'
+ size='400' width='400' alt='The theme Nausicaa' title='The theme Nausicaa'></a></td>
+<td><a href='screenshots/red-gray.jpg'><img src='screenshots/thumb-red-gray.jpg'
+ size='400' width='400' alt='The theme red gray' title='The theme red-gray'></a></td>
+</tr>
+<tr>
+<td><a href='screenshots/simple.jpg'><img src='screenshots/thumb-simple.jpg' siz
+e='400' width='400' alt='The theme simple' title='The theme simple'></a>
+</td>
+<td><a href='screenshots/split.jpg'><img src='screenshots/thumb-split.jpg' size=
+'400' width='400' alt='The theme split' title='The theme split'></a></td
+>
+</tr>
+<tr>
+
+<td><a href='screenshots/default.jpg'><img src='screenshots/thumb-default.jpg' s
+ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
+</a></td>
+
+<td valign="center" align="center"><b>Your theme here?</b></td>
+</tr>
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page security.html=Security
+.build anchor Security
+
+.HEADING Security .. or why I think its safe
+
+<p>&nbsp;One of the goals of this project was to make sure that
+ the server was small, stable, and <i>secure</i>.</p>
+
+<h4>What does that mean?</h4>
+
+<p>&nbsp;By this I mean that your server should not be compromised,
+ in any way simply because it is running this software.</p>
+<p>&nbsp;With this in mind there are three important things that the
+ server should protect against:</p>
+
+<ol>
+<li>Nobody should be able to browse your filesystem, except that specific part which you make your server root</li>
+<li>Nobody should be able to crash the server, so that you can't use it. (A denial of service attack).</li>
+<li>Nobody should be able to trick the server into running code of their choosing</li>
+</ol>
+
+<h4>Confidence</h4>
+<p>&nbsp;I'm confident that these things can't happen, because I had them in mind when I was writing the software, but nobody is perfect and I would not like to suggest this software is perfect.</p>
+<p>&nbsp;Most of the common buffer overflows should be impossible due to the implementation language of Perl.  Likewise signal attacks, or format string attacks shouldn't be anything to worry about.</p>
+
+<h4>Vulnerabilities</h4>
+<p>&nbsp;Of all the common attacks I believe the only thing that this server is likely to be vulnerable to are "cross site scripting attacks" - this basically means that it may be possible for people to steal the cookies which you are using.</p>
+<p>&nbsp;As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
+
+<h4>Testing</h4>
+<p>&nbsp;I believe that my server, (this software), doesn't do allow anybody
+ to subvert your machine - and I've tested this to the best of my ability.</p>
+
+<h4>Security Notifications</h4>
+<p>&nbsp;After reading BugTrack, etc, I know that having a good 
+ contact address is essential - my email address is listed at the bottom of each page on this website, so you shouldn't have too much difficulty in finding it ;)
+</p>
+<p>&nbsp;(If you wish you may use my <a href="$(GPGKEY)">gpg key</a>).</p>
+
+<h4>Recognition</h4>
+<p>&nbsp;Any researcher who discovers a hole in a current release will receive prominent credit upon the front page for a period of not less than one calender month after notifying me.</p>
+<p>&nbsp;<b>This only applies if</b> the author is contacted <i>before</i> making a disclosure; as any ethical researcher should.  (If you do this then I'm happy for you to post to bugtraq/cert/wherever - after all it's important to spread the news).</p>
+
+
+<h4>Past Vulnerabilities</h4>
+<p>&nbsp;To date there have been only one reported verified vulnerability in this server.</p>
+<ul>
+<li><a href="$(attacks)">Malicious Password File Download</a>
+<ul>
+<li>by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; [Notifed 3/02/2003 - Fixed 3/02/2003]</li>
+</ul></li>
+</ul>
+
+
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page attacks.html=Past Security Attacks
+.build anchor attacks
+
+.HEADING Past Security Attacks 
+
+ <p>&nbsp;In the interests of full disclosure this page will stand as a permanent record of any security vulnerabilities which have been discovered in the server.</p>
+<p>&nbsp;To date I'm pleased that there has only been one serious problem.  Granted this is one too many, but it's not a bad record</p>
+
+
+<h4>GNUMP3d v2.0 Password File Weakness</h4>
+<p>&nbsp;GNUMP3d supports two simple methods of securing access to your music archive, (these are described more fully <a href="$(Securing)">here</a>), IP address access control and a password system.</p>
+<p>&nbsp;The password system relies upon their being a file within the music archive containing a list of usernames and passwords which may be used to access the system.</p>
+<p>&nbsp;When this system was created I was careful to deny browsers the ability to download this file - as part of the re-write in Perl I missed this important step.</p>
+<p>&nbsp;This meant that if password protection were in use it would be possible for an <i>authentificed</i> user to download the password file - gaining access to all other account names and passwords.</p>
+</ul>
+<p>&nbsp;This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
+<p>&nbsp;(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
+
+
+
+
+.---------------------------------------------------------------------
+.page logos.html=Logos
+.build anchor Logos
+
+.HEADING User Contributed Logos
+
+<p>&nbsp;I'm not so good at designing logos, so in a previous release
+ I asked for users to contribute any logos they might create.</p>
+
+<p>&nbsp;If you're of the artistic persuasion, or if you think that
+ you could supply something better - then I'd love to see your work.
+ If I receive a few more donations, I could arrange a vote to see which
+ people prefer...</p>
+
+
+<p>&nbsp;Please click on the images to see them full size.</p>
+
+<table align="center">
+<tr>
+    <td>
+<a href="logo.jpg">
+.IMAGE "thumbs/logo.jpg"
+</a>
+    </td>
+    <td>
+<a href="logo2.jpg">
+.IMAGE "thumbs/logo2.jpg"
+</a>
+    </td>
+</tr><tr>
+    <td>
+<a href="logo3.jpg">
+.IMAGE "thumbs/logo3.jpg"
+</a>
+    </td>
+    <td>
+<a href="logo4.jpg">
+.IMAGE "thumbs/logo4.jpg"
+</a>
+    </td>
+</tr><tr>
+    <td>
+<a href="logo6.jpg">
+.IMAGE "thumbs/logo6.jpg"
+</a>
+    </td>
+    <td>
+<a href="logo7.jpg">
+.IMAGE "thumbs/logo7.jpg"
+</a>
+    </td>
+</tr><tr>
+    <td>
+<a href="logo9.jpg">
+.IMAGE "thumbs/logo9.jpg"
+</a>
+    </td>
+    <td>Your logo here?</td>
+</tr>
+</table>
+
+
+
+<p>&nbsp;These logos were contributed by :</p>
+<ul>
+<li>Boris Kurktchiev:</li>
+<li>Bill Kerr.</li>
+<li>Russell Beattie.</li>
+<li>Grant Miner.</li>
+<li>Kyle Vice.</li>
+<li>jmpnthfire.</li>
+</ul>
+
+
+.---------------------------------------------------------------------
+.page bugs.html=Bugs
+.build anchor Bugs
+
+.HEADING Known Bugs
+
+<p>&nbsp;This page contains a summery of the known bugs within the software,
+ some of these might have been fixed in the <a href="$(CVS)">CVS repository</a> by the time you read this.</p>
+<p>&nbsp;The list will be updated after every release to keep it current.</p>
+
+<ul>
+<li><a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=61">Chinese Directory names don't work.</a>
+<ul>
+<li>Verified.  I've yet to fix this however.</li>
+</ul></li>
+</ul>
+
+
+
+.---------------------------------------------------------------------
+.page links.html=Links
+.build anchor Links
+
+
+.HEADING Links
+
+<p>&nbsp;This is a small collection of links, to sites that are of
+ interest to me, and maybe others.
+</p>
+
+<dl>
+<dt><b>Personal</b></dt>
+<dd>&nbsp;<a href="http://www.steve.org.uk/">My homepage</a> - split between free software for Windows, and Body Piercing.  A great combination ;)
+</dd>
+
+<dt><b>GNUMP3d</b></dt>
+<dd>&nbsp;The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.  This site makes use of the excellent <a href="http://www.phpbb.org/">PHP Bulletin Board</a>, worth a look if you want something similar to <a href="/forum/">these forums</a>.</dd>
+
+<dt><b>Distributions with GNUMP3d</b></dt>
+<dd>&nbsp;<a href="http://www.debian.org/">Debian GNU/Linux</a>, <a href="http://www.gentoo.org/">Gentoo GNU/Linux</a>, <a href="http://www.freebsd.org/">FreeBSD</a> - it is also be included in the professional release of their <a href="http://www.suse.de/uk/">SuSE GNU/Linux</a> distribution.</dd>
+
+<dt><b>Perl For Windows</b></dt>
+<dd>&nbsp;To run the GNUMP3d you'll need to make sure you have a recent copy of <a href="$(ACTIVESTATE)">ActiveState Perl</a> installed.</dd>
+
+<dt><b>Other Streaming Servers</b></dt>
+<dd>&nbsp;There are other servers which do a similar job to GNUMP3d - here are a couple of them:  <a href="http://ample.sf.net/">Ample</a>, and <a href="http://www.icecast.org/">IceCast</a>.</dd>
+
+<dt><b>More complicated servers</b></dt>
+<dd>&nbsp;There are a few more complicated systems designed to allow you to share your music <a href="http://kplaylist.com/">KPlaylist</a> is one of the prettiest, and <a href="http://spookyworld.dnsalias.com/projects/tvdinner">Tv Dinner</a> looks very comprehensive.  Both of these streamers require the user of a webserver and a database.</dd>
+
+<dt><b>GNU</b></dt>
+<dd>&nbsp;None of this work would have been possible without the existance and inspiration of the <a href="http://www.gnu.org/">GNU</a> project who kindly provide hosting for this site and allowed it to become part of their project.</dd>
+
+<dt><b>MP3 Players</b></dt>
+<dd>&nbsp;The following are my two favourite MP3 players : <a href="http://www.freeamp.org/">FreeAmp</a> / <a href="http://www.xmms.org/">XMMS</a>.  (<a href="http://www.winamp.com/">WinAmp</a> is also widely used on Microsoft platforms).</dd>
+
+<dt><b>Development Tools</b></dt>
+<dd>&nbsp;<a href="http://www.cvshome.org">CVS</a>, the Concurrent Versioning System, <a href="http://www.imatix.com/html/htmlpp/">HTMLPP</a>, the HTML preprocessor, <a href="http://freshmeat.net/projects/manedit">manedit</a> for creating the manpages</a>, and of course <a href="http://www.gnu.org/software/emacs/emacs.html">GNU Emacs</a>.</dd>
+
+
+</dl>
+
+
+
+.---------------------------------------------------------------------
+.page thanks.html=Thanks
+.build anchor Thanks
+
+
+.HEADING Thanks
+
+<p>&nbsp;Many people have contributed to this application server,
+ all of whom have been mentioned in the '<a href="$(AUTHORS)">AUTHORS</a>' file.</p>
+<p>&nbsp;Some people deserve extra mention for truly outstanding 
+ help, feedback, or contributions.</p>
+<p>&nbsp;Special thanks go out to the following people and groups:
+</p>
+<ul>
+<li>Eric Lawrence for contribution comments on running the code under Mac OS X</li>
+<li>Stefan Podkowinski for <a href="http://mplib.sourceforge.net">mplib</a>  (This is no longer being used, but it was very helpful)</li>
+<li>Colin Tinker for his previous work contributing RPM packages, and frequent good suggestions.</li>
+<li>Rodolphe Quiedeville for the two <a href="$(Screenshots)">stunningly attractive theme's</a> he has contributed.</li>
+<li>David H&auml;rdeman.</li>
+<li>Tahara Ryozo for early contributions.</li>
+<li>The combined readership of the <a href="http://groups.google.com/groups?group=comp.unix.programmer">comp.unix.programmer</a> newsgroup.</li>
+<li>The <a href="http://www.vorbis.com/">OGG Vorbis</a> team for making a great open Codec</li>
+<li>The members of the <a href="$(Lists)">gnump3d-users mailing list</a></li>
+<li>Everybody who contributed a <a href="$(Logos)">logo</a>.</li>
+</ul>
+
+<h4>Special Thanks</h4>
+
+<p>&nbsp;Special thanks go to the individuals who have sent me
+ items from my <a href="$(WISHLIST)">Amazon Wishlist</a>.  Especially the individual who purchased the <a href="http://www.amazon.co.uk/exec/obidos/ASIN/1578701902/ref=wl_em_to/ref=cm_mp_wli_/026-3911955-7842852">Autoconf</a> book for me, and Scott Lesnet who donated <a href="http://www.amazon.co.uk/exec/obidos/ASIN/B00005AXSH/ref=wl_em_to/ref=cm_mp_wli_/202-5360387-3557455">a USB webcam</a> - which is now being used <a href="http://www.steve.org.uk/Cam/">here</a>.</p>
+
+<p>&nbsp;(I've since discovered that the Autoconf book is <a href="http://sources.redhat.com/autobook/">available online</a> - but I'm glad I've got the physical copy to read).</p>
+
+
+
+.---------------------------------------------------------------------
+.page history.html=History
+.build anchor History
+
+
+.HEADING The History of GNUMP3d
+
+<p>&nbsp;After receiving a few emails from interested individuals I've decided to document the history of this server here.</p>
+<p>&nbsp;I've had a large MP3 collection for a few years now which I've ripped from my large CD collection.</p>
+<p>&nbsp;(Nowadays I prefer to encode my songs as <a href="http://www.vorbis.com/">OGG Vorbis files</a> - but I'd guess my archive is 50/50 at the moment).</p>
+
+<h4>Introducing Edna</h4>
+<p>&nbsp;Once I'd setup my home network (three GNU/Linux machines) I wanted a simple solution for streaming them from a central location.  After looking around for a while I came across <a href="http://edna.sourceforge.net/">Edna</a> which is a small media server written in Python.</p>
+<p>&nbsp;Edna sufficed my needs for a very long time.  Although it appears that all practical development has ceased it serves it's purpose extremely well.</p>
+
+<h4>Edna's deficiencies</h4>
+<p>&nbsp;After a few months use I found that I was missing several things which would have made the server a lot nicer - Such as the ability to search the archive, and view statistics.</p>
+<p>&nbsp;Unfortunately my Python knowledge is minimal.  I hacked around with a for a little while but then decided to recode the server in Perl, I did this because it seemed sensible to move from one scripting language to another.</p>
+
+<h4>The Perl Server</h4>
+<p>&nbsp;The perl server whas quite honestly a mess.  I only used it for a short while before thinking of recoding it in C.</p>
+<p>&nbsp;This was mostly due to me attempting to rewrite the Python code in Perl, something that was a mistake; picking a more appropriate design would probably have resulted in a great server right from the start.</p>
+
+<h4>The C server</h4>
+<p>&nbsp;As an excuse to play with writing a server in C with threading support I began to recode the server one rainy weekend.  Although it wasn't very complete, in 2 days I'd managed to build a nice simple server which did the basic listing and streaming of MP3's.  This sufficed my needs for a short while.</p>
+<p>&nbsp;The C code was released to <a href="http://www.freshmeat.net/projects/gnump3d/">Freshmeat.net</a> on the following Monday.</p>
+<p>&nbsp;I received around 20 emails that week from users who liked it.  To my intense suprise I actually started to recieve patches for various things too.</p>
+<p>&nbsp;Like many other developers I'd released software before but this was the first time I'd received patches from multiple users in such a short amount of time.  (I put this down to the fact that there aren't many simple streaming servers, and the server has the magic three letters 'MP3' in its name ;).</p>
+<p>&nbsp;Development continued with regular bugfix releases and feature updates.</p>
+
+<h4>The Move To C++</h4>
+<p>&nbsp;After a few releases it became apparent that there were several problems with the codebase that weren't going to be simple to fix.  (Mostly because of complications with the multi-threaded nature of the server)</p>
+<p>&nbsp;The flaws in the codebase were primarily concerned with string handling and memory management.  (Two areas where C is traditionaly prone to misuse and abuse).</p>
+<p>&nbsp;I've previously written a lot of code in Java but I didn't want to alienate any users who were without a Java runtime environment.  This meant that C++ was a natural choice for the new implementation as it led to a natural reuse of the existing code.</p>
+<p>&nbsp;(Looking back on it maybe I would have been better of going for Java; it has built in support for both threading and networking - who can tell what the server would look like if I'd decided to go with Java instead?)</p>
+<p>&nbsp;Migrating the code to C++ took a couple of days.  Really making the code object orientated took slightly longer - but eventually it was done.</p>
+<p>&nbsp;There were a few problems with the first C++ release, but they were fixed fairly quickly and know I made the correct choice in doing the re-write.</p>
+<h4>More Users</h4>
+<p>&nbsp;After a while I started getting curious as to how many users I had - so I started running websearches - this is when I discovered it had made it into Gentoo GNU/Linux, and the FreeBSD ports collection.</p>
+<p>&nbsp;Many people were beginning to complain that the server was too hard to modify; which I thought was a shame, especially since I'd put such a lot of effort into the plugin system.</p>
+<p>&nbsp;Two other problems were starting to show up:</p>
+<uL>
+<li>Buggy versions of the standard C++ library causing random crashes
+<li>The difficulty of integrating database support.
+</ul>
+<p>&nbsp;Database support was something that originally I'd resisted - as it would increase the dependancies of the code.  But with an active userbase of people with large collections of music I was coming round to the idea of supporting this.</p>
+<p>&nbsp;Around this time I decided that the idea of using a scripting language with good database interoperability would be a good thing.</p>
+<p>&nbsp;Perl was the obvious candidate for me, <a href="http://www.ruby-lang.org/">Ruby</a> was an interesting contender but a little too new for me.</p>
+<p>&nbsp;Python I'd already moved away from, and it's still a language I don't know.</p>
+
+<h4>The Future?</h4>
+<p>&nbsp;In the past I had considered the version 1 release to be feature complete; it did everything I'd ever wanted it to do.  Streaming, searching, stability, and extensibility were all there.</p>
+<p>&nbsp;But now with the added power of Perl <sup>tm</sup> interesting new possibilities are presenting themselfs - the ability to rate songs, and choose to listen only to songs that have been rated positively, the ability for the server to track your music and suggest similar things, both these ideas and more will be possible in the future.</p>
+<p>&nbsp;After that .. who knows?</p>
+<p>&nbsp;I guess it will come down to people making interesting suggestions.</p>
+<h4>GNU</h4>
+<p>&nbsp;I was recently contacted by RMS who asked if I intended the program to become part of the <a href="http://www.gnu.org/">GNU Project</a>.  I hadn't considered this, despite the name of the software.</p>
+<p>&nbsp;However after some discussion we both decided it would be.</p>
+<p>&nbsp;This led to the migration of all the webpages from <a href="http://sourceforge.net/">SourceForge</a> to the hosting facilities that are provided at <a href="http://savannah.gnu.org/">Savannah</a>, and closes another chapter in the projects history.</p>
+
+
+
+.---------------------------------------------------------------------
+.page dedication.html=Dedication
+.build anchor Dedication.
+
+
+<center><h3>Tigger</h3></center>
+
+<p align="center">
+<a href="http://www.steve.org.uk/Images/Tigger/">
+.IMAGE "dedication.jpg" "My beautiful Tigger"
+</a>
+</p>
+
+<p>&nbsp;I can't find suitable words to describe how much he helped me
+ in writing this software, providing purrs and affection, nor how much
+ he has given me over the past few years.</p>
+<p>&nbsp;Rest In Peace Tigger.</p>
+<p align="right">Tuesday September 10th 2002.</p>
+
+
+
+.---------------------------------------------------------------------
+.ignore page
+.page support.html=Support
+.build anchor Support
+
+
+.HEADING Commercial Support
+
+<p>&nbsp;Free support is available from many sources:</p>
+<ul>
+<li><a href="$(FAQ)">The FAQ</a></li>
+<li><a href="$(Lists)">The mailing lists</a></li>
+<li><a href="/forum/">The Forums</a></li>
+<li><a href="$(CVS)">The Source code itself</a></li>
+<li><a href="mailto:$(AUTHOR)">e-mail</a></li>
+</ul>
+
+<p>&nbsp;Nontheless if you are interested in commercial support
+ from somebody who knows the code and is available either as an
+ ongoing arrangement, or on a per-incident basis then feel free to get in <a href="http://www.steve.org.uk/contact/">touch</a>.</p>
+<p>&nbsp;Other examples of commercial support include:</p>
+
+<ul>
+<li>Designing a custom theme or collection of templates to help
+ the system fit in with your site.</li>
+<li>Designing custom plugins to perform tasks specific to your group
+ or organization.</li>
+</ul>
+
+
+
+
+.-
+.-
+.---------------------------------------------------------------------
+.-
+.-
+.ignore page
+.page 404.html=404 - Page Not Found
+
+
+
+.HEADING 404 - Page Not Found
+
+<p>&nbsp;As this project is still in active development the files on this server may move around from time to time.</p>
+<p>&nbsp;Please try to find what you are looking for from the <a href="$(Introduction)">main page</a>, the navigation bar upon the left hand side of this page, or the <a href="$(Search)">site search</a>.</p>
+
+<h4>About GNUMP3d</h4>
+
+<p>&nbsp;GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis</a>, and other streamable audio files, it is designed to be:
+</p>
+<ul>
+<li>Small, stable, portable, self-contained, and <a href="$(Security)">secure</a>.</li>
+<li>Simple to <a href="$(Install)">install</a>, <a href="$(Config)">configure</a>, and <a href="$(Screenshots)">use</a>.</li>
+<li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
+</ul>
+
+
+.-
+.-
+.---------------------------------------------------------------------
+.-
+.-
+.ignore page
+.build anchor Search
+.page search.html=Search the GNUMP3d Website
+
+
+
+.HEADING Advanced Search Page
+
+<p>&nbsp;This page allows you to perform an advanced search of this website,
+ which allows more options to be set than the quick search.</p>
+
+<table cellpadding="10" cellspacing="0" border="1"><td align="center">
+                <form action="http://www.gnump3d.org/cgi-bin/search/ksearch.cgi" method="get" name="search">
+                <b>Search Terms:</b> <input type="text" size=35 name="terms" value="" onFocus="select(this);">
+                &nbsp; <input type="submit" value="Search"> &nbsp; 
+		<font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif">
+		<b><input type=checkbox name="all" value=1>+</b> 
+		</font>
+
+                <p>
+                <table border="0" cellpadding="1" cellspacing="0">
+                        <tr><td valign=top>
+                                <table border="0" cellpadding="1" cellspacing="0">
+                                        <tr><td align=left><font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif"><input type=checkbox name="c" value="s">Case Sensitive</font></td>
+                                        <tr><td align=left><font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif"><input type=checkbox name="w" value="1">Whole Words Only</font></td>
+                                        <tr><td align=left><font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif"><input type=checkbox name="st" value="1">Include Stop-Terms</font></td>
+
+                                </table></td>
+                        <td valign=top>
+                                <table border="0" cellpadding="3" cellspacing="0">
+                                        <tr><td valign="top" align="left">
+                                                <font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif">
+                                                Sort by <select name="sort"><option SELECTED>Matches<option>Scores<option>Dates<option>Sizes</select>
+
+                                                </font>
+                                        </td>
+                                        <tr><td valign="top" align="left">
+                                                <font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif">
+                                                Display <select name="display"><option SELECTED>5<option>10<option>25<option>50<option>100</select>
+                                                </font>
+
+                                        </td>
+                                </table>
+                        </td>
+                        <tr><td align="left" colspan="2"><br><font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif"><b>Search Content</b></font></td>
+                        <tr><td align="left" colspan="2">
+                                <font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif">
+                                <input type=checkbox name="b" value="1" checked>Body
+                                <input type=checkbox name="t" value="1" checked>Title
+                                <input type=checkbox name="u" value="1">Url  
+                                <input type=checkbox name="alt" value="1">Alt-Text
+                                <input type=checkbox name="l" value="1">Links
+                                <input type=checkbox name="default" value=1>Default
+                                </font>
+
+                        </td>
+                        <tr><td align="left" colspan="2">
+                                <font color="#000000" size=2 face="verdana, arial, helvetica, sans-serif">
+                                <input type=checkbox name="d" value="1" checked>Meta-Description
+                                <input type=checkbox name="k" value="1">Meta-Keywords 
+                                <input type=checkbox name="au" value="1">Meta-Authors
+                                </font>
+                        </td>
+                </table>
+                </p>
+
+                </form>
+        </td></table>
+</p>
