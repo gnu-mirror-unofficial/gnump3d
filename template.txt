@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.3 $
+.define TEMPLATE-VERSION $Revision: 1.4 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -38,7 +38,10 @@
 <p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
 <ul>
 <li>Full support for internationlised interfaces.</li>
-<li>Several new plugins</li>
+<li>Several new plugins.</li>
+<li>A new theme.</li>
+<li>A "random directory" function</li>
+<li>Improved diagnostic messages</li>
 </ul>
 </blockquote>
 
