@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.20 $
+.define TEMPLATE-VERSION $Revision: 1.21 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -21,8 +21,8 @@
 
 .HEADING GNUMP3d - The GNU Streaming MP3 / Media Server
 
-<p>GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis files</a>, movies and other media.   It is designed to be:
-</p>
+<p>GNUMP3d is a streaming server for MP3s, <a href="http://www.vorbis.com/">OGG vorbis files</a>, movies and other media formats.</p>
+<p>It is designed to be:</p>
 <ul>
 <li>Small, stable, portable, self-contained, and <a href="$(Security)">secure</a>.</li>
 <li>Simple to <a href="$(Install)">install</a>, <a href="$(Config)">configure</a>, and <a href="$(Screenshots)">use</a>.</li>
@@ -31,13 +31,13 @@
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 19th of February 2005.</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 1st of April 2005.</p>
 <p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
 <p>Prominent changes for this release include:</p>
 <ul>
-<li>Complete support for the AIFF file format.</li>
-<li>Improved handling of tag cache files, resulting in a significant speedup.</li>
-<li>A new theme, and miscallaneous bugfixes.</li>
+<li>Increased speed for larger archives.</li>
+<li>Incremental caching improvements.</li>
+<li>Support for more audio types, including AAC, WMA, and MP4.</li>
 </ul>
 <p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
 
@@ -356,6 +356,34 @@ usernameN:passwordN
 </pre>
 <p>If the visitor enters a valid username and password they will be
  able to browse - otherwise they won't.</p>
+
+.build anchor password-mitigation
+<h4>Password Protection Evasion</h4>
+<p>Every few months a user will report a security issue with the server
+ when they realise that if they know the name of an audio file they
+ can download it without being prompted for a password.</p>
+<p>This is a <b>deliberate hole</b>.  Although that might seem nonsensical its
+ mandated by the way the server works.</p>
+<p>If you enable the password protection what you are actually doing is 
+ denying random visitors the ability to browse your music archives GUI,
+ including the playlists.</p>
+<p>However you're not protecting against the users who know what
+ directory structure you have - if a remote user knows you have the
+ following file they can download it directly:</p>
+<pre>
+http://some.host.name:port/foo/bar/test.mp3
+</pre>
+<p>Why is that?</p>
+<p>It's because 99% of available MP3 players know nothing of HTTP authentication, which is used to prompt visitors for their password.</p>
+<p>If we protected the audio files as well as the GUI files then the client
+ MP3 players would be unable to download the audio tracks and streaming
+ would break for all users.</p>
+<p>So, whilst the password protection is useful, and does stop somebody
+ from discovering your archive structure it doesn't give foolproof protection.</p>
+<p>I'll reiterate this one last time:</p>
+<P>If you want full security restrict access by IP addresses and only allow known-good clients to connect.</p>
+
+
 
 
 
@@ -1235,11 +1263,15 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 
 
 <h4>Past Vulnerabilities</h4>
-<p>To date there have been only one reported verified vulnerability in this server.</p>
+<p>To date there have been two verified vulnerabilities in this server:</p>
 <ul>
 <li><a href="$(attacks)">Malicious Password File Download</a>
 <ul>
 <li>by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; [Notifed 3/02/2003 - Fixed 3/02/2003]</li>
+</ul></li>
+<li><a href="$(attacks)">Directory traversal attack</a>
+<ul>
+<li>by "dabfus", fixed 2005</li>
 </ul></li>
 </ul>
 
@@ -1254,7 +1286,16 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 .HEADING Past Security Attacks 
 
  <p>In the interests of full disclosure this page will stand as a permanent record of any security vulnerabilities which have been discovered in the server.</p>
-<p>To date I'm pleased that there has only been one serious problem.  Granted this is one too many, but it's not a bad record</p>
+<p>To date there have only been two problems reporting.  Granted this is two too many.</p>
+
+<p>Erroneous security reports involve:</p>
+<ul>
+<li><a href="$(password-mitigation)">Password evasion</a></li>
+<li>Cross Site Scripting (XSS) Attacks</li>
+</ul>
+<p>Whilst it is true that cross site scripting attacks can be serious, in this application they are not.  A cross site scripting attack (xss) is one in which user supplied input is injecting into pages, usually with the intention of stealing cookies.</p>
+<p>Whilst it's true that user supplied input is displayed upon the GNUMP3d output pages, for example if you enter HTML code into the search box, this is not a security concern because the code doesn't use cookies for storing authentication information.</p>
+
 
 
 <h4>GNUMP3d v2.0 Password File Weakness</h4>
@@ -1265,6 +1306,25 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 </ul>
 <p>This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
 <p>(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
+
+<h4>Directory Traversal Attack</h4>
+<p>This is a bug which was present in two release of the code:</p>
+<ul>
+<li>2.9.2</li>
+<li>2.9.1</li>
+</ul>
+<p>In both cases this was because of an error in the way I tested for
+ traversal attacks.</p>
+<p>A directory traversal attack involves making a request such as :</p>
+<pre>
+http://server.host.name:port/../../../etc/passwd
+</pre>
+<p>My code attempted to deal with this by removing the following characters from the requested files "<tt>../</tt>".  However this failed to handle the case where users would request:</p>
+<pre>
+http://server.host.name:port/....//....//....//etc/passwd
+</pre>
+<p>Removing "<tt>../</tt>" from this request still leaves it vulnerable.</p>
+<P>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
 
 
 
@@ -1349,16 +1409,18 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 
 .HEADING Known Bugs
 
-<p>This page contains a summery of the known bugs within the software,
+<p>This page contains a summary of the known bugs within the software,
  some of these might have been fixed in the <a href="$(CVS)">CVS repository</a> by the time you read this.</p>
 <p>The list will be updated after every release to keep it current.</p>
+<p>Currently there are no known bugs.</p>
+<P>Previous bugs included:</p>
 
-<ul>
-<li>Chinese Directory names don't work.
-<ul>
-<li>Verified.  I've yet to fix this however.</li>
-</ul></li>
-</ul>
+<h3>Chinese Directory names failing to work</h3>
+<p>This can be fixed by anybody who sees it now, but setting the encoding type of the pages as they are served.</p>
+<p>Inside the <tt>gnump3d.conf</tt> file add this:</p>
+<pre>
+add_meta_tag = &lt;meta http-equiv="Content-Type" content="text/html;charset=utf8"&gt;
+</pre>
 
 
 
@@ -1375,7 +1437,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 
 <dl>
 <dt><b>Personal</b></dt>
-<dd><a href="http://www.steve.org.uk/">My homepage</a> - split between free software for Windows, and Body Piercing.  A great combination ;)
+<dd><a href="http://www.steve.org.uk/">My homepage</a> - split between free software, and Body Piercing.  A great combination ;)
 </dd>
 
 <dt><b>GNUMP3d</b></dt>
@@ -1394,7 +1456,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <dd>There are a few more complicated systems designed to allow you to share your music <a href="http://kplaylist.com/">KPlaylist</a> is one of the prettiest, and <a href="http://spookyworld.dnsalias.com/projects/tvdinner">Tv Dinner</a> looks very comprehensive.  Both of these streamers require the user of a webserver and a database.</dd>
 
 <dt><b>GNU</b></dt>
-<dd>None of this work would have been possible without the existance and inspiration of the <a href="http://www.gnu.org/">GNU</a> project who kindly provide hosting for this site and allowed it to become part of their project.</dd>
+<dd>None of this work would have been possible without the existance and inspiration of <a href="http://www.gnu.org/">The GNU Project</a> who kindly provide hosting for this site and allowed it to become part of their project.</dd>
 
 <dt><b>MP3 Players</b></dt>
 <dd>The following are my two favourite MP3 players : <a href="http://www.freeamp.org/">FreeAmp</a> / <a href="http://www.xmms.org/">XMMS</a>.  (<a href="http://www.winamp.com/">WinAmp</a> is also widely used on Microsoft platforms).</dd>
@@ -1421,14 +1483,15 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>Special thanks go out to the following people and groups:
 </p>
 <ul>
-<li>Eric Lawrence for contribution comments on running the code under Mac OS X</li>
-<li>Stefan Podkowinski for <a href="http://mplib.sourceforge.net">mplib</a>  (This is no longer being used, but it was very helpful)</li>
+<li>Eric Lawrence for contribution comments on running the code under Mac OS X.</li>
+<li>Stefan Podkowinski for <a href="http://mplib.sourceforge.net">mplib</a>  (This is no longer being used, but it was very helpful).</li>
 <li>Colin Tinker for his previous work contributing RPM packages, and frequent good suggestions.</li>
 <li>Rodolphe Quiedeville for the two <a href="$(Screenshots)">stunningly attractive theme's</a> he has contributed.</li>
 <li>David H&auml;rdeman.</li>
 <li>Tahara Ryozo for early contributions.</li>
 <li>The combined readership of the <a href="http://groups.google.com/groups?group=comp.unix.programmer">comp.unix.programmer</a> newsgroup.</li>
-<li>The <a href="http://www.vorbis.com/">OGG Vorbis</a> team for making a great open Codec</li>
+<li>The <a href="http://www.vorbis.com/">OGG Vorbis</a> team for making a great open Codec.</li>
+<li>Solomon Peachy for his work on speeding up the server's tag handling.</li>
 <li>The members of the <a href="$(Lists)">gnump3d-users mailing list</a></li>
 <li>Everybody who contributed a <a href="$(Logos)">logo</a>.</li>
 </ul>
@@ -1436,7 +1499,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <h4>Special Thanks</h4>
 
 <p>Special thanks go to the individuals who have sent me
- items from my <a href="$(WISHLIST)">Amazon Wishlist</a>.  Especially the individual who purchased the <a href="http://www.amazon.co.uk/exec/obidos/ASIN/1578701902/ref=wl_em_to/ref=cm_mp_wli_/026-3911955-7842852">Autoconf</a> book for me, and Scott Lesnet who donated <a href="http://www.amazon.co.uk/exec/obidos/ASIN/B00005AXSH/ref=wl_em_to/ref=cm_mp_wli_/202-5360387-3557455">a USB webcam</a> - which is now being used <a href="http://www.steve.org.uk/Cam/">here</a>.</p>
+ items from my <a href="$(WISHLIST)">Amazon Wishlist</a>.  Especially the individual who purchased the <a href="http://www.amazon.co.uk/exec/obidos/ASIN/1578701902/ref=wl_em_to/ref=cm_mp_wli_/026-3911955-7842852">Autoconf</a> book for me, and Scott Lesnet who donated <a href="http://www.amazon.co.uk/exec/obidos/ASIN/B00005AXSH/ref=wl_em_to/ref=cm_mp_wli_/202-5360387-3557455">a nice USB webcam</a>.</p>
 
 <p>(I've since discovered that the Autoconf book is <a href="http://sources.redhat.com/autobook/">available online</a> - but I'm glad I've got the physical copy to read).</p>
 
