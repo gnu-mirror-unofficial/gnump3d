@@ -4,6 +4,17 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+  v2.9.1 / 2.9.2
+    -  Martin Lohmeier
+       Contributed fix to mp3info to handle broken tags better.
+
+    -  Jeff Smith
+       Contributed the new theme - Musicus.
+
+	-  Aaron Longson 
+	   Minor bugfix with quoting files for external commands.
+
+
   v2.9
     -  Russell Sears
        Fixed infinite loop when calling random playlist and having

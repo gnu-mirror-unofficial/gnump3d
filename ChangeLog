@@ -11,7 +11,25 @@
 	v1.0     - Current    Were coded in Perl
 	
 
-  2.9  [ ]
+  2.9.1 / 2.9.2 [ 19 Feb 2005 ]
+
+  	- FEATURES:  Support .aif/.aiff tag display and processing.
+	- FEATURES:  Show .shn files as audio files too.
+	- FEATURES:  Show all audio files in the statistics page.
+	
+	- BUGFIX:    Applied patch from Martine Lohmeier for broken tag handling.
+	- BUGFIX:    Quoting files is handled slightly better.
+
+	- PLUGINS:   Added a new link to serve a random directory's playlist.
+
+	- MISC:      Added '--debug' flag to gnump3d-top.
+	- MISC:      Added support for custom META tags to be added, to allow
+	             users to customize Content-type, etc.
+
+	- THEMES:    New theme from Jeff Smith
+	
+
+  2.9  [ 11th Jan 2005 ]
 
 	- BUGFIX: Avoid infinate loop when calling /random/ with empty cache file
 	- BUGFIX: Handling sorting of track numbers more intelligently.
