@@ -1,12 +1,74 @@
+		#pagemenu {
+			float: left;
+			width: 10em;
+			margin-right: -9em;	/* this is a fix for IE 4 which suffers
+								   from a bug similar to Navigator 4. 
+								   Setting this to -10em generates a bug
+								   in Mozilla which then ignores the float
+								   so that clear:both does not place text
+								   below the menu if the content height is
+								   shorter than the menu. this bug also
+								   appears in IE 6 if the <?XML ...>
+								   tag is missing (quirks mode?) */
+		}
+		#pagebodyframe {
+			margin-right: 1px;	/* by applying left or right side padding
+								   or margin space, Navigator 4 will _NOT_
+								   wrap content around a float. this bug
+								   appears to apply to all versions of 
+								   Navigator 4. */
+			height: 100%;
+		}
+		div#pagebodyframe {
+			margin-right: 0;
+			margin-left: 10.5em;	/* Navigator 4 ignores the div#<id>
+									   selector for all DIV elements that are
+									   a child of the body tag. this is 
+									   another CSS bug that seems to exist
+									   through all versions of Navigator 4.
+									   Note I said CHILD and not DESCENDANT as
+									   the selector IS applied to any element
+									   that is a DESCENDANT but is not a CHILD
+									   of the BODY element. */
+		}
+		#footer {
+			clear: both;
+		}
+		#copyright {
+			text-align: center;
+		}
+		#validxhtml {
+			float: right;
+			width: 88px;
+		}
+		#validxhtml img {
+			border-width: 0;
+		}
+		div#oldbrowser {
+			display: none;	/* not perfect as IE 4 will follow this and we
+							   don't want it to. but better than nothing. */
+		}
 
-   Index of /css
+/*
+	The following @media directives should instead be placed in a separate
+	stylesheet and imported using the @import directive or LINK element.
 
-        Name                    Last modified       Size  Description
-_______________________________________________________________
+		@media all {
+			#oldbrowser {
+				display: none;
+			}
+		}
+		@media print {
+			#copyrightprefix, #pagemenu, #validxhtml {
+				display: none;
+			}
+			#pagebodyframe {
+				margin-left: 0 !important;
+			}
+			#footer a:link, #footer a:visited {
+				text-decoration: none;
+				color: #000;
+			}
+		}
+*/
 
- [DIR]  Parent Directory        12-Oct-2003 01:22      -
- [TXT]  layout.css              25-Sep-2003 21:02     2k
- [TXT]  netscape-4x.css         12-Sep-2003 11:37     2k
- [TXT]  tabbar.css              12-Sep-2003 11:37     1k
- [TXT]  tweaks.css              12-Sep-2003 11:37     3k
-   ________________________________________________________
