@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.11 $
+.define TEMPLATE-VERSION $Revision: 1.12 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -753,16 +753,16 @@ there are two thing to check:</p>
 <table width="100%">
 <tr><td><b>Archive</b></td><td><b>GPG Signatures</b></td></tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.gz">gnump3d-$(VERSION).tar.gz</a></td>
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.gz.asc">gnump3d-$(VERSION).tar.gz.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz">gnump3d-$(VERSION).tar.gz</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz.sig">gnump3d-$(VERSION).tar.gz.sig</a></td>
 </tr>
 <tr>
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.bz2">gnump3d-$(VERSION).tar.bz2</a></td>
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.bz2.asc">gnump3d-$(VERSION).tar.bz2.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2">gnump3d-$(VERSION).tar.bz2</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2.sig">gnump3d-$(VERSION).tar.bz2.sig</a></td>
 </tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).zip">gnump3d-$(VERSION).zip</a></td>
-<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).zip.asc">gnump3d-$(VERSION).zip.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip">gnump3d-$(VERSION).zip</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip.sig">gnump3d-$(VERSION).zip.sig</a></td>
 </tr>
 <tr ><td><a href="$(CHANGELOG)">ChangeLog</a></td><td></td></tr>
 <tr bgcolor="#CCCCCC"><td><a href="$(README)">README</a></td><td></td></tr>
@@ -771,11 +771,11 @@ there are two thing to check:</p>
 <tr><td><a href="$(READMEMAC)">README.MacOSX</a></td><td></td></tr>
 </table>
 
-<h4>Download Notes</h4>
-<p>Due to the recent compromise of the Savannah machine which hosts this software and these pages the downloads are coming from a temporary location upon my <a href="http://www.steve.org.uk/">personal homepage</a>.</p>
-<p>Offers of mirroring the site/download area would be appreciated.</p>
+<h4>Download Mirror</h4>
+<p>In case the primary download site becomes unavailable due to maintainence, or other outages I have provided a mirror upon my personal website.</p>
+<p>The mirror is located at the following URL:</p>
 <ul>
-<li><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/">http://www.steve.org.uk/Software/GNUMP3d/tmp</a></li>
+<li><a href="http://www.steve.org.uk/Software/GNUMP3d/mirror/">http://www.steve.org.uk/Software/GNUMP3d/mirror/</a></li>
 </ul>
 
 <h4>Freshmeat Rating</h4>
