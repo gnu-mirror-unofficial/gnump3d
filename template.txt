@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.14 $
+.define TEMPLATE-VERSION $Revision: 1.15 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -29,16 +29,13 @@
 <li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
 </ul>
 
-<h4>GNUMP3d v2.7 Released</h4>
+<h4>GNUMP3d v2.8 Released</h4>
 
-<p>The current stable release of GNUMP3d is v2.7, which was released upon March  25th 2004.</p>
+<p>The current stable release of GNUMP3d is v2.8, which was released upon the 18th of May 2004.</p>
 <p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
 <ul>
-<li>Full support for internationlised interfaces.</li>
-<li>The ability to browse your archive by tag information</li>
-<li>Multiple theme cleanups.</li>
-<li>Updated networking code.</li>
-<li>Much faster index generation.</li>
+<li>Improved support for Microsoft Windows Platforms.</li>
+<li>Updated playlist generator.</li>
 </ul>
 <p>Please find the archives on the <a href="$(Download)">download page</a> - note that there is now a simplified, seperate, version for the Microsoft Windows platform.</p>
 

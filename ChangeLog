@@ -12,6 +12,31 @@
 	
 
 	
+  2.8  [ 18 May 2004 ]
+	
+	- MISC: Added more comprehensive support for Microsoft Windows
+	- MISC: Don't output 'indexing complete' when running with '--quiet'
+	- MISC: mpc is a valid audio file type.
+	- MISC: Leave playlists which point to external sites alone.
+	- MISC: Test for password files all the way up to the root of the archive.
+	- MISC: Deal with the root directory containing a trailing '/'.
+	- MISC: Added explicit DOWNSAMPLING document.
+	- MISC: Highlight entire row in tabular theme.
+	- MISC: Updated version numbers
+    
+	- BUGFIX: Fix date used for logging to access log.
+	- BUGFIX: Abort with error if indexing program fails.
+	- BUGFIX: Don't hold server socket open in child processes,
+	          this fix allows logrotation to function correctly.
+	- BUGFIX: Fixed up playlists which were erroneoulsy empty
+	- BUGFIX: Downsampling treats its arguments case insensitively.
+
+	- PLUGINS: Allow the configuration file to set the default number
+ 	           of random songs generated via 'random.pm'.
+	- PLUGINS: Custom playlist verified working properly.
+	
+
+
   2.7  [ 25th March 2004 ]
 
     - MISC: New module 'sorter.pm'
