@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.1 $
+.define TEMPLATE-VERSION $Revision: 1.2 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -772,16 +772,16 @@ there are two thing to check:</p>
 <table width="100%">
 <tr><td><b>Archive</b></td><td><b>GPG Signatures</b></td></tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.gz?download">gnump3d-$(VERSION).tar.gz</a></td>
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.gz.asc?download">gnump3d-$(VERSION).tar.gz.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz?download">gnump3d-$(VERSION).tar.gz</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz.asc?download">gnump3d-$(VERSION).tar.gz.asc</a></td>
 </tr>
 <tr>
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.bz2?download">gnump3d-$(VERSION).tar.bz2</a></td>
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).tar.bz2.asc?download">gnump3d-$(VERSION).tar.bz2.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2?download">gnump3d-$(VERSION).tar.bz2</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2.asc?download">gnump3d-$(VERSION).tar.bz2.asc</a></td>
 </tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).zip?download">gnump3d-$(VERSION).zip</a></td>
-<td><a href="http://prdownloads.sourceforge.net/gnump3d/gnump3d-$(VERSION).zip.asc?download">gnump3d-$(VERSION).zip.asc</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip?download">gnump3d-$(VERSION).zip</a></td>
+<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip.asc?download">gnump3d-$(VERSION).zip.asc</a></td>
 </tr>
 <tr ><td><a href="$(CHANGELOG)">ChangeLog</a></td><td>&nbsp;</td></tr>
 <tr bgcolor="#CCCCCC"><td><a href="$(README)">README</a></td><td>&nbsp;</td></tr>
