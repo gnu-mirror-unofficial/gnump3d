@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.4 $
+.define TEMPLATE-VERSION $Revision: 1.5 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -90,7 +90,7 @@
   or are needing customizations, etc, then your best option <b>after</b>
   reading the available documentation is to join one of the
   <a href="$(Lists)">mailing lists</a>, or post a message in one of 
- the <a href="/forum/">discussion forums</a>.</p>
+ the <a href="http://gnump3d.sf.net/forum/">discussion forums</a>.</p>
 
 
 
@@ -520,7 +520,7 @@ part1.title
 <p>&nbsp;All of the currently available documentation is listed in the
  <a href="$(Documentation)">documentation</a> index - if you're not 
  satisfied with the information there, then you should checkout the
- <a href="$(Lists)">mailing lists</a>, or <a href="http://www.gnump3d.org/forum/">forums</a>.</p>
+ <a href="$(Lists)">mailing lists</a>, or <a href="http://gnump3d.sf.net/forum/">forums</a>.</p>
 
 
 .build anchor faq-key
@@ -1050,7 +1050,7 @@ sub handlePath( $ )
 <p>&nbsp;The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
 
 <h4>Comments / Questions?</h4>
-<p>&nbsp;Any comments or questions can be posted to the <a href="/forum/">Forums</a> or the <a href="$(Lists)">developer mailing list</a>.</p>
+<p>&nbsp;Any comments or questions can be posted to the <a href="http://gnump3d.sf.net/forum/">Forums</a> or the <a href="$(Lists)">developer mailing list</a>.</p>
 
 
 
@@ -1394,7 +1394,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 </dd>
 
 <dt><b>GNUMP3d</b></dt>
-<dd>&nbsp;The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.  This site makes use of the excellent <a href="http://www.phpbb.org/">PHP Bulletin Board</a>, worth a look if you want something similar to <a href="/forum/">these forums</a>.</dd>
+<dd>&nbsp;The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.  This site makes use of the excellent <a href="http://www.phpbb.org/">PHP Bulletin Board</a>, worth a look if you want something similar to <a href="http://gnump3d.sf.net/forum/">these forums</a>.</dd>
 
 <dt><b>Distributions with GNUMP3d</b></dt>
 <dd>&nbsp;<a href="http://www.debian.org/">Debian GNU/Linux</a>, <a href="http://www.gentoo.org/">Gentoo GNU/Linux</a>, <a href="http://www.freebsd.org/">FreeBSD</a> - it is also be included in the professional release of their <a href="http://www.suse.de/uk/">SuSE GNU/Linux</a> distribution.</dd>
@@ -1552,7 +1552,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <ul>
 <li><a href="$(FAQ)">The FAQ</a></li>
 <li><a href="$(Lists)">The mailing lists</a></li>
-<li><a href="/forum/">The Forums</a></li>
+<li><a href="http://gnump3d.sf.net/forum/">The Forums</a></li>
 <li><a href="$(CVS)">The Source code itself</a></li>
 <li><a href="mailto:$(AUTHOR)">e-mail</a></li>
 </ul>
