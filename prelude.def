@@ -20,7 +20,7 @@
 .define VERSION 2.6
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.1 $
+.define PRELUDE-VERSION $Revision: 1.2 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to
@@ -39,7 +39,7 @@
 .define README-SERVICE  Gnump3d-Service-on-Windows.txt
 .define INSTALL INSTALL
 .define CHANGELOG ChangeLog
-.define GPGKEY skx@tardis.ed.ac.uk.gpg
+.define GPGKEY gnump3d@steve.org.uk.gpg
 
 .-
 .- A centered heading
