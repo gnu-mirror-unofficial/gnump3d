@@ -1,52 +1,51 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml11-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<title>GNUMP3d - Plugin Development Notes - GNU Project - Free Software Foundation (FSF)</title>
-<meta content="Steve Kemp" name="author" />
-<style type="text/css" media="all">@import url(style.css);</style>
-<link rel="icon" href="/favicon.ico" type="image/ico" />
+	<title>GNUMP3d [GNU MP3/Media Streamer] - Plugin Development Notes - GNU Project - Free Software Foundation (FSF)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <style type="text/css" media="all">@import url(style.css);</style>
 </head>
-<body bgcolor="#ffffff">
+<body>
+	<div id="oldbrowser">
+		<p>
 
-<table width="99%" align="center" cellpadding="0" cellspacing="0" border="0"><tr>
-<td valign="top" rowspan="5" width="200">
-<a title="Visit the GNU Project Homepage" href="/"><img src="http://www.gnu.org/graphics/gnu-head-sm.jpg" width="129" height="122" /></a>
+			This site will look much better in a browser that supports
+			<a href="http://www.webstandards.org/upgrade/"
+			title="Download a browser that complies with Web standards.">web
+			standards</a>, but it is accessible to any browser or Internet
+			device.
+		</p>
+	</div>
+	<div id="masthead">
+		<p align="center"><img src="gnump3d.jpg">
+	</div>
+	<div id="pagemenu">
+		<div id="menuframe">
+<div><a href="index.html">Index</a></div>
+<div> <a href="documents.html">Documentation</a> </div>
+<div> <a href="lists.html">Mailing Lists</a> </div>
+<div> <a href="FAQ.html">FAQ</a> </div>
+<div> <a href="download.html">Download</a> </div>
+<div> <a href="cvs.html">CVS</a> </div>
+<div> <a href="developer.html">Developers</a> </div>
+<div> <a href="screenshots.html">Screenshots</a> </div>
+<div> <a href="logos.html">Logos</a> </div>
+<div> <a href="bugs.html">Bugs</a> </div>
+<div> <a href="links.html">Links</a> </div>
+<div> <a href="thanks.html">Thanks</a> </div>
+<div> <a href="history.html">History</a> </div>
+<div> <a href="dedication.html">Dedication</a> </div>
+		</div>
+	</div>
+	<div id="pagebodyframe">
 
-<p><b>GNUMP3d</b></p>
-<ul>
-<li><a href="index.html">About</a></li>
-<li> <a href="documents.html">Documentation</a> </li>
-<li> <a href="lists.html">Mailing Lists</a> </li>
-<li> <a href="FAQ.html">FAQ</a> </li>
-<li> <a href="download.html">Download</a> </li>
-<li> <a href="cvs.html">CVS</a> </li>
-<li> <a href="developer.html">Developers</a> </li>
-<li> <a href="screenshots.html">Screenshots</a> </li>
-<li> <a href="logos.html">Logos</a> </li>
-<li> <a href="bugs.html">Bugs</a> </li>
-<li> <a href="links.html">Links</a> </li>
-<li> <a href="thanks.html">Thanks</a> </li>
-<li> <a href="history.html">History</a> </li>
-<li> <a href="dedication.html">Dedication</a> </li>
-</ul>
-
-<p><b>Interact</b></p>
-<ul>
-<li><a href="http://gnump3d.sourceforge.net/forum/">Forums</a></li>
-<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">View Guestbook</a></li>
-<li><a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi">Sign Guestbook</a></li>
-</ul>
-</td>
-<td valign="top">
-
-<!-- Page content -->
+		<div id="pagebody">
 <a name="Plugins"><!-- Anchor--></a>
 
-<h3><a name="TOC75">Plugin Development Notes.</a></h3>
+<h3><a name="TOC74">Plugin Development Notes.</a></h3>
 
 
-<h4><a name="TOC76">GNUMP3d Plugin Support</a></h4>
+<h4><a name="TOC75">GNUMP3d Plugin Support</a></h4>
 <p>&nbsp;GNUMP3d now has support for external plugins, which are Perl modules loaded upon demand by the server when incoming requests are recieved.</p>
 <p>&nbsp;The plugins may extend the server by handling the processing of a given URL.  When an incoming request is made each of the loaded plugins is given the opertunity to handle it, if none does so then the request is handled by the server proper.</p>
 <p>&nbsp;Included with each release are several 'core' plugins - these plugins are all considered to be part of the core of the server, because they're linked to from the included templates.  However if you wish to remove them you're entirely welcome to do so.</p>
@@ -58,12 +57,12 @@
 </ul>
 
 
-<h4><a name="TOC77">How it all works</a></h4>
+<h4><a name="TOC76">How it all works</a></h4>
 <p>&nbsp;Currently the plugin system is rather simplistic, it assumes that the name of a plugin matches the path upon the server which it handles.</p>
 <p>&nbsp;For example a plugin to handle the path "/stats/" must be called "stats.pm".</p>
 <p>&nbsp;This will change in the near future - although I will ensure that all user contributed plugins are updated to work with the new system when it is ready.</p>
 
-<h4><a name="TOC78">Creating A Plugin</a></h4>
+<h4><a name="TOC77">Creating A Plugin</a></h4>
 <p>&nbsp;This is the simple overview for creating a plugin, there's a more
  detailed <a href="ptutorial.html#plugin-tutorial">plugin creation tutorial</a> if you'd
  like step by step instructions.</p>
@@ -75,22 +74,29 @@
 <p>&nbsp;Have a look at the source to the included plugins for more details,
  '<a href="http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/gnump3d/gnump3d/lib/gnump3d/plugins/COPYING.pm?rev=HEAD">COPYING.pm</a>' is the simplest plugin, (it just displays the GNU Public License, regardless of how it was called).</p>
 
-<h4><a name="TOC79">Todo</a></h4>
+<h4><a name="TOC78">Todo</a></h4>
 <p>&nbsp;1. I need to plan plugin priorities.  What should happen if multiple
  plugins all claim a given path?</p>
 <p>&nbsp;2. Could plugins be called for more than just regexps on the request path?</p>
 
 
-</td></tr></table>
-<p><hr /></p>
-<table width="100%">
-<tr>
-<td align="left" valign="top"><strong>Steve Kemp</strong><br /><strong>&lt;<a href="mailto:&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;">&#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;</a>&gt;</strong><br />
-Page Last modified : 16 January 2004
-</td>
-<td>&nbsp;</td>
-<td align="right" valign="top">
-Copyright (c) 2001,2002,2003 Steve Kemp<br />
-Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.<br />
-</td></tr></table>
-</body></html>
+		</div>
+	</div>
+	<div id="footer">
+		<hr />
+
+		<div id="validxhtml">
+			<a href="http://validator.w3.org/check/referer"><img
+				src="http://www.w3.org/Icons/valid-xhtml10.png"
+				alt="Valid XHTML 1.0!" height="31" width="88" /></a>
+		</div>
+		<div id="copyright">
+			<span id="copyrightprefix">Copyright (c) 2001,2002,2003,2004 <a href="http://www.steve.org.uk/">Steve Kemp</a><spam>
+			<p>Verbatim copying and distribution of this entire page is permitted in any medium,<br/> provided this notice is preserved.</p>
+			<p>Page Last modified : 14 March 2004
+</p>
+		</div>
+
+	</div>
+</body>
+</html>

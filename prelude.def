@@ -20,7 +20,7 @@
 .define VERSION 2.6
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.4 $
+.define PRELUDE-VERSION $Revision: 1.5 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to
@@ -79,6 +79,7 @@
 	</div>
 	<div id="pagemenu">
 		<div id="menuframe">
+<div><a href="index.html">Index</a></div>
 .build index
 		</div>
 	</div>
@@ -116,7 +117,7 @@
 
 .block index_open
 .block index_entry
-<li> &pageref("$(INDEX_PAGE)","<em>$(INDEX_TITLE)</em>") </li>
+<div> &pageref("$(INDEX_PAGE)","<em>$(INDEX_TITLE)</em>") </div>
 .endblock
 
 .block anchor
