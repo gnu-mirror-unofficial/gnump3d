@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.19 $
+.define TEMPLATE-VERSION $Revision: 1.20 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -26,20 +26,20 @@
 <ul>
 <li>Small, stable, portable, self-contained, and <a href="$(Security)">secure</a>.</li>
 <li>Simple to <a href="$(Install)">install</a>, <a href="$(Config)">configure</a>, and <a href="$(Screenshots)">use</a>.</li>
-<li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
+<li>Portable across different varieties of Unix, the GNU Operating System, and Microsoft Windows platforms.</li>
 </ul>
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 10th of January 2005.</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 19th of February 2005.</p>
 <p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
 <p>Prominent changes for this release include:</p>
 <ul>
-<li>Several additional new themes.</li>
-<li>URL Rewriting support for hosting a server behind a proxy such as Apache's mod_proxy module.</li>
-<li>Playlist handling is much improved.</li>
+<li>Complete support for the AIFF file format.</li>
+<li>Improved handling of tag cache files, resulting in a significant speedup.</li>
+<li>A new theme, and miscallaneous bugfixes.</li>
 </ul>
-<p>Please find the archives on the <a href="$(Download)">download page</a> - note that there is now a simplified, seperate, version for the Microsoft Windows platform.</p>
+<p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
 
 
 <h4>Contribute</h4>
@@ -142,7 +142,9 @@
 <p>With the need to organize voting and ranking I'm tending towards the idea that some sort of database is required.  (This doesn't necessarily have to be a &quot;real&quot; database - flat files could well be good enough).</p>
 <p>To this end I started putting together a Perl release of GNUMP3d, this was originally intended to be a prototype system; but soon it was almost completely compatible with the existing release.  At this point I decided Perl was the way of the future!.</p>
 <p>If you'd like to look at the code you can see it online via the <a href="http://savannah.gnu.org/cgi-bin/viewcvs/gnump3d/gnump3d/">online gnump3d2 CVS repository</a> - to check your copy please see the instructions on the <a href="$(CVS)">CVS page</a></p>
-
+<hr />
+<p>Right now development has mostly ceased, the code is complete even without the proposed voting functionality.</p>
+<p>Most of the users of the software appreciate the simplicity of the code, and the lack of dependencies to install to get it up and running.  It seems likely that only minor upgrades will be made in the future, however encouragement or specific requests might change this.</p>
 
 .---------------------------------------------------------------------
 .ignore page 
@@ -180,8 +182,7 @@
 .HEADING The Configuration File
 
 <h4>Where is it?</h4>
-<p>GNUMP3d is configured exclusively through the use of a
- configuration file.
+<p>GNUMP3d is configured exclusively through the use of a configuration file.
 </p>
 <p>By default GNUMP3d will read the system-wide
  configuration file &quot;/etc/gnump3d/gnump3d.conf&quot; however it will read the file &quot;~/.gnump3drc&quot; in preference to the system wide file if it exists.</p>
@@ -247,6 +248,7 @@
 <p>To that end GNUMP3d v2.5 and higher will no longer directly read the song tags from your audio files upon each directory access, instead song tags are read from a &quot;database file&quot;</p>
 <p>When the server starts it will index all the files which are found beneath your defined 'root' directory - writing out the filename and tag informatin from each file it finds.</p>
 <p>At any time you may update the database by manually running the installed script 'gnump3d-index', this script may also give you statistics upon your archive if you run with the '--stats' argument:</p>
+<p>Alternatively (since version 2.9.2) you may cause the server to re-index itself by sending it a SIGHUP signal on Unix or GNU platforms.  Note that this only works when you're not running with the <tt>--debug</tt> flag.</p>
 
 <pre class="example">
 skx@hell:~$ gnump3d-index  --stats
@@ -255,7 +257,7 @@ Beneath /home/mp3 there are:
 </pre>
 
 <p>The song tag information is then used for searching your archive via the search plugin, and for building up the web interface.</p>
-<p>(The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.)</p>
+<p>The database is currently nothing more sophisticated than a flat file which you may view with your favourite text editor if you wish.  It is entirely possible that the information will be <i>optionally</i> stored in a real database in the future.</p>
 <p>To control where the database resides you may specify it's path within the <a href="$(Config)">gnump3d.conf</a> file - using the setting below:</p>
 <pre class="example">
 #
@@ -403,6 +405,7 @@ part1.title
 <ol>
 <li><a href="$(faq-reload-themes)">Do I have to restart the server to update the template files?</a></li>
 <li><a href="$(faq-hostname)">The server uses the wrong hostname, how do I change this?</a></li>
+<li><a href="$(faq-proxy)">The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</a></li>
 <li><a href="$(faq-securing)">How do I secure my music archive?</a></li>
 </ol>
 
@@ -424,7 +427,6 @@ part1.title
 
 <h4>Platform/Distribution Specific</h4>
 <ul>
-<li><a href="$(faq-mime)">I get errors about MIME::Base64</a></li>
 <li><a href="$(faq-win32)">Will the Perl server run under Windows?</a></li>
 <li>[<font color="red">Updated</font>] <a href="$(faq-win32-service)">Will the Perl server run as a service under Windows?</a></li>
 <li><a href="$(faq-macosx-startup)">How can I make the server run at startup on Mac OS X?</a></li>
@@ -553,6 +555,25 @@ part1.title
 hostname = mp3d.foo.org
 </pre>
 
+
+.build anchor faq-proxy
+<h4>The server is behind a proxy and gets the hostname wrong in the links, how do I fix this?</h4>
+<p>The hostname used in the links can be set fairly easily, simply update the configuration file <tt>gnump3d.conf</tt> paying attention to the following setting:</p>
+<pre>
+##
+#
+# Set this option to rewrite the hostname:port combination in the URLs in
+# your playlist.  Most people won't need this unless they are proxying
+# their connection or running multiple streaming servers through a load
+# balancer or DNS rotor.
+#
+# Note: If you set this you will almost certainly need to set
+#       "use_client_host=0"
+##
+# host_rewrite = ""
+</pre>
+
+
 .build anchor faq-securing
 <h4>How do I secure my music archive?</h4>
 <p>You can secure your archive in two ways, see the following URL's for details:</p>
@@ -670,11 +691,6 @@ there are two thing to check:</p>
 <li>Change the logfile setting in the 'gnump3d.conf' file to point to a directory which already exists, eg. 'logfile = /var/log/gnump3d.log'.</li>
 </ul>
 
-
-.build anchor faq-mime
-<h4>I get errors about MIME::Base64</h4>
-<p>I didn't include this in the distribution for version 2.0 of the server because I thought it was part of the basic Perl installation.</p>
-<p>As of release 2.2 this is no longer needed - I've included a minimal decoding module of my own; so please upgrade if you see this error.</p>
 
 .build anchor faq-win32
 <h4>Will the Perl server run under Windows?</h4>
