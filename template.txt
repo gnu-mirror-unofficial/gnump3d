@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.2 $
+.define TEMPLATE-VERSION $Revision: 1.3 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -22,6 +22,7 @@
 
 .HEADING GNUMP3d - The GNU Streaming MP3 / Media Server
 
+<blockquote>
 <p>&nbsp;GNUMP3d is a streaming server for MP3's, <a href="http://www.vorbis.com/">OGG vorbis files</a>, and other media.   It is designed to be:
 </p>
 <ul>
@@ -29,18 +30,24 @@
 <li>Simple to <a href="$(Install)">install</a>, <a href="$(Config)">configure</a>, and <a href="$(Screenshots)">use</a>.</li>
 <li>Portable across different varieties of Unix and Microsoft Windows platforms.</li>
 </ul>
+</blockquote>
 
 <h4>GNUMP3d v2.6 Released</h4>
+<blockquote>
 <p>&nbsp;I am proud to announce the immediate availability of GNUMP3 v2.6, which can be found at the <a href="$(Download)">download page</a>.</p>
 <p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
 <ul>
 <li>Full support for internationlised interfaces.</li>
 <li>Several new plugins</li>
 </ul>
+</blockquote>
 
 <h4>Contribute</h4>
+<blockquote>
 <p>&nbsp;I still welcome the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, <a href="$(Logos)">logo designs</a>, <a href="$(Theme)">theme designs</a>, or ideas - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a> ;)</p>
 <p>&nbsp;I owe a large part of the success of this project to the many suggestions, and patches from <a href="$(Thanks)">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
+</blockquote>
+
 
 .---------------------------------------------------------------------
 .page documents.html=Documentation
@@ -758,7 +765,7 @@ there are two thing to check:</p>
 
 
 .---------------------------------------------------------------------
-.page download.html=Download GNUMP3d v$(VERSION)
+.page download.html=Download
 .build anchor Download
 
 
