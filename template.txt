@@ -1,4 +1,4 @@
-.---------------------------------------------------------------------
+.--------------------------------------------------------------------
 .-  template.txt  Template file for the GNUMP3d.org website.
 .-
 .-
@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.7 $
+.define TEMPLATE-VERSION $Revision: 1.8 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -92,9 +92,8 @@
 <p>&nbsp;If you have detailed questions which you would like answered,
   or are needing customizations, etc, then your best option <b>after</b>
   reading the available documentation is to join one of the
-  <a href="$(Lists)">mailing lists</a>, or post a message in one of 
- the <a href="http://gnump3d.sf.net/forum/">discussion forums</a>.</p>
-
+  <a href="$(Lists)">mailing lists</a> and post a message.</p>
+<p>Failing that you may <a href="mailto:$(AUTHOR)">email the author</a>.</p>
 
 
 .---------------------------------------------------------------------
@@ -505,8 +504,8 @@ part1.title
 
 .build anchor faq-add
 <h4>Will you add ...?</h4>
-<p>&nbsp;If you have a suggestion then I'd be happy to hear, simply make a post in the <a href="http://gnump3d.sourceforge.net/forum/viewforum.php?f=3">Feature Request Forum</a>, or suggest it upon one of the <a href="$(Lists)">mailing lists</a>.</p>
-<p>&nbsp;If you have a patch, or a rough idea of how it would be implemented, then that is even better.</p>
+<p>&nbsp;If you have a suggestion then I'd be happy to hear, simply make a post  to the relevent <a href="$(Lists)">mailing list</a>, or <a href="mailto:$(AUTHOR)">mail the author</a>.</p>
+<p>&nbsp;If you have a patch, or a rough idea of how it could be implemented then so much the better!</p>
 
 
 
@@ -523,7 +522,7 @@ part1.title
 <p>&nbsp;All of the currently available documentation is listed in the
  <a href="$(Documentation)">documentation</a> index - if you're not 
  satisfied with the information there, then you should checkout the
- <a href="$(Lists)">mailing lists</a>, or <a href="http://gnump3d.sf.net/forum/">forums</a>.</p>
+ <a href="$(Lists)">mailing lists</a>.</p>
 
 
 .build anchor faq-key
@@ -532,7 +531,7 @@ part1.title
 
 .build anchor faq-donate
 <h4>I like this software - can I give you something?</h4>
-<p>&nbsp;If you want to give me something 'big' then there's a small Amazon wishlist <a href="$(WISHLIST)">here</a>.  If you just wish to express your appreciation then please sign the <a href="http://gnump3d.sourceforge.net/cgi-bin/guestbook.cgi?type=view&amp;images=no">guestbook</a>, or drop me an email - its always nice to receive feedback, (good <b>or</b> bad).</p>
+<p>&nbsp;If you want to give me something 'big' then there's a small Amazon wishlist <a href="$(WISHLIST)">here</a>.  If you just wish to express your appreciation just drop me or the <a href="$(Lists)">mailing lists</a> an email - its always nice to receive feedback, (good <b>or</b> bad).</p>
 
 
 .build anchor faq-commercial
@@ -705,12 +704,7 @@ there are two thing to check:</p>
 <li>Create the directory where the logfile is going to be written : <b>mkdir /var/log/gnump3d</b>
 <li>Change the logfile setting in the 'gnump3d.conf' file to point to a directory which already exists, eg. 'logfile = /var/log/gnump3d.log'.</li>
 </ul>
-<p>&nbsp;For more discussion on this subject please see <a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=3">this thread</a> in the <a href="http://gnump3d.sourceforge.net/forum/viewforum.php?f=2">installation problem forum</a></p>
 
-.build anchor faq-tie-hash
-<h4>I get errors about TIEHASH under Mandrake 9.1</h4>
-<p>&nbsp;This suprises me, and I've not looked at it in depth.</p>
-<p>&nbsp;For the moment you can remove the lines which are complained about, <a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=118">see here for details</a></p>
 
 .build anchor faq-mime
 <h4>I get errors about MIME::Base64</h4>
@@ -1060,7 +1054,7 @@ sub handlePath( $ )
 <p>&nbsp;The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
 
 <h4>Comments / Questions?</h4>
-<p>&nbsp;Any comments or questions can be posted to the <a href="http://gnump3d.sf.net/forum/">Forums</a> or the <a href="$(Lists)">developer mailing list</a>.</p>
+<p>&nbsp;Any comments or questions can be posted to the <a href="$(Lists)">developer mailing list</a>.</p>
 
 
 
@@ -1379,7 +1373,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>&nbsp;The list will be updated after every release to keep it current.</p>
 
 <ul>
-<li><a href="http://gnump3d.sourceforge.net/forum/viewtopic.php?t=61">Chinese Directory names don't work.</a>
+<li>Chinese Directory names don't work.
 <ul>
 <li>Verified.  I've yet to fix this however.</li>
 </ul></li>
@@ -1404,7 +1398,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 </dd>
 
 <dt><b>GNUMP3d</b></dt>
-<dd>&nbsp;The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.  This site makes use of the excellent <a href="http://www.phpbb.org/">PHP Bulletin Board</a>, worth a look if you want something similar to <a href="http://gnump3d.sf.net/forum/">these forums</a>.</dd>
+<dd>&nbsp;The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.</dd>
 
 <dt><b>Distributions with GNUMP3d</b></dt>
 <dd>&nbsp;<a href="http://www.debian.org/">Debian GNU/Linux</a>, <a href="http://www.gentoo.org/">Gentoo GNU/Linux</a>, <a href="http://www.freebsd.org/">FreeBSD</a> - it is also be included in the professional release of their <a href="http://www.suse.de/uk/">SuSE GNU/Linux</a> distribution.</dd>
@@ -1562,7 +1556,6 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <ul>
 <li><a href="$(FAQ)">The FAQ</a></li>
 <li><a href="$(Lists)">The mailing lists</a></li>
-<li><a href="http://gnump3d.sf.net/forum/">The Forums</a></li>
 <li><a href="$(CVS)">The Source code itself</a></li>
 <li><a href="mailto:$(AUTHOR)">e-mail</a></li>
 </ul>
