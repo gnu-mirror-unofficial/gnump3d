@@ -11,7 +11,29 @@
 	v1.0     - Current    Were coded in Perl
 	
 
+  2.9  [ ]
+
+	- BUGFIX: Avoid infinate loop when calling /random/ with empty cache file
+	- BUGFIX: Handling sorting of track numbers more intelligently.
+	- BUGFIX: Allow library files to install correctly on Mac OS X
+	- BUGFIX: Correct the rewriting of absolute pathnames in premade playlists
+
+	- MISC: Added --debug option go gnump3d-index
+	- MISC: Quote command line arguments more safely when invoking commands
+	- MISC: Allow meta information to persist even when downsampling.
+	- MISC: Don't print 'tag cache initialized' when starting.
+
+	- FEATURES: Allow recently modified directories to be flagged.
+                new config, new_format, new_days, and $NEW for directory_format
+	- FEATURES: Allow URL rewriting when behind a proxy server.
+
+	- THEMES: Added a new theme optimized for handheld devices.
+	- THEMES: Added new 'Club Nomad' theme.
+
+	- PLUGINS: Updated the handling of nested directorys in custom playlist
+	- PLUGINS: Updated playing of nested playlists. (esp. for Firefox
 	
+
   2.8  [ 18 May 2004 ]
 	
 	- MISC: Added more comprehensive support for Microsoft Windows
