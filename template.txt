@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.8 $
+.define TEMPLATE-VERSION $Revision: 1.9 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -43,8 +43,8 @@
 <li>Full support for internationlised interfaces.</li>
 <li>Several new plugins.</li>
 <li>A new theme.</li>
-<li>A "random directory" function</li>
-<li>Improved diagnostic messages</li>
+<li>A "random directory" function.</li>
+<li>Improved diagnostic messages.</li>
 </ul>
 </blockquote>
 
@@ -70,7 +70,7 @@
 <li><a href="$(Install)">Installation Guide</a>
 <ul>
 <li><a href="$(gnump3d-index)">Working with the song database</a></li>
-</ul>
+</ul></li>
 <li><a href="$(Config)">Configuration guide</a></li>
 <li><a href="$(Developer)">Developer Documentation</a></li>
 <li><a href="$(FAQ)">Frequently Asked Questions</a></li>
@@ -83,8 +83,8 @@
 </ul></li>
 <li><a href="$(Securing)">Notes on securing your music archive</a></li>
 <li><a href="$(TitleOverride)">Overriding the information displayed</a></li>
-<li><a href="$(Plugins)">Plugin Introduction Page</a>
-<li><a href="$(plugin-tutorial)">Plugin Creation Tutorial</a>
+<li><a href="$(Plugins)">Plugin Introduction Page</a></li>
+<li><a href="$(plugin-tutorial)">Plugin Creation Tutorial</a></li>
 <li><a href="$(Theme)">Themes Creation Documentation</a>.</li>
 <li><a href="$(Theme-advanced)">Advanced Theming Notes</a>.</li>
 </ul>
@@ -1502,9 +1502,9 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>&nbsp;After a while I started getting curious as to how many users I had - so I started running websearches - this is when I discovered it had made it into Gentoo GNU/Linux, and the FreeBSD ports collection.</p>
 <p>&nbsp;Many people were beginning to complain that the server was too hard to modify; which I thought was a shame, especially since I'd put such a lot of effort into the plugin system.</p>
 <p>&nbsp;Two other problems were starting to show up:</p>
-<uL>
-<li>Buggy versions of the standard C++ library causing random crashes
-<li>The difficulty of integrating database support.
+<ul>
+<li>Buggy versions of the standard C++ library causing random crashes</li>
+<li>The difficulty of integrating database support.</li>
 </ul>
 <p>&nbsp;Database support was something that originally I'd resisted - as it would increase the dependancies of the code.  But with an active userbase of people with large collections of music I was coming round to the idea of supporting this.</p>
 <p>&nbsp;Around this time I decided that the idea of using a scripting language with good database interoperability would be a good thing.</p>
@@ -1566,10 +1566,8 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>&nbsp;Other examples of commercial support include:</p>
 
 <ul>
-<li>Designing a custom theme or collection of templates to help
- the system fit in with your site.</li>
-<li>Designing custom plugins to perform tasks specific to your group
- or organization.</li>
+<li>Designing a custom theme or collection of templates to help the system fit in with your site.</li>
+<li>Designing custom plugins to perform tasks specific to your group or organization.</li>
 </ul>
 
 
