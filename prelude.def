@@ -20,7 +20,7 @@
 .define VERSION 2.6
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.5 $
+.define PRELUDE-VERSION $Revision: 1.6 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/wishlist/2LTKRAY9O22LI/ref=wl_em_to
@@ -75,7 +75,7 @@
 		</p>
 	</div>
 	<div id="masthead">
-		<p align="center"><img src="gnump3d.jpg">
+		<div align="center"><img src="gnump3d.jpg" width="360" height="70" alt="GNUMP3d Logo"></div>
 	</div>
 	<div id="pagemenu">
 		<div id="menuframe">
