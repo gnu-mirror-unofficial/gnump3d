@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.6 $
+.define TEMPLATE-VERSION $Revision: 1.7 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -32,10 +32,13 @@
 </ul>
 </blockquote>
 
-<h4>GNUMP3d v2.6 Released</h4>
+<h4>GNUMP3d v2.6 Available</h4>
 <blockquote>
-<p>&nbsp;I am proud to announce the immediate availability of GNUMP3 v2.6, which can be found at the <a href="$(Download)">download page</a>.</p>
-<p>&nbsp;This release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
+<p>The current release of GNUMP3d v2.6 is available for download again - after being in a state of hiatus due to the recent Savannah compromise.</p>
+<p>Active development will be restarting now that the <a href="$(CVS)">CVS repository</a> is usable once more.</p>
+<p>My apologies for any inconvience caused by my inability to update the code or these webpages.</p>
+<p>All pending patches will be committed over the weekend at the latest - and questions may be posted to the <a href="$(Lists)">mailing lists</a>.</p>
+<p>&nbsp;The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a>.  Prominent changes include:</p>
 <ul>
 <li>Full support for internationlised interfaces.</li>
 <li>Several new plugins.</li>
@@ -775,23 +778,23 @@ there are two thing to check:</p>
 .HEADING Download GNUMP3d v$(VERSION)
 
 <p>&nbsp;The latest release is available from the links below, in a variety of different formats - simply choose the format with which you are most comfortable with.</p>
-<!--
+
 <h4>Security / Paranoia</h4>
 <p>&nbsp;After several high profile server compromises in the past all the release files upon this page are signed with <a href="$(GPGKEY)">my GPG key</a> - to verify them run '<a href="http://www.gnupg.org/">gpg</a> --verify $file', after importing my key.</p>
 <p>&nbsp;If the signatures do not match please let me know - and <b>do not</b> install the software.</p>
 <table width="100%">
 <tr><td><b>Archive</b></td><td><b>GPG Signatures</b></td></tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz?download">gnump3d-$(VERSION).tar.gz</a></td>
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.gz.asc?download">gnump3d-$(VERSION).tar.gz.asc</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.gz">gnump3d-$(VERSION).tar.gz</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.gz.asc">gnump3d-$(VERSION).tar.gz.asc</a></td>
 </tr>
 <tr>
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2?download">gnump3d-$(VERSION).tar.bz2</a></td>
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).tar.bz2.asc?download">gnump3d-$(VERSION).tar.bz2.asc</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.bz2">gnump3d-$(VERSION).tar.bz2</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).tar.bz2.asc">gnump3d-$(VERSION).tar.bz2.asc</a></td>
 </tr>
 <tr bgcolor="#CCCCCC">
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip?download">gnump3d-$(VERSION).zip</a></td>
-<td><a href="http://savannah.gnu.org/download/gnump3d/gnump3d-$(VERSION).zip.asc?download">gnump3d-$(VERSION).zip.asc</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).zip">gnump3d-$(VERSION).zip</a></td>
+<td><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/gnump3d-$(VERSION).zip.asc">gnump3d-$(VERSION).zip.asc</a></td>
 </tr>
 <tr ><td><a href="$(CHANGELOG)">ChangeLog</a></td><td>&nbsp;</td></tr>
 <tr bgcolor="#CCCCCC"><td><a href="$(README)">README</a></td><td>&nbsp;</td></tr>
@@ -799,14 +802,13 @@ there are two thing to check:</p>
 <tr bgcolor="#CCCCCC"><td><a href="$(READMEWIN)">README.Windows</a></td><td><a href="$(README-SERVICE)">Running As A Service On Windows</a></td></tr>
 <tr><td><a href="$(READMEMAC)">README.MacOSX</a></td><td>&nbsp;</td></tr>
 </table>
--->
 
-<h4>Download Area</h4>
-<p>Due to the recent compromise of the Savannah machine which hosts this software and these pages I've setup a temporary download location for GNUMp3d:</p>
+<h4>Download Notes</h4>
+<p>Due to the recent compromise of the Savannah machine which hosts this software and these pages the downloads are coming from a temporary location upon my <a href="http://www.steve.org.uk/">personal homepage</a>.</p>
+<p>Offers of mirroring the site/download area would be appreciated.</p>
 <ul>
 <Li><a href="http://www.steve.org.uk/Software/GNUMP3d/tmp/">http://www.steve.org.uk/Software/GNUMP3d/tmp</a></li>
 </ul>
-<p>In the future this will become an official mirror.</p>
 
 <h4>Freshmeat Rating</h4>
 <p>&nbsp;If you came here from <a href="http://freshmeat.net/projects/gnump3d">Freshmeat</a>, then it'd be great if you could <a href="http://freshmeat.net/rate/20517/">rate</a> this software once you've tried it ;)</p>
