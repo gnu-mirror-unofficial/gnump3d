@@ -4,6 +4,34 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+
+  v2.9.4
+    -  Solomon Peachy
+       Fix a double slash strip bug.
+
+  v2.9.3 
+    -  Solomon Peachy  
+       Show "NEW" next to files instead of just directories.
+       Add incremental tag cache updates
+       Assorted bugfixes
+       Consolidated tag reading code into one place
+
+    -  Martin Lohmeier
+       Bugfix for broken Nomad theme link.
+
+    -  Philip Chan
+       Contributed fix to the URL encoding on the random plugin page.
+       Added support for reading tag information from .WMA files.
+	
+    -  Adrien BUSTANY 
+       French language translation.
+       Added support for .aac/.mp4 files.
+
+    -  Reid Rivenburgh
+       Contributed patch for sorting by file modification date.
+
+
+
   v2.9.1 / 2.9.2
     -  Martin Lohmeier
        Contributed fix to mp3info to handle broken tags better.
@@ -11,8 +39,11 @@
     -  Jeff Smith
        Contributed the new theme - Musicus.
 
-	-  Aaron Longson 
-	   Minor bugfix with quoting files for external commands.
+    -  Aaron Longson 
+       Minor bugfix with quoting files for external commands.
+
+    -  Solomon Peachy 
+       Contributed changes to speed up tag cache handling.
 
 
   v2.9
