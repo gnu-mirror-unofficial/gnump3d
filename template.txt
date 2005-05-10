@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.21 $
+.define TEMPLATE-VERSION $Revision: 1.22 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -31,13 +31,13 @@
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 1st of April 2005.</p>
-<p>The current release features many small cleanups and changes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
-<p>Prominent changes for this release include:</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 10th of May 2005.</p>
+<p>The current release features only a couple of small bugfixes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
+<p>The changes for this release are only:</p>
 <ul>
-<li>Increased speed for larger archives.</li>
-<li>Incremental caching improvements.</li>
-<li>Support for more audio types, including AAC, WMA, and MP4.</li>
+<li>An important bugfix which restores the 'info' links.</li>
+<li>A couple of warnings and spelling mistakes corrected..</li>
+<li>Updated support for MP3 tags.</li>
 </ul>
 <p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
 
