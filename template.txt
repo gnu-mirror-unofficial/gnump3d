@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.22 $
+.define TEMPLATE-VERSION $Revision: 1.23 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -381,7 +381,7 @@ http://some.host.name:port/foo/bar/test.mp3
 <p>So, whilst the password protection is useful, and does stop somebody
  from discovering your archive structure it doesn't give foolproof protection.</p>
 <p>I'll reiterate this one last time:</p>
-<P>If you want full security restrict access by IP addresses and only allow known-good clients to connect.</p>
+<p>If you want full security restrict access by IP addresses and only allow known-good clients to connect.</p>
 
 
 
@@ -1324,7 +1324,7 @@ http://server.host.name:port/../../../etc/passwd
 http://server.host.name:port/....//....//....//etc/passwd
 </pre>
 <p>Removing "<tt>../</tt>" from this request still leaves it vulnerable.</p>
-<P>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
+<p>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
 
 
 
@@ -1413,7 +1413,7 @@ http://server.host.name:port/....//....//....//etc/passwd
  some of these might have been fixed in the <a href="$(CVS)">CVS repository</a> by the time you read this.</p>
 <p>The list will be updated after every release to keep it current.</p>
 <p>Currently there are no known bugs.</p>
-<P>Previous bugs included:</p>
+<p>Previous bugs included:</p>
 
 <h3>Chinese Directory names failing to work</h3>
 <p>This can be fixed by anybody who sees it now, but setting the encoding type of the pages as they are served.</p>
