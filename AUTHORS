@@ -5,6 +5,38 @@
  useful bug reports to the software.
 
 
+  v2.9.5
+    -  Solomon Peachy:
+	   Refactored much song tag code
+	   Fixed info plugin to use song tags directly.
+           Fixed multiple stat() calls in the indexer.
+
+    -  Matti Somppi
+ 	   Some filename escape bugfixes, and a bugfix with new_count.
+
+    -  Aaron Longson
+	   Improved filename escaping.
+
+    - Michael Rensing
+	   HTML Validation cleanup on the playlist plugin.
+
+    - Daniel Eiland
+	   New theme, Liquid.
+
+    - Aaron Brown
+           New theme, BlueBox.
+
+    - Erik Vandekieft
+	   MP4 tracknumber bug report, and fix.
+
+    - Jack Twilley
+	   Contributed patch to show the time of the most recently played tracks.
+    - C. Menge
+           Provided enhancements to deal with the "currently playing" files on 
+           Microsoft Windows platforms.
+
+
+
   v2.9.4
     -  Solomon Peachy
        Fix a double slash strip bug.

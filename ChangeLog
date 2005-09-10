@@ -13,6 +13,26 @@
 
 
  
+  2.9.5 [ 8th September 2005  ]
+
+    - BUGFIX:  Don't stat the file twice in the indexer.
+    - BUGFIX:  Have Info plugin handle non/newly-cached items.
+    - BUGFIX:  Escape filenames more.
+    - BUGFIX:  Allow the 'new_days' parameter to work properly.
+    - BUGFIX:  Strip newline characters from tag values.
+    - BUGFIX:  Filter user supplied input in 404 page. (XSS).
+    - BUGFIX:  MPEG4 tracknumber reading bugfix.
+    - BUGFIX:  Avoid warnings about 'sanitizePath'.
+
+    - CLEANUP: HTML Validation fixes for the playlist plugin.
+	
+    - THEMES:  New theme 'Liquid' from Daniel Eiland
+    - THEMES:  New theme 'BlueBox' from Aaron Brown
+
+    - MISC:    "Most recent" now shows the time of the songs played.
+    - MISC:    The "currently playing files" are cleaned up on Windows
+
+
   2.9.4 [ 10th May 2005  ]
 
     - FEATURES: Updated MP3::Info module to support newer tags.
