@@ -17,10 +17,10 @@
 .define DATE &(`date +"%d %B %Y"`)
 
 .- The current released verision of GNUMP3d
-.define VERSION 2.9.4
+.define VERSION 2.9.5
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.15 $
+.define PRELUDE-VERSION $Revision: 1.16 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/registry/2LTKRAY9O22LI/ref=wl_s_3/202-8341772-7932661
