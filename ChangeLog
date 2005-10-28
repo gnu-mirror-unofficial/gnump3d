@@ -11,8 +11,19 @@
 	v1.0     - Current    Were coded in Perl
 	
 
+  2.9.6 [ 28th October 2005 ]
 
- 
+    - BUGFIX:  When "disable_tag_cache" is set don't spawn gnump3d-index.
+    - BUGFIX:  Still run `gnump3d-index` on startup if given --quiet.
+    - BUGFIX:  Playlist play-lengths are correctly displayed now.
+    - BUGFIX:  "/COPYING" link is now non-broken
+    - BUGFIX:  Process playlist files that share directory names.
+    - BUGFIX:  ".ram" files are playlist, not audio files.
+
+    - SECURITY: Remove XSS attacks.     [CVE-2005-3122]
+    - SECURITY: Prevent path traversal. [CVE-2005-3123]
+
+
   2.9.5 [ 8th September 2005  ]
 
     - BUGFIX:  Don't stat the file twice in the indexer.

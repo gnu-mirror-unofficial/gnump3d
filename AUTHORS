@@ -4,6 +4,16 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+  v2.9.6
+    -  C. Menge
+	   Playlist length count bugfix.
+
+    -  Rafael Bohrer Avila:
+       Provided fix for playlist + directory name handling in case of clash.
+
+    -  Ross Mohn
+       Informed me that .ram files are playlists, not audio files.
+
 
   v2.9.5
     -  Solomon Peachy:
