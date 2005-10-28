@@ -11,6 +11,11 @@
 	v1.0     - Current    Were coded in Perl
 	
 
+  2.9.7 [ 28th October 2005 ]
+
+    - BUGFIX:  The previous release was broken.
+
+	
   2.9.6 [ 28th October 2005 ]
 
     - BUGFIX:  When "disable_tag_cache" is set don't spawn gnump3d-index.
