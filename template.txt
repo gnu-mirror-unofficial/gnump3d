@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.25 $
+.define TEMPLATE-VERSION $Revision: 1.26 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -31,12 +31,18 @@
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 28th of October 2005.</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 17th of November 2005.</p>
 <p>The current release features only a couple of small bugfixes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
 <p>The changes for this release are primarily security fixes:</p>
 <ul>
-<li>Avoiding XSS (cross site scripting) attacks.</li>
-<li>Avoiding Path Traversal attacks.</li>
+<li>Avoid creating files insecurely in the <tt>/tmp</tt> directory
+<ul>
+<li>This issue was allocated the ID CVE-2005-3349</li>
+</ul></li>
+<li>Avoid path traversal attacks when processing CGI parameter, and cookie values.
+<ul>
+<li>This issue has been allocated the ID: CVE-2005-3355</li>
+</ul></li>
 </ul>
 <p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
 
@@ -81,11 +87,7 @@
 <li><a href="$(Theme-advanced)">Advanced Theming Notes</a>.</li>
 </ul>
 
-<p>If you have detailed questions which you would like answered,
-  or are needing customizations, etc, then your best option <b>after</b>
-  reading the available documentation is to join one of the
-  <a href="$(Lists)">mailing lists</a> and post a message.</p>
-<p>Failing that you may <a href="mailto:$(AUTHOR)">email the author</a>.</p>
+<p>If you have detailed questions which you would like answered, or are needing customizations, etc, then your best option <b>after</b> reading the available documentation is to join one of the <a href="$(Lists)">mailing lists</a> and post a message.</p>
 
 
 .---------------------------------------------------------------------
@@ -94,25 +96,16 @@
 
 .HEADING GNUMP3d Mailing Lists
 
-<p>There are several mailing lists which have been created for discussion
- related to gnump3d - below you can find descriptions of each of them.
-</p>
+<p>There are two mailing lists which have been created for discussion related to gnump3d - below you can find descriptions of each of them.</p>
+<p><b>Note:</b> In order to avoid spam only members who are subscribed to the mailing list may post messages.  If you're not a member then your message will be rejected, and bounced.</p>
 
 <h4>gnump3d-users</h4>
-<p>This is a list for discussions by users of the software, its
- a handy place to make suggestions, share templates, and offer/receive
- assistance from users.</p>
+<p>This is a list for discussions by users of the software, its a handy place to make suggestions, share templates, and offer/receive assistance from users.</p>
 <p>The list is <a href="http://mail.gnu.org/archive/html/gnump3d-users">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-users">subscribe/unsubscribe here</a></p>
 
 <h4>gnump3d-devel</h4>
 <p>This is a list for development discussions of the software.</p>
 <p>The list is <a href="http://mail.gnu.org/archive/html/gnump3d-devel">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-devel">subscribe/unsubscribe here</a></p>
-
-
-
-<h4>gnump3d-commits</h4>
-<p>This is a list for CVS commit notifications for this software.  Each commit to the programs <a href="$(CVS)">CVS Repository</a> will trigger a mail to this list.</p>
-<p>The list is <a href="http://mail.gnu.org/archive/html/gnump3d-commits">archived here</a>, you can <a href="http://mail.gnu.org/mailman/listinfo/gnump3d-commits">subscribe/unsubscribe here</a></p>
 
 
 .---------------------------------------------------------------------
@@ -511,7 +504,7 @@ part1.title
 
 .build anchor faq-add
 <h4>Will you add ...?</h4>
-<p>If you have a suggestion then I'd be happy to hear, simply make a post  to the relevent <a href="$(Lists)">mailing list</a>, or <a href="mailto:$(AUTHOR)">mail the author</a>.</p>
+<p>If you have a suggestion then I'd be happy to hear, simply make a post  to the relevent <a href="$(Lists)">mailing list</a> (after subscribing).</p>
 <p>If you have a patch, or a rough idea of how it could be implemented then so much the better!</p>
 
 
@@ -1243,10 +1236,6 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>I'm confident that these things can't happen, because I had them in mind when I was writing the software, but nobody is perfect and I would not like to suggest this software is perfect.</p>
 <p>Most of the common buffer overflows should be impossible due to the implementation language of Perl.  Likewise signal attacks, or format string attacks shouldn't be anything to worry about.</p>
 
-<h4>Vulnerabilities</h4>
-<p>Of all the common attacks I believe the only thing that this server is likely to be vulnerable to are "cross site scripting attacks" - this basically means that it may be possible for people to steal the cookies which you are using.</p>
-<p>As no cookies are used for authentification, or anything serious I wouldn't be too worried if this did turn out to be the case.</p>
-
 <h4>Testing</h4>
 <p>I believe that my server (this software), doesn't allow anybody
  to subvert your machine - and I've tested this to the best of my ability.</p>
@@ -1256,23 +1245,35 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 </p>
 <p>(If you wish you may use my <a href="$(GPGKEY)">gpg key</a>).</p>
 
-<h4>Recognition</h4>
-<p>Any researcher who discovers a hole in a current release will receive prominent credit upon the front page for a period of not less than one calender month after notifying me.</p>
-<p><b>This only applies if</b> the author is contacted <i>before</i> making a disclosure; as any ethical researcher should.  (If you do this then I'm happy for you to post to bugtraq/cert/wherever - after all it's important to spread the news).</p>
+<h4>Previous Security Holes</h4>
+<p>Information on <a href="$(Exploits)">previously discovered security holes</a> is available.</p>
 
 
-<h4>Past Vulnerabilities</h4>
-<p>To date there have been two verified vulnerabilities in this server:</p>
+.---------------------------------------------------------------------
+.ignore page
+.page exploits.html=Security Holes
+.build anchor Exploits
+
+.HEADING Previously Discovered &amp; Fixed Security Issues.
+
+<p>Sadly several security issues have been discovered in various versions of this program.  To ensure that your installation is secure it is <i>highly</i> recommended that you <a href="$(Securing)">restrict access to your server</a> from non-trusted clients.</p>
+<p>Only allowing trusted clients to communicate with your server has protected against all reported bugs except one.</p>
+
+<dl>
+<dt><a href="$(password-weakness)">Malicious Password File Download</a></dt>
+<dd><p>This issue allowed remote users to download your <tt>.password</tt> file.    Fixed the day it was reported, and the only issue which wasn't prevented by <a href="$(Securing)">securing your archive</a>.</p>
+<p>by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; [Notifed 3/02/2003 - Fixed 3/02/2003]</p>
+</dd>
+<dt><a href="$(directory-traversal)">Directory traversal attacks</a></dt>
+<dd><p>There have been several distinct directory traversal attacks attacks reported against the server.</p>
 <ul>
-<li><a href="$(attacks)">Malicious Password File Download</a>
-<ul>
-<li>by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; [Notifed 3/02/2003 - Fixed 3/02/2003]</li>
-</ul></li>
-<li><a href="$(attacks)">Directory traversal attack</a>
-<ul>
-<li>by "dabfus", fixed 2005</li>
-</ul></li>
+<li>Two relating to the use of input requests.</li>
+<li>One relating to the processing of CGI parameters, or cookie values.</li>
 </ul>
+</dd>
+<dt><a href="$(temporary-files)">Insecure Use of Temporary Files</a></dd>
+<dd><p>The final vulnerability involved the insecure use of files in the <tt>/tmp</tt> directory, when indexing music.  [CVE-2005-3349]</p></dd>
+</dt>
 
 
 
@@ -1285,18 +1286,9 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 .HEADING Past Security Attacks 
 
  <p>In the interests of full disclosure this page will stand as a permanent record of any security vulnerabilities which have been discovered in the server.</p>
-<p>To date there have only been two problems reporting.  Granted this is two too many.</p>
-
-<p>Erroneous security reports involve:</p>
-<ul>
-<li><a href="$(password-mitigation)">Password evasion</a></li>
-<li>Cross Site Scripting (XSS) Attacks</li>
-</ul>
-<p>Whilst it is true that cross site scripting attacks can be serious, in this application they are not.  A cross site scripting attack (xss) is one in which user supplied input is injecting into pages, usually with the intention of stealing cookies.</p>
-<p>Whilst it's true that user supplied input is displayed upon the GNUMP3d output pages, for example if you enter HTML code into the search box, this is not a security concern because the code doesn't use cookies for storing authentication information.</p>
 
 
-
+.build anchor password-weakness
 <h4>GNUMP3d v2.0 Password File Weakness</h4>
 <p>GNUMP3d supports two simple methods of securing access to your music archive, (these are described more fully <a href="$(Securing)">here</a>), IP address access control and a password system.</p>
 <p>The password system relies upon their being a file within the music archive containing a list of usernames and passwords which may be used to access the system.</p>
@@ -1306,26 +1298,33 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 <p>This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
 <p>(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
 
+
+.build anchor directory-traversal
 <h4>Directory Traversal Attack</h4>
-<p>This is a bug which was present in two release of the code:</p>
+<p>There are three bugs relating to directory traversal:</p>
+<dl>
+<dt>The first, discovered by "dabfus"</dt>
+<dd><p>This is a bug which was caused by inadequate filtering of the requested URI.  It was fixed with the release of v2.9.3.</p></dd>
+<dt>The second, discovered and fixed by myself</dt>
+<dd><p>This was another issue where clients were allowed to make requests which were not adequately filtered.  This was given the ID CAN-2005-3123, and fixed in the release 2.9.7.</p></dd>
+<dt>The third, reported to vendor-sec</dt>
+<dd><p>This related to the handling of CGI parameters, and cookie values.</p>
+<p>The issue was given the ID CVE-2005-3355 and fixed in the release of v2.9.8.</p></dd>
+</dl>
+
+
+.build anchor temporary-files
+
+<h4>Insecure Use of Temporary Files</h4>
+<p>When the music server starts it automatically attempts to update the index  of music automatically.  (Unless given the <tt>--fast</tt> command line argument).</p>
+<p>To prevent potential issues with the indexing being started more than once it created a "lock file":</p>
 <ul>
-<li>2.9.2</li>
-<li>2.9.1</li>
+<li>The server looks for the file "<tt>/tmp/index.lok</tt>" and if it is present it exits</li>
+<li>If the lockfile is not present then it is created and the indexing begins.</li>
+<li>Once the indexing is complete the lockfile is removed.</li>
 </ul>
-<p>In both cases this was because of an error in the way I tested for
- traversal attacks.</p>
-<p>A directory traversal attack involves making a request such as :</p>
-<pre>
-http://server.host.name:port/../../../etc/passwd
-</pre>
-<p>My code attempted to deal with this by removing the following characters from the requested files "<tt>../</tt>".  However this failed to handle the case where users would request:</p>
-<pre>
-http://server.host.name:port/....//....//....//etc/passwd
-</pre>
-<p>Removing "<tt>../</tt>" from this request still leaves it vulnerable.</p>
-<p>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
-
-
+<p>The lockfile was created in the directory <tt>/tmp</tt>, which all local users can write to, in an insecure manner.  This could have allowed a local user to create, or delete any file upon the system which the server had permission to modify.</p>
+<p>In the release of version 2.9.8 the lockfile code was simply removed.</p>
 
 
 .---------------------------------------------------------------------
@@ -1600,7 +1599,6 @@ add_meta_tag = &lt;meta http-equiv="Content-Type" content="text/html;charset=utf
 <li><a href="$(FAQ)">The FAQ</a></li>
 <li><a href="$(Lists)">The mailing lists</a></li>
 <li><a href="$(CVS)">The Source code itself</a></li>
-<li><a href="mailto:$(AUTHOR)">e-mail</a></li>
 </ul>
 
 <p>Nontheless if you are interested in commercial support

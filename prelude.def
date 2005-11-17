@@ -10,17 +10,14 @@
 .- Homepage of the software
 .define SERVER  http://www.gnump3d.org/
 
-.- Me
-.define AUTHOR  &#103;&#110;&#117;&#109;&#112;&#51;&#100;&#64;&#115;&#116;&#101;&#118;&#101;&#46;&#111;&#114;&#103;&#46;&#117;&#107;
-
 .- The date when the pages are built.
 .define DATE &(`date +"%d %B %Y"`)
 
 .- The current released verision of GNUMP3d
-.define VERSION 2.9.7
+.define VERSION 2.9.8
 
 .- Version of this file, as recorded by CVS.
-.define PRELUDE-VERSION $Revision: 1.18 $
+.define PRELUDE-VERSION $Revision: 1.19 $
 
 .- Reward me ;)
 .define WISHLIST http://www.amazon.co.uk/exec/obidos/registry/2LTKRAY9O22LI/ref=wl_s_3/202-8341772-7932661
