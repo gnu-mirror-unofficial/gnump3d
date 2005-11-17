@@ -35,22 +35,13 @@
       <div id="content">
 <a name="attacks"><!-- Anchor--></a>
 
-<h3><a name="TOC110">Past Security Attacks</a></h3>
+<h3><a name="TOC108">Past Security Attacks</a></h3>
 
  <p>In the interests of full disclosure this page will stand as a permanent record of any security vulnerabilities which have been discovered in the server.</p>
-<p>To date there have only been two problems reporting.  Granted this is two too many.</p>
-
-<p>Erroneous security reports involve:</p>
-<ul>
-<li><a href="securing.html#password-mitigation">Password evasion</a></li>
-<li>Cross Site Scripting (XSS) Attacks</li>
-</ul>
-<p>Whilst it is true that cross site scripting attacks can be serious, in this application they are not.  A cross site scripting attack (xss) is one in which user supplied input is injecting into pages, usually with the intention of stealing cookies.</p>
-<p>Whilst it's true that user supplied input is displayed upon the GNUMP3d output pages, for example if you enter HTML code into the search box, this is not a security concern because the code doesn't use cookies for storing authentication information.</p>
 
 
-
-<h4><a name="TOC111">GNUMP3d v2.0 Password File Weakness</a></h4>
+<a name="password-weakness"><!-- Anchor--></a>
+<h4><a name="TOC109">GNUMP3d v2.0 Password File Weakness</a></h4>
 <p>GNUMP3d supports two simple methods of securing access to your music archive, (these are described more fully <a href="securing.html#Securing">here</a>), IP address access control and a password system.</p>
 <p>The password system relies upon their being a file within the music archive containing a list of usernames and passwords which may be used to access the system.</p>
 <p>When this system was created I was careful to deny browsers the ability to download this file - as part of the re-write in Perl I missed this important step.</p>
@@ -59,33 +50,40 @@
 <p>This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
 <p>(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
 
-<h4><a name="TOC112">Directory Traversal Attack</a></h4>
-<p>This is a bug which was present in two release of the code:</p>
+
+<a name="directory-traversal"><!-- Anchor--></a>
+<h4><a name="TOC110">Directory Traversal Attack</a></h4>
+<p>There are three bugs relating to directory traversal:</p>
+<dl>
+<dt>The first, discovered by "dabfus"</dt>
+<dd><p>This is a bug which was caused by inadequate filtering of the requested URI.  It was fixed with the release of v2.9.3.</p></dd>
+<dt>The second, discovered and fixed by myself</dt>
+<dd><p>This was another issue where clients were allowed to make requests which were not adequately filtered.  This was given the ID CAN-2005-3123, and fixed in the release 2.9.7.</p></dd>
+<dt>The third, reported to vendor-sec</dt>
+<dd><p>This related to the handling of CGI parameters, and cookie values.</p>
+<p>The issue was given the ID CVE-2005-3355 and fixed in the release of v2.9.8.</p></dd>
+</dl>
+
+
+<a name="temporary-files"><!-- Anchor--></a>
+
+<h4><a name="TOC111">Insecure Use of Temporary Files</a></h4>
+<p>When the music server starts it automatically attempts to update the index  of music automatically.  (Unless given the <tt>--fast</tt> command line argument).</p>
+<p>To prevent potential issues with the indexing being started more than once it created a "lock file":</p>
 <ul>
-<li>2.9.2</li>
-<li>2.9.1</li>
+<li>The server looks for the file "<tt>/tmp/index.lok</tt>" and if it is present it exits</li>
+<li>If the lockfile is not present then it is created and the indexing begins.</li>
+<li>Once the indexing is complete the lockfile is removed.</li>
 </ul>
-<p>In both cases this was because of an error in the way I tested for
- traversal attacks.</p>
-<p>A directory traversal attack involves making a request such as :</p>
-<pre>
-http://server.host.name:port/../../../etc/passwd
-</pre>
-<p>My code attempted to deal with this by removing the following characters from the requested files "<tt>../</tt>".  However this failed to handle the case where users would request:</p>
-<pre>
-http://server.host.name:port/....//....//....//etc/passwd
-</pre>
-<p>Removing "<tt>../</tt>" from this request still leaves it vulnerable.</p>
-<p>This issue was fixed with the release of <tt>2.9.3</tt>.</p>
-
-
+<p>The lockfile was created in the directory <tt>/tmp</tt>, which all local users can write to, in an insecure manner.  This could have allowed a local user to create, or delete any file upon the system which the server had permission to modify.</p>
+<p>In the release of version 2.9.8 the lockfile code was simply removed.</p>
 
 
       </div>
     </div>
 
     <div class="copyright">
-      <p>Last modified: 28 October 2005
+      <p>Last modified: 17 November 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>

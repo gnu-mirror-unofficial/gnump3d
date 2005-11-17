@@ -9,11 +9,29 @@
 	v0.1     - v0.9.9.3   Were coded in C
 	v0.9.9.4 - v1.0       Were coded in C++
 	v1.0     - Current    Were coded in Perl
-	
+
+
+
+  2.9.8 [ 17th November 2005 ]
+
+    - MISC: New Spanish translation of error texts & etc.
+    - MISC: Updated German translation of error texts & etc.
+
+    - THEMES: New theme Avalon, from Stan Mulder.
+
+    - BUGFIX: Random directory selection doesn't result in DOS with
+	          no tag cache file present.
+    - BUGFIX: Don't give warnings when sorting by track number.
+    - BUGFIX: /random/directory works on Windows machines too now :)
+
+    - SECURITY: Remove insecure usage of /tmp.    [CVE-2005-3349]
+    - SECURITY: Filter input parameters/cookies.  [CVE-2005-3355]
+
 
   2.9.7 [ 28th October 2005 ]
 
     - BUGFIX:  The previous release was broken.
+    - BUGFIX: Allow files to start with ...
 
 	
   2.9.6 [ 28th October 2005 ]

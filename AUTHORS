@@ -4,6 +4,16 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+  v2.9.8
+    -  C. Menge
+       Supplied an updated German language translation.
+
+    - Ibron
+       Gave an initial Spanish translation.
+
+    - Stan Mulder.
+       Contributed another theme, Avalon.
+
   v2.9.6
     -  C. Menge
 	   Playlist length count bugfix.

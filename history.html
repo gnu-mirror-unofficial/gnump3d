@@ -36,39 +36,39 @@
 <a name="History"><!-- Anchor--></a>
 
 
-<h3><a name="TOC119">The History of GNUMP3d</a></h3>
+<h3><a name="TOC118">The History of GNUMP3d</a></h3>
 
 <p>After receiving a few emails from interested individuals I've decided to document the history of this server here.</p>
 <p>I've had a large MP3 collection for a few years now which I've ripped from my large CD collection.</p>
 <p>(Nowadays I prefer to encode my songs as <a href="http://www.vorbis.com/">OGG Vorbis files</a> - but I'd guess my archive is 50/50 at the moment).</p>
 
-<h4><a name="TOC120">Introducing Edna</a></h4>
+<h4><a name="TOC119">Introducing Edna</a></h4>
 <p>Once I'd setup my home network (three GNU/Linux machines) I wanted a simple solution for streaming them from a central location.  After looking around for a while I came across <a href="http://edna.sourceforge.net/">Edna</a> which is a small media server written in Python.</p>
 <p>Edna sufficed my needs for a very long time.  Although it appears that all practical development has ceased it serves it's purpose extremely well.</p>
 
-<h4><a name="TOC121">Edna's deficiencies</a></h4>
+<h4><a name="TOC120">Edna's deficiencies</a></h4>
 <p>After a few months use I found that I was missing several things which would have made the server a lot nicer - Such as the ability to search the archive, and view statistics.</p>
 <p>Unfortunately my Python knowledge is minimal.  I hacked around with a for a little while but then decided to recode the server in Perl, I did this because it seemed sensible to move from one scripting language to another.</p>
 
-<h4><a name="TOC122">The Perl Server</a></h4>
+<h4><a name="TOC121">The Perl Server</a></h4>
 <p>The perl server whas quite honestly a mess.  I only used it for a short while before thinking of recoding it in C.</p>
 <p>This was mostly due to me attempting to rewrite the Python code in Perl, something that was a mistake; picking a more appropriate design would probably have resulted in a great server right from the start.</p>
 
-<h4><a name="TOC123">The C server</a></h4>
+<h4><a name="TOC122">The C server</a></h4>
 <p>As an excuse to play with writing a server in C with threading support I began to recode the server one rainy weekend.  Although it wasn't very complete, in 2 days I'd managed to build a nice simple server which did the basic listing and streaming of MP3's.  This sufficed my needs for a short while.</p>
 <p>The C code was released to <a href="http://www.freshmeat.net/projects/gnump3d/">Freshmeat.net</a> on the following Monday.</p>
 <p>I received around 20 emails that week from users who liked it.  To my intense suprise I actually started to recieve patches for various things too.</p>
 <p>Like many other developers I'd released software before but this was the first time I'd received patches from multiple users in such a short amount of time.  (I put this down to the fact that there aren't many simple streaming servers, and the server has the magic three letters 'MP3' in its name ;).</p>
 <p>Development continued with regular bugfix releases and feature updates.</p>
 
-<h4><a name="TOC124">The Move To C++</a></h4>
+<h4><a name="TOC123">The Move To C++</a></h4>
 <p>After a few releases it became apparent that there were several problems with the codebase that weren't going to be simple to fix.  (Mostly because of complications with the multi-threaded nature of the server)</p>
 <p>The flaws in the codebase were primarily concerned with string handling and memory management.  (Two areas where C is traditionaly prone to misuse and abuse).</p>
 <p>I've previously written a lot of code in Java but I didn't want to alienate any users who were without a Java runtime environment.  This meant that C++ was a natural choice for the new implementation as it led to a natural reuse of the existing code.</p>
 <p>(Looking back on it maybe I would have been better of going for Java; it has built in support for both threading and networking - who can tell what the server would look like if I'd decided to go with Java instead?)</p>
 <p>Migrating the code to C++ took a couple of days.  Really making the code object orientated took slightly longer - but eventually it was done.</p>
 <p>There were a few problems with the first C++ release, but they were fixed fairly quickly and know I made the correct choice in doing the re-write.</p>
-<h4><a name="TOC125">More Users</a></h4>
+<h4><a name="TOC124">More Users</a></h4>
 <p>After a while I started getting curious as to how many users I had - so I started running websearches - this is when I discovered it had made it into Gentoo GNU/Linux, and the FreeBSD ports collection.</p>
 <p>Many people were beginning to complain that the server was too hard to modify; which I thought was a shame, especially since I'd put such a lot of effort into the plugin system.</p>
 <p>Two other problems were starting to show up:</p>
@@ -81,12 +81,12 @@
 <p>Perl was the obvious candidate for me, <a href="http://www.ruby-lang.org/">Ruby</a> was an interesting contender but a little too new for me.</p>
 <p>Python I'd already moved away from, and it's still a language I don't know.</p>
 
-<h4><a name="TOC126">The Future?</a></h4>
+<h4><a name="TOC125">The Future?</a></h4>
 <p>In the past I had considered the version 1 release to be feature complete; it did everything I'd ever wanted it to do.  Streaming, searching, stability, and extensibility were all there.</p>
 <p>But now with the added power of Perl <sup>tm</sup> interesting new possibilities are presenting themselfs - the ability to rate songs, and choose to listen only to songs that have been rated positively, the ability for the server to track your music and suggest similar things, both these ideas and more will be possible in the future.</p>
 <p>After that .. who knows?</p>
 <p>I guess it will come down to people making interesting suggestions.</p>
-<h4><a name="TOC127">GNU</a></h4>
+<h4><a name="TOC126">GNU</a></h4>
 <p>I was recently contacted by RMS who asked if I intended the program to become part of the <a href="http://www.gnu.org/">GNU Project</a>.  I hadn't considered this, despite the name of the software.</p>
 <p>However after some discussion we both decided it would be.</p>
 <p>This led to the migration of all the webpages from <a href="http://sourceforge.net/">SourceForge</a> to the hosting facilities that are provided at <a href="http://savannah.gnu.org/">Savannah</a>, and closes another chapter in the projects history.</p>
@@ -97,7 +97,7 @@
     </div>
 
     <div class="copyright">
-      <p>Last modified: 28 October 2005
+      <p>Last modified: 17 November 2005
  - Copyright (c) 2001,2002,2003,2004,2005 <a href="http://www.steve.org.uk/">Steve Kemp</a> &lt;<a href="http://www.steve.org.uk/contact/">email</a>&gt;.
       </p>
     </div>
