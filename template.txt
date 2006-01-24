@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.26 $
+.define TEMPLATE-VERSION $Revision: 1.27 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -1442,7 +1442,15 @@ add_meta_tag = &lt;meta http-equiv="Content-Type" content="text/html;charset=utf
 <dd>The <a href="http://freshmeat.net/projects/GNUMP3d/">Freshmeat</a> project page for this software, and the <a href="http://savannah.gnu.org/projects/gnump3d/">Savannah project page</a>.</dd>
 
 <dt><b>Distributions with GNUMP3d</b></dt>
-<dd><a href="http://www.debian.org/">Debian GNU/Linux</a>, <a href="http://www.gentoo.org/">Gentoo GNU/Linux</a>, <a href="http://www.freebsd.org/">FreeBSD</a> - it is also be included in the professional release of their <a href="http://www.suse.de/uk/">SuSE GNU/Linux</a> distribution.</dd>
+<dd>GNUMP3d is included in the following distributions:</p>
+<ul>
+<li><a href="http://www.debian.org/">Debian GNU/Linux</a></li>
+<li><a href="http://www.gentoo.org/">Gentoo GNU/Linux</a></li>
+<li><a href="http://www.freebsd.org/">FreeBSD</a></li>
+<li><a href="http://www.suse.de/uk/">SuSE GNU/Linux</a></li>
+</ul>
+<p>It may be included in more, but I have been unable to discover this.</p.
+</dd>
 
 <dt><b>Perl For Windows</b></dt>
 <dd>To run the GNUMP3d you'll need to make sure you have a recent copy of <a href="$(ACTIVESTATE)">ActiveState Perl</a> installed.</dd>
@@ -1457,10 +1465,10 @@ add_meta_tag = &lt;meta http-equiv="Content-Type" content="text/html;charset=utf
 <dd>None of this work would have been possible without the existance and inspiration of <a href="http://www.gnu.org/">The GNU Project</a> who kindly provide hosting for this site and allowed it to become part of their project.</dd>
 
 <dt><b>MP3 Players</b></dt>
-<dd>The following are my two favourite MP3 players : <a href="http://www.freeamp.org/">FreeAmp</a> / <a href="http://www.xmms.org/">XMMS</a>.  (<a href="http://www.winamp.com/">WinAmp</a> is also widely used on Microsoft platforms).</dd>
+<dd><a href="http://www.xmms.org/">XMMS</a> is my favourite MP3 player upon the GNU/Linux platform.  (<a href="http://www.winamp.com/">WinAmp</a> is also widely used on Microsoft platforms).</dd>
 
 <dt><b>Development Tools</b></dt>
-<dd><a href="http://www.cvshome.org">CVS</a>, the Concurrent Versioning System, <a href="http://www.imatix.com/html/htmlpp/">HTMLPP</a>, the HTML preprocessor, <a href="http://freshmeat.net/projects/manedit">manedit</a> for creating the manpages</a>, and of course <a href="http://www.gnu.org/software/emacs/emacs.html">GNU Emacs</a>.</dd>
+<dd>CVS, the Concurrent Versioning System, <a href="http://www.imatix.com/html/htmlpp/">HTMLPP</a>, the HTML preprocessor, <a href="http://freshmeat.net/projects/manedit">manedit</a> for creating the manpages</a>, and of course <a href="http://www.gnu.org/software/emacs/emacs.html">GNU Emacs</a>.</dd>
 
 
 </dl>
