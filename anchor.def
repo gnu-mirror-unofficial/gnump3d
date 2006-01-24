@@ -2,10 +2,10 @@
 #  Delete this file to reset all anchors
 FAQ-players          FAQ.html     
 faq-template         FAQ.html     
-Plugins              plugins.html 
 faq-stats            FAQ.html     
-faq-logfile          FAQ.html     
+Plugins              plugins.html 
 Securing-Pass        securing.html 
+faq-logfile          FAQ.html     
 Config               config.html  
 Theme                theme.html   
 faq-hostname         FAQ.html     
@@ -16,8 +16,8 @@ faq-securing         FAQ.html
 faq-what-plugins     FAQ.html     
 Download             download.html 
 faq-reload-themes    FAQ.html     
-Links                links.html   
 faq-proxy            FAQ.html     
+Links                links.html   
 faq-donate           FAQ.html     
 Support              support.html 
 faq-theme-location   FAQ.html     
