@@ -11,6 +11,31 @@
 	v1.0     - Current    Were coded in Perl
 
 
+  2.9.9 [ 3rd September 2006 ]
+
+   - LANGUAGES: New Basque translation.
+
+   - BUGFIX: Theme names may contain underscores.
+   - BUGFIX: Directories are sorted in playlist correctly.
+   - BUGFIX: Search plugin and quality are never sent as cookies.
+   - BUGFIX: "Now playing" identifies multiple connections from the same IP.
+
+   - CLEANUP: Better Ogg Vorbis Tag handling.
+   - CLEANUP: Suggest a filename for playlists.
+   - CLEANUP: Case-insensitive sorting in several places.
+   - CLEANUP: EXTINF formatting is improved.
+   - CLEANUP: Downsample cache files are less liable to suffer from collisions.
+
+   - PLUGINS: /info/ now shows playlist information too.
+   - PLUGINS:  Massively more flexiable, scalable, and sexy plugin system.
+     TODO - Finish!
+
+   - DEVELOPMENT:  A new collection of test cases.
+
+   - MISC:  Added a more current MIME file.
+   - MISC:  The filetypes we understand are now user-modifiable, via the
+	   file /etc/gnump3d/file.types
+
 
   2.9.8 [ 17th November 2005 ]
 

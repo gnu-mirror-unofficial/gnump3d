@@ -44,6 +44,13 @@ Introduction
   In addition to this support is also present for streaming MPEG video
  files direct to clients.
 
+
+--
+ NOTE: The streaming of movies requires a  player capable of supporting
+        HTTP downloads.
+-
+
+
   The streaming is very versatile; individual files may be played directly,
  whole directory trees can be streamed, you may even choose to listen to
  audio files which match a particular pattern.
@@ -110,8 +117,13 @@ NOTE:
 Running
 -------
 
-  Simply run the main script, 'gnump3d' after installing, and
- editing the configuration file.
+  The first time you start the server you should make sure you
+ have a current "index" of your music.  To generate an index 
+ please run the script 'gnump3d-index' after updating your
+ configuration file as discussed above.
+
+  Once you have an index you should run the main script, 'gnump3d'
+ to start the streaming server.
 
   Once the server is started point a web browser at the host and
  port which you have specified, and browse/stream away.
@@ -164,6 +176,10 @@ Mailing Lists
  the following URL:
 
         http://www.gnump3d.org/lists.html
+
+  NOTE: You must be subscribed to the mailing lists in order to
+ post messages.  This is a regretable position made necessary by
+ the amount of spam an open mailing list would receive.
 
 
 Reporting Bugs

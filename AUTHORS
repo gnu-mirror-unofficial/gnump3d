@@ -4,6 +4,29 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+  v2.9.9
+    -  Ibon
+       Basque translation of the language file.
+
+    - Dave Slotter
+       Minor bugfixes in Makefile and default configuration file.
+
+    - Andrew McGuinness
+       Improved the OGG Vorbis tag file reading.
+
+    - Ross Mohn
+       Contributed code to display playlist information too.
+
+    - Michael Collard
+       Provided patches for several cleanups and enhancements.
+
+    - Juanra Dikal
+       Provided a patch for sorting directories in the playlist plugin.
+
+    - Matthew Cheetah
+       Provided multiple useful patches to fix caching issues, random
+       generation, whitespace issues, ratelimitting, and more!
+
   v2.9.8
     -  C. Menge
        Supplied an updated German language translation.

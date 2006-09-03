@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.27 $
+.define TEMPLATE-VERSION $Revision: 1.28 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -31,20 +31,16 @@
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 17th of November 2005.</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 3rd of September 2006.</p>
 <p>The current release features only a couple of small bugfixes - a complete list may be found in the <a href="$(CHANGELOG)">ChangeLog</a> file, and contributors are acknowleged in the <a href="$(AUTHORS)">Authors</a> list.</p>
-<p>The changes for this release are primarily security fixes:</p>
-<ul>
-<li>Avoid creating files insecurely in the <tt>/tmp</tt> directory
-<ul>
-<li>This issue was allocated the ID CVE-2005-3349</li>
-</ul></li>
-<li>Avoid path traversal attacks when processing CGI parameter, and cookie values.
-<ul>
-<li>This issue has been allocated the ID: CVE-2005-3355</li>
-</ul></li>
-</ul>
+<p>The changes for this release are primarily cosmetic and minor.</p>
 <p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
+
+
+<h4>Future Developments</h4>
+<p>All work on the 2.x.x versions of GNUMP3d have now ceased.  In the future a new branch will be developed featuring less "home-grown" code, making use of the many available Perl modules.</p>
+<p>This will make the core of the server smaller, easier to maintain, and less full of "issues".</p>
+<p>The intention is to literally start from scratch using the modules which have appeared and matured in the four years since this project was started.  That includes things like <a href="http://www.sqlite.org/">SQLite</a>, <a href="http://dbi.perl.org/">DBI</a>, <a href="http://html-template.sourceforge.net/">HTML::Tempalte</a>, etc.</p>
 
 
 <h4>Contribute</h4>
