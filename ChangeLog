@@ -11,7 +11,13 @@
 	v1.0     - Current    Were coded in Perl
 
 
-  2.9.9 [ 3rd September 2006 ]
+  2.9.9.1 [ 11th September 2006 ]
+
+   - BUGFIX:  file.types is installed.
+   - BUGFIX:  gnump3d-top works.
+
+  2.9.9 [ 2rd September 2006 ]
+
 
    - LANGUAGES: New Basque translation.
 
