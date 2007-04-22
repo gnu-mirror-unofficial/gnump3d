@@ -11,6 +11,12 @@
 	v1.0     - Current    Were coded in Perl
 
 
+  2.9final [22nd April 2007]
+
+   - BUGFIX:  Movie links are non-broken in the output.
+   - DEVELOPMENT: HTTP Auth Digest Patch.
+	
+
   2.9.9.1 [ 11th September 2006 ]
 
    - BUGFIX:  file.types is installed.

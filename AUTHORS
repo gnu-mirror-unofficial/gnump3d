@@ -4,6 +4,11 @@
   The following people have contributed either code, ideas, or
  useful bug reports to the software.
 
+
+  v2.9final
+    -  Samuel Alba
+       Contributed HTTP Auth-Digest support.
+
   v2.9.9
     -  Ibon
        Basque translation of the language file.

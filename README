@@ -3,8 +3,22 @@ GNUMP3d - The GNU Streaming MP3 / OGG Vorbis Server.
 
 
 Homepage: http://www.gnump3d.org/
-Version : 2.x
+Version : 2.9final
 Author  : Steve Kemp <steve@steve.org.uk>
+
+
+
+
+NOTE
+----
+
+  All development of this branch of the project has ceased.
+   
+  In the future there might be a GNUMP3d 3.x branch writen in
+ modern Perl, or Ruby, supporting an SQLite back-end.  However
+ there are no plans to start on this in the short-term future.
+
+
 
 
 
@@ -282,21 +296,6 @@ Comments / Suggestions / Patches?
   If you really like the software consider purchasing something from
  the wishlist you'll find displayed at http://www.gnump3d.org/
 
-
-Recent Changes
---------------
-
-  This small section is designed to give an overview of areas of the
- code, functionality, or documentation which might have gone through
- major changes since the last release.
-
-  This release contains several changes the most obvious one is the
- removal of the song tag parsing code.  Nowadays all the song tags are
- stored in a simple 'database', for speedy retrieval.  Prior to starting
- the server the database will be built up.
-
-  You may tweak the settings, or disable this altogether - please see
- the notes within the configuration file for more details.
 
 
 Steve
