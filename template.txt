@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.30 $
+.define TEMPLATE-VERSION $Revision: 1.31 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -31,16 +31,16 @@
 
 <h4>GNUMP3d v$(VERSION) Released</h4>
 
-<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 22nd of April 2007.</p>
-<p>This new release features only minor changes, and is intended to be the final release of the 2.x branch of the project.  In the future there <i>might</i> be a 3.x release branch using <i>modern</i> Perl or Ruby as the implementation language - however that is not yet decided.</p>
-<p>In the past five years I've had an awful lot of fun working on this project, learned an awful lot of things, and feel the the world has moved on from my little project.  It might be time to lay it to rest for good rather than start again with a real SQLite database backend, etc.</p>
-<p>Please find the archives on the <a href="$(Download)">download page</a>.</p>
+<p>The current stable release of GNUMP3d is v$(VERSION), which was released upon the 18th of October 2007.</p>
+<p>This new release features only a couple of small bugfixes and the removal of obsolete and broken code.  (Notably the previous password protection was removed entirely from the project.)</p>
+<p>In the past five years I've had an awful lot of fun working on this project, learned an awful lot of things.  However I feel that the world has moved on from my little project, and future development of this code is extremely unlikely.</p>
+<p>It is possible there will be a new project with the same name with neater, tighter, and better code with an SQLite database backend, etc, but there are no immediate plans to start such development.</p>
 
 
 
 <h4>Contribute</h4>
 
-<p>In the past I welcomed the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, or <a href="$(Theme)">theme designs</a> - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a>.  However with the current mothballing of the 2.x release I think it is no longer appropriate to accept such contributions - since that would mean making additional releases which is contrary to the idea of a "final" release.</p>
+<p>In the past I welcomed the contribution of <a href="$(Developer)">code</a>, <a href="$(Documentation)">documentation</a>, or <a href="$(Theme)">theme designs</a> - not to mention items from my <a href="$(WISHLIST)">Amazon wishlist</a>.  However with the current mothballing of the project I think it is no longer appropriate to accept such contributions - since that would mean making additional releases which is contrary to the idea of a "final" release.</p>
 <p>I owe a large part of the success of this project to the many suggestions, and patches from <a href="$(Thanks)">previous contributors</a>, their feedback, updates, and support is appreciated very much.</p>
 
 
@@ -264,30 +264,16 @@ tag_cache = /var/cache/gnump3d/song.tags
 .HEADING Securing Your Server
 
 
-<p>By default the server is open to the world; which means that
- anybody who can connect to your server can browse or play any of your
- available music, see your statistics, or perform searches.</p>
+<p>By default the server is open to the world; which means that anybody who can connect to your server can browse or play any of your available music, see your statistics, or perform searches.</p>
 
-<p>If you wish to impose tighter controls you have two options:</p>
-
-<ol>
-<li><a href="$(Securing-IP)">Restrict access by the IP Address of the client</a>.</li>
-<li><a href="$(Securing-Pass)">Restrict access via password protection</a>.</li>
-</ol>
-
+<p>If you wish to impose tighter controls you should <a href="$(Securing-IP)">restrict access</a> to your server either by using the available IP address restrictions or via a good firewall policy.</p>
 
 .build anchor Securing-IP
 <h3>IP Address Restriction</h3>
 <h4>Allowing Addresses</h4>
 
-<p>This is the simplest method of restricting which visitors can
- browse and stream your music.  Edit the configuration file and include
- all the IP addresses, or ranges which you'd like to be able to use your
- via the 'allowed_clients' setting.
-</p>
-<p>If you wish to enable everybody to access the server then
-leave the setting as it is by default 'allowed_clients = all' - otherwise
- follow the examples to limit access, eg:</p>
+<p>Edit the configuration file and include all the IP addresses, or ranges which you'd like to be able to use your via the 'allowed_clients' setting.</p>
+<p>If you wish to enable everybody to access the server then leave the setting as it is by default 'allowed_clients = all' - otherwise follow the examples to limit access, eg:</p>
 
 <pre class="example">
 #  Limit the clients who can connect and use your server by IP address.
@@ -323,48 +309,10 @@ denied_clients  = 192.168.2.2; 192.168.2.44
 </pre>
 
 .build anchor Securing-Pass
-<h4>Restrict access via password protection</h4>
-<p>You may also restrict access to the server by username + password.
- This is enabled by default you just need to create a password file inside
- your music repository.</p>
-<p>The password file must be called '<b>.password</b>' and should contain
- a list of all the usernames and passwords which are accepted.  (Note that this file must be readable to the user which the server is running as).</p>
-<p>The password file is assumed to be in the following format:</p>
-<pre class="example">
-username1:password1
-username2:password2
-username3:password3
-...
-usernameN:passwordN
-</pre>
-<p>If the visitor enters a valid username and password they will be
- able to browse - otherwise they won't.</p>
-
-.build anchor password-mitigation
-<h4>Password Protection Evasion</h4>
-<p>Every few months a user will report a security issue with the server
- when they realise that if they know the name of an audio file they
- can download it without being prompted for a password.</p>
-<p>This is a <b>deliberate hole</b>.  Although that might seem nonsensical its
- mandated by the way the server works.</p>
-<p>If you enable the password protection what you are actually doing is 
- denying random visitors the ability to browse your music archives GUI,
- including the playlists.</p>
-<p>However you're not protecting against the users who know what
- directory structure you have - if a remote user knows you have the
- following file they can download it directly:</p>
-<pre>
-http://some.host.name:port/foo/bar/test.mp3
-</pre>
-<p>Why is that?</p>
-<p>It's because 99% of available MP3 players know nothing of HTTP authentication, which is used to prompt visitors for their password.</p>
-<p>If we protected the audio files as well as the GUI files then the client
- MP3 players would be unable to download the audio tracks and streaming
- would break for all users.</p>
-<p>So, whilst the password protection is useful, and does stop somebody
- from discovering your archive structure it doesn't give foolproof protection.</p>
-<p>I'll reiterate this one last time:</p>
-<p>If you want full security restrict access by IP addresses and only allow known-good clients to connect.</p>
+<h4>Password protection</h4>
+<p>Previously it was possible to restrict server access via a weak form
+of password protection.  Given that 99% of media players did not support even HTTP Basic authentication this protection was deliberately weak.</p>
+<p>Recognising the lack of real security this support was removed with the v3.0 release of the project.</p>
 
 
 

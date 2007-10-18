@@ -11,6 +11,10 @@
 	v1.0     - Current    Were coded in Perl
 
 
+  3.0 [ 17th October 2007]
+   - Removed several perl warnings.
+   - Removed password protection as being broken beyond repair.
+
   2.9final [22nd April 2007]
 
    - BUGFIX:  Movie links are non-broken in the output.
