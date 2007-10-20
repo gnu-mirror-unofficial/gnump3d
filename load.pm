@@ -1,68 +1,71 @@
 
+#
+#  The package this module is implementing.
+#
+package plugins::load;
 
-sub getAuthor( )
+
+#
+#  Register the plugin.
+#
+::register_plugin("plugins::load");
+
+
+#
+#  Minimal constructor.
+#
+sub new { return bless {}; }
+
+
+#
+#  Get the author of this plugin.
+#
+sub getAuthor
 {
     return( "Steve Kemp" );
 }
 
-sub getVersion( )
+#
+#  Get the version of this plugin.
+#
+sub getVersion
 {
     return( "1.1" );
 }
 
-sub handlePath( $ )
+#
+#  Test whether we should be invoked for a given URL.
+#
+sub wantsPath
 {
-    my ( $request ) = ( @_ );
+    my ( $class, $path ) = ( @_ );
 
-    my $header   = &getHTTPHeader( 200, "text/html" );
-    &sendData( $data, $header );
-
-    my $text     = "";
-    my @template = &getThemeFile( $ARGUMENTS{ "theme" }, "plugin.html" );
-    foreach my $line (@template )
+    if ( $path =~ /^\/info\/*/i )
     {
-	#
-	# Make global substitutions.
-	#
-	$line =~ s/\$HOSTNAME/$host/g;
-	$line =~ s/\$VERSION/$VERSION/g;
-	$line =~ s/\$DIRECTORY/\/load\//g;
-	$line =~ s/\$HEADING/GNUMP3d Load Reporting Page/g;
-	$line =~ s/\$TITLE/GNUMP3d Load Reporting Page/g;
-		#
-	# Now handle the special sections.
-	#
-	if ( $line =~ /(.*)\$BANNER(.*)/ )
-	{
-	    # Insert banner;
-	    my $pre  = $1;
-	    my $post = $2;
-
-	    $text .= $pre;
-	    $text .= &getBanner( "/load/" );
-	    $text .= $post;
-	}
-	elsif ( $line =~ /(.*)\$TEXT(.*)/ )
-	{
-	    #
-	    # This is the main output area of the plugin
-	    #
-	    my $uptime = `uptime`;
-	    chomp( $uptime );
-
-	    if ( $uptime =~ /load average: ([^,]+),/ )
-	    {
-		$text .= "<b>Current Load: $1</b>\n";
-	    }
-	}
-	else
-	{
-	    $text .= $line;
-	}
+        return 1;
     }
-  
-    &sendData( $data, $text );
-    return 1;
+
+    return 0;
+}
+
+
+#
+#  Handle one of the paths we're invoked for.
+#
+sub handlePath
+{
+    my ( $class, $uri ) = (@_);
+
+package main;
+
+
+   my $header = &getHTTPHeader( 200, "text/plain" );
+   &sendData( $data, $header );
+
+   my $output = "We were called for the URL <b>$request</b>";
+
+   &sendData( $data, $output );
+   return 1;
 }
 
 

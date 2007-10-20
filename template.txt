@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.31 $
+.define TEMPLATE-VERSION $Revision: 1.32 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -910,7 +910,7 @@ cvs -z6 -q update -P -d
 <h4>Adding The Plugin To The Source</h4>
 <p>With that decided we can start coding - the first thing to do
  is to create a new source file within the 'lib/gnump3d/plugin' directory.</p>
-<p>We'll call our file 'load.pm' in order to ensure it will get called for requests to the top level '/load/' URL.</p>
+<p>We'll call our file 'load.pm', although the name doesn't matter, and we'll ensure that it is called for requests to the top level '/load/' URL.</p>
 
 
 <h4>Implementing the plugin</h4>
@@ -920,6 +920,10 @@ cvs -z6 -q update -P -d
 <li>getAuthor()
 <ul>
 <li>Returns a text string containing the authors name.</li>
+</ul></li>
+<li>wantsPath()
+<ul>
+<li>This function decides which paths the plugin will be invoked for.</li>
 </ul></li>
 <li>getVersion()
 <ul>
@@ -936,19 +940,33 @@ cvs -z6 -q update -P -d
 <pre class="example">
 # lib/gnump3d/plugins/load.pm
 
-sub getAuthor()
+sub getAuthor
 {
    return( "Steve Kemp" );
 }
 
-sub getVersion( )
+sub getVersion
 {
    return( "1.0" );
 }
 
-sub handlePath( $ )
+sub wantsPath
 {
-   my ( $request ) = ( @_ );
+    my ( $class, $path ) = ( @_ );
+
+    if ( $path =~ /^\/load\/*/i )
+    {
+        return 1;
+    }
+
+    return 0;
+}
+
+sub handlePath
+{
+    my ( $class, $uri ) = (@_);
+
+package main;
 
    my $header = &amp;getHTTPHeader( 200, "text/plain" );
    &amp;sendData( $data, $header );
@@ -964,7 +982,7 @@ sub handlePath( $ )
 </pre>
 <hr/>
 
-<p>All that code did was export the three functions the server requires, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
+<p>All that code did was export the minimal functions the server required, and respond to a request upon the path '/load/', merely echoing the request it received.</p>
 
 <h4>Testing It</h4>
 <p>Now would be a good time to test the code.  You should be able to go to the top directory, and run 'make install'.</p>
@@ -992,7 +1010,6 @@ sub handlePath( $ )
 <ul>
 <li><a href="load.pm">load.pm - sample module</a></li>
 </ul>
-<p>The sample presented above shows other advanced features, such as working with template files, and setting the mime-type of your response.
 
 <h4>Comments / Questions?</h4>
 <p>Any comments or questions can be posted to the <a href="$(Lists)">developer mailing list</a>.</p>
