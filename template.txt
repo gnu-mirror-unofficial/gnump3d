@@ -8,7 +8,7 @@
 .-  These variables get put into the header of each HTML file.
 .-
 
-.define TEMPLATE-VERSION $Revision: 1.32 $
+.define TEMPLATE-VERSION $Revision: 1.33 $
 .-
 .-  The prelude.def file centralises various definitions that I don't
 .-  want to clutter-up this file with.  This is just one of my habits.
@@ -186,7 +186,6 @@
 <tr><td valign='top'><b>binding_host</b></td><td valign='top'><p>  If your machine has multiple ethernet interfaces then this setting will allow you to control which interface the server listens upon.</p></td></tr>
 <tr><td valign='top'><b>directory_format</b></td><td valign='top'><p>  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used in the output file for each directory name which is found.</p></td></tr>
 <tr><td valign='top'><b>enable_browsing</b></td><td valign='top'><p>  This value allows you to disable browsing your servers GUI interface.  This would be ideal if you just wished your clients to be restricted to random playing of songs.</p></td></tr>
-<tr><td valign='top'><b>enable_password_protection</b></td><td valign='top'><p>  Password protection is enabled by default, with this option you may disable it.</p><p>  Password protection requires that you place a file '.password' within each directory you wish to restrict access to.  This file contains lines of the form 'username:password'.</p></td></tr>
 <tr><td valign='top'><b>errorlog</b></td><td valign='top'><p>  The name of the file to write all error messages to.  When the server is ran in debug mode (with '\-\-debug' specified upon the command line) this file is not used, instead the output is sent to the console.</p></td></tr>
 <tr><td valign='top'><b>file_format</b></td><td valign='top'><p>  This is a format string which is documented within the configuration file itself; it allows you to specify a template which will be used to generate the output for each file which is found.</p></td></tr>
 <tr><td valign='top'><b>hostname</b></td><td valign='top'><p>  The hostname setting allows you to control the hostname which is used in all the generated links within the GUI.  It may be useful if the server has multiple DNS names.</p></td></tr>
@@ -535,11 +534,7 @@ hostname = mp3d.foo.org
 
 .build anchor faq-securing
 <h4>How do I secure my music archive?</h4>
-<p>You can secure your archive in two ways, see the following URL's for details:</p>
-<ul>
-<li><a href="$(Securing-IP)">Restrict access by the IP Address of the browser</a>.</li>
-<li><a href="$(Securing-Pass)">Restrict access via password protection</a>.</li>
-</ul>
+<p>You can secure your archive by <a href="$(Securing-IP)">restricting access</a> to clients based upon their IP address.</p>
 
 
 <hr width="50%" />
@@ -1253,7 +1248,7 @@ ize='400' width='400' alt='The theme default.jpg' title='The theme default.jpg'>
 </ul>
 <p>This vulnerability was spotted and reported to me by Daniel Lyons &lt;<a href="mailto:fusion@nmt.edu">fusion@nmt.edu</a>&gt; and was fixed the same day - with release 2.2</p>
 <p>(Due to the fact the release was only out for one day before it was patched, and the low liklihood of this version of the server being widespread in the wild I've chosen to not notify bugtraq et al).</p>
-
+<p><b>Note</b>: Password protection was removed in 3.0 as being too weak to be useful.</p>
 
 .build anchor directory-traversal
 <h4>Directory Traversal Attack</h4>
